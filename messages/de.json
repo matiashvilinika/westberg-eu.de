@@ -1,0 +1,129 @@
+{
+  "nav": {
+    "features": "Funktionen",
+    "about": "Über uns",
+    "portfolio": "Portfolio",
+    "pricing": "Preise",
+    "pages": "Seiten",
+    "home": "Startseite",
+    "docs": "Dokumentation",
+    "support": "Support",
+    "blog": "Blog",
+    "signin": "Anmelden",
+    "signup": "Registrieren",
+    "services": "Dienstleistungen",
+    "team": "Team",
+    "contact": "Kontakt"
+  },
+  "auth": {
+    "signIn": "Anmelden",
+    "signUp": "Registrieren",
+    "signOut": "Abmelden"
+  },
+  "footer": {
+    "privacy": "Datenschutz",
+    "support": "Support",
+    "rights": "Alle Rechte vorbehalten",
+    "about": {
+      "description": "West Berg Europe (W.B.E.) GmbH - Ihr vertrauenswürdiger Partner für Premium-Automobile in ganz Europa.",
+      "company": "Unternehmen",
+      "supportSection": "Support",
+      "getInTouch": "Kontakt aufnehmen",
+      "tollFree": "Kostenlose Kundenbetreuung",
+      "liveSupport": "Benötigen Sie Live-Support?",
+      "contactUs": "Kontakt",
+      "careers": "Karriere",
+      "carSelling": "Autoverkauf",
+      "companyName": "Unternehmen",
+      "pressMedia": "Presse & Medien",
+      "ourBlog": "Unser Blog",
+      "account": "Konto",
+      "soon": "Bald"
+    }
+  },
+  "hero": {
+    "badge": "Premium Automobile",
+    "title": "West Berg Europe",
+    "subtitle": "Ihr Premium Automobil Partner",
+    "description": "West Berg Europe (W.B.E.) GmbH ist ein Premium-Automobilunternehmen, das sich auf die Suche, den Verkauf und den Tausch von Premium-Fahrzeugen konzentriert. Wir arbeiten vollständig legal und transparent und erweitern unser Netzwerk in Deutschland, der Schweiz und Italien.",
+    "cta": "Kontaktieren Sie uns"
+  },
+  "about": {
+    "mainTitle": "ÜBER UNS",
+    "title": "Über West Berg Europe",
+    "paragraph": "Erfahren Sie mehr über unsere Premium-Automobildienstleistungen und unser Engagement für Exzellenz.",
+    "aboutTitle": "Über uns",
+    "missionTitle": "Unsere Mission",
+    "visionTitle": "Unsere Vision",
+    "aboutDescription": "West Berg Europe (W.B.E.) GmbH ist ein Premium-Automobilunternehmen, das sich auf Premium-Fahrzeugdienstleistungen spezialisiert. Wir konzentrieren uns auf die Suche, den Verkauf und den Tausch von Premium-Automobilen, die Erweiterung unseres Netzwerks in Deutschland–Schweiz–Italien und die Schaffung einer digitalen Plattform für europäische Premium-Automobile.",
+    "missionDescription": "Unsere Mission ist es, Premium-Automobildienstleistungen mit vollständiger rechtlicher Compliance und Transparenz anzubieten. Wir arbeiten unermüdlich daran, die perfekten Premium-Fahrzeuge für unsere Kunden zu finden und sicherzustellen, dass der gesamte Prozess nahtlos verläuft.",
+    "visionDescription": "Unsere Vision ist es, die führende digitale Plattform für europäische Premium-Automobile zu werden und Käufer und Verkäufer in Deutschland, der Schweiz und Italien zu verbinden. Wir streben an, unser Netzwerk zu erweitern und gleichzeitig die höchsten Standards der rechtlichen Compliance und Transparenz aufrechtzuerhalten."
+  },
+  "company": {
+    "focusTitle": "Worauf wir uns konzentrieren",
+    "focus1": "Suche nach Premium-Automobilen",
+    "focus2": "Verkauf von Premium-Automobilen",
+    "focus3": "Automobiltausch",
+    "focus4": "Netzwerkerweiterung in Deutschland–Schweiz–Italien",
+    "focus5": "Schaffung einer digitalen Plattform für europäische Premium-Automobile",
+    "values": "Wir arbeiten vollständig legal und transparent."
+  },
+  "features": {
+    "mainTitle": "FUNKTIONEN",
+    "title": "Unsere Premium-Dienstleistungen",
+    "paragraph": "Umfassende Premium-Automobildienstleistungen, die auf Ihre Bedürfnisse zugeschnitten sind.",
+    "feature1": {
+      "title": "Premium-Fahrzeugsuche",
+      "description": "Expertenhilfe bei der Suche nach dem perfekten Premium-Fahrzeug, das Ihren Anforderungen und Vorlieben entspricht."
+    },
+    "feature2": {
+      "title": "Premium-Fahrzeugverkauf",
+      "description": "Professioneller Verkaufsservice mit transparenten Preisen und detaillierten Fahrzeuginformationen für selbstbewusste Kaufentscheidungen."
+    },
+    "feature3": {
+      "title": "Fahrzeugtausch",
+      "description": "Nahtloser Fahrzeugtausch-Service zum Upgrade oder Wechsel Ihres aktuellen Premium-Automobils."
+    },
+    "feature4": {
+      "title": "Grenzüberschreitendes Netzwerk",
+      "description": "Erweitertes Netzwerk in Deutschland, der Schweiz und Italien für eine breitere Fahrzeugauswahl und Zugänglichkeit."
+    },
+    "feature5": {
+      "title": "Digitale Plattform",
+      "description": "Moderne digitale Plattform zum Durchsuchen und Verwalten des europäischen Premium-Automobilbestands."
+    },
+    "feature6": {
+      "title": "Rechtliche Compliance",
+      "description": "Vollständig legale und transparente Operationen, die Sicherheit bei jeder Transaktion gewährleisten."
+    }
+  },
+  "team": {
+    "mainTitle": "UNSER TEAM",
+    "title": "Lernen Sie unser Expertenteam kennen",
+    "paragraph": "Engagierte Fachkräfte, die sich für außergewöhnliche Premium-Automobildienstleistungen einsetzen."
+  },
+  "brands": {
+    "title": "Vertrauenswürdige Partner",
+    "paragraph": "Zusammenarbeit mit führenden Automobilpartnern in ganz Europa."
+  },
+  "support": {
+    "mainTitle": "SUPPORT",
+    "title": "Benötigen Sie Hilfe? Sagen Sie Hallo",
+    "paragraph": "Unser Team steht bereit, Ihnen bei all Ihren Premium-Automobilbedürfnissen zu helfen.",
+    "emailLabel": "E-Mail-Adresse",
+    "phoneLabel": "Telefonnummer",
+    "officeLabel": "Bürostandort",
+    "email": "support@westberg-eu.com",
+    "phone": "+4915162600982",
+    "office": "Amtsgericht Charlottenburg (Berlin) HRB 248481 B",
+    "ceoEmail": "ceo@westberg-eu.de"
+  },
+  "cta": {
+    "title": "Auf der Suche nach einer Zusammenarbeit? Starten Sie noch heute!",
+    "paragraph": "Kontaktieren Sie uns, um Ihre Premium-Automobilbedürfnisse zu besprechen.",
+    "button": "Jetzt starten"
+  }
+}
+
+
+

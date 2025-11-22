@@ -1,0 +1,129 @@
+{
+  "nav": {
+    "features": "Features",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "pricing": "Pricing",
+    "pages": "Pages",
+    "home": "Home",
+    "docs": "Docs",
+    "support": "Support",
+    "blog": "Blog",
+    "signin": "Sign in",
+    "signup": "Sign up",
+    "services": "Services",
+    "team": "Team",
+    "contact": "Contact"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out"
+  },
+  "footer": {
+    "privacy": "Privacy Policy",
+    "support": "Support",
+    "rights": "All rights reserved",
+    "about": {
+      "description": "West Berg Europe (W.B.E.) GmbH - Your trusted partner for premium automobiles across Europe.",
+      "company": "Company",
+      "supportSection": "Support",
+      "getInTouch": "Get in touch",
+      "tollFree": "Toll Free Customer Care",
+      "liveSupport": "Need live support?",
+      "contactUs": "Contact Us",
+      "careers": "Careers",
+      "carSelling": "Car Selling",
+      "companyName": "Company",
+      "pressMedia": "Press Media",
+      "ourBlog": "Our Blog",
+      "account": "Account",
+      "soon": "Soon"
+    }
+  },
+  "hero": {
+    "badge": "Premium Automobiles",
+    "title": "West Berg Europe",
+    "subtitle": "Your Premium Automobile Partner",
+    "description": "West Berg Europe (W.B.E.) GmbH is a premium automobile company focused on finding, selling, and exchanging premium vehicles. We operate fully legally and transparently, expanding our network across Germany, Switzerland, and Italy.",
+    "cta": "Contact Us"
+  },
+  "about": {
+    "mainTitle": "ABOUT US",
+    "title": "About West Berg Europe",
+    "paragraph": "Learn about our premium automobile services and commitment to excellence.",
+    "aboutTitle": "About Us",
+    "missionTitle": "Our Mission",
+    "visionTitle": "Our Vision",
+    "aboutDescription": "West Berg Europe (W.B.E.) GmbH is a premium automobile company specializing in premium vehicle services. We focus on finding, selling, and exchanging premium automobiles, expanding our network across Germany–Switzerland–Italy, and creating a digital platform for European premium automobiles.",
+    "missionDescription": "Our mission is to provide premium automobile services with full legal compliance and transparency. We work tirelessly to find the perfect premium vehicles for our clients and ensure a seamless experience throughout the process.",
+    "visionDescription": "Our vision is to become the leading digital platform for European premium automobiles, connecting buyers and sellers across Germany, Switzerland, and Italy. We aim to expand our network while maintaining the highest standards of legal compliance and transparency."
+  },
+  "company": {
+    "focusTitle": "What We Focus On",
+    "focus1": "Finding premium automobiles",
+    "focus2": "Selling premium automobiles",
+    "focus3": "Automobile exchange",
+    "focus4": "Network expansion across Germany–Switzerland–Italy",
+    "focus5": "Creating a digital platform for European premium automobiles",
+    "values": "We operate fully legally and transparently."
+  },
+  "features": {
+    "mainTitle": "FEATURES",
+    "title": "Our Premium Services",
+    "paragraph": "Comprehensive premium automobile services tailored to your needs.",
+    "feature1": {
+      "title": "Premium Vehicle Search",
+      "description": "Expert assistance in finding the perfect premium vehicle that matches your requirements and preferences."
+    },
+    "feature2": {
+      "title": "Premium Vehicle Sales",
+      "description": "Professional sales service with transparent pricing and detailed vehicle information for confident purchasing decisions."
+    },
+    "feature3": {
+      "title": "Vehicle Exchange",
+      "description": "Seamless vehicle exchange services to upgrade or change your current premium automobile."
+    },
+    "feature4": {
+      "title": "Cross-Border Network",
+      "description": "Expanded network across Germany, Switzerland, and Italy for wider vehicle selection and accessibility."
+    },
+    "feature5": {
+      "title": "Digital Platform",
+      "description": "Modern digital platform for browsing and managing European premium automobile inventory."
+    },
+    "feature6": {
+      "title": "Legal Compliance",
+      "description": "Fully legal and transparent operations ensuring peace of mind in every transaction."
+    }
+  },
+  "team": {
+    "mainTitle": "OUR TEAM",
+    "title": "Meet Our Expert Team",
+    "paragraph": "Dedicated professionals committed to providing exceptional premium automobile services."
+  },
+  "brands": {
+    "title": "Trusted Partners",
+    "paragraph": "Working with leading automotive partners across Europe."
+  },
+  "support": {
+    "mainTitle": "SUPPORT",
+    "title": "Need Any Help? Say hello",
+    "paragraph": "Our team is ready to assist you with all your premium automobile needs.",
+    "emailLabel": "Email Address",
+    "phoneLabel": "Phone Number",
+    "officeLabel": "Office Location",
+    "email": "support@westberg-eu.com",
+    "phone": "+4915162600982",
+    "office": "District Court of Charlottenburg (Berlin) HRB 248481 B",
+    "ceoEmail": "ceo@westberg-eu.de"
+  },
+  "cta": {
+    "title": "Looking for a collaboration? Get Started Today!",
+    "paragraph": "Contact us to discuss your premium automobile needs.",
+    "button": "Get Started Now"
+  }
+}
+
+
+
