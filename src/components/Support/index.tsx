@@ -69,6 +69,7 @@ export default function Support() {
                   </p>
                 </div>
               </div>
+              {/* Social Media Icons - Hidden for now
               <div className="w-full px-4 md:w-1/2 lg:w-1/4">
                 <div className="mb-6 flex items-center space-x-5 lg:justify-end">
                   <a
@@ -135,6 +136,7 @@ export default function Support() {
                   </a>
                 </div>
               </div>
+              */}
             </div>
           </div>
         </div>

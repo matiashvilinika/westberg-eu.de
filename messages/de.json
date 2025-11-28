@@ -69,32 +69,24 @@
     "values": "Wir arbeiten vollständig legal und transparent."
   },
   "features": {
-    "mainTitle": "FUNKTIONEN",
+    "mainTitle": "DIENSTLEISTUNGEN",
     "title": "Unsere Premium-Dienstleistungen",
     "paragraph": "Umfassende Premium-Automobildienstleistungen, die auf Ihre Bedürfnisse zugeschnitten sind.",
     "feature1": {
-      "title": "Premium-Fahrzeugsuche",
-      "description": "Expertenhilfe bei der Suche nach dem perfekten Premium-Fahrzeug, das Ihren Anforderungen und Vorlieben entspricht."
+      "title": "Premium-Fahrzeugbeschaffung",
+      "description": "Wir finden Ihr Traumauto. Unsere Experten suchen in Deutschland, der Schweiz und Italien nach dem perfekten Premium-Fahrzeug für Sie."
     },
     "feature2": {
-      "title": "Premium-Fahrzeugverkauf",
-      "description": "Professioneller Verkaufsservice mit transparenten Preisen und detaillierten Fahrzeuginformationen für selbstbewusste Kaufentscheidungen."
+      "title": "Premium-Fahrzeugverkaufsunterstützung",
+      "description": "Verkaufen Sie Ihr Premium-Fahrzeug mit Vertrauen. Wir kümmern uns um Preisgestaltung, Marketing und Käuferverbindungen."
     },
     "feature3": {
       "title": "Fahrzeugtausch",
-      "description": "Nahtloser Fahrzeugtausch-Service zum Upgrade oder Wechsel Ihres aktuellen Premium-Automobils."
+      "description": "Tauschen Sie Ihr aktuelles Fahrzeug gegen ein neues ein. Einfacher, schneller und unkomplizierter Tauschprozess mit fairen Bewertungen."
     },
     "feature4": {
-      "title": "Grenzüberschreitendes Netzwerk",
-      "description": "Erweitertes Netzwerk in Deutschland, der Schweiz und Italien für eine breitere Fahrzeugauswahl und Zugänglichkeit."
-    },
-    "feature5": {
-      "title": "Digitale Plattform",
-      "description": "Moderne digitale Plattform zum Durchsuchen und Verwalten des europäischen Premium-Automobilbestands."
-    },
-    "feature6": {
-      "title": "Rechtliche Compliance",
-      "description": "Vollständig legale und transparente Operationen, die Sicherheit bei jeder Transaktion gewährleisten."
+      "title": "Logistik",
+      "description": "Sicherer und zuverlässiger Fahrzeugtransport in ganz Europa. Wir übernehmen Abholung, Lieferung und alle Dokumente."
     }
   },
   "team": {

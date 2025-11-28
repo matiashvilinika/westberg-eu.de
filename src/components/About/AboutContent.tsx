@@ -45,9 +45,9 @@ export default function AboutContent() {
         {activeTab === "about" && (
           <TabPanel
             title={tCompany("focusTitle")}
-            image1='/images/about/image-1.jpg'
+            image1='/images/about/image-1.webp'
             image1Alt='about image 1'
-            image2='/images/about/image-2.jpg'
+            image2='/images/about/image-2.webp'
             image2Alt='about image 2'
           >
             <p className='mb-6 text-base text-dark-text'>
@@ -74,9 +74,9 @@ export default function AboutContent() {
         {activeTab === "mission" && (
           <TabPanel
             title={t("missionTitle")}
-            image1='/images/about/image-1.jpg'
+            image1='/images/about/image-1.webp'
             image1Alt='about image 1'
-            image2='/images/about/image-2.jpg'
+            image2='/images/about/image-2.webp'
             image2Alt='about image 2'
             leftContent
           >
@@ -89,9 +89,9 @@ export default function AboutContent() {
         {activeTab === "vision" && (
           <TabPanel
             title={t("visionTitle")}
-            image1='/images/about/image-1.jpg'
+            image1='/images/about/image-1.webp'
             image1Alt='about image 1'
-            image2='/images/about/image-2.jpg'
+            image2='/images/about/image-2.webp'
             image2Alt='about image 2'
           >
             <p className='mb-6 text-base text-dark-text'>

@@ -55,7 +55,7 @@ export default function Hero() {
             <div className='wow fadeInRight relative z-30 mx-auto h-[560px] w-full max-w-[700px] lg:ml-0'>
               <div className='absolute right-0 top-0 lg:w-11/12'>
                 <Image
-                  src='/images/hero/image-2.png'
+                  src='/images/hero/image-2.webp'
                   alt='hero-image'
                   className='object-cover aspect-[1.08]'
                   width={560}
@@ -64,7 +64,7 @@ export default function Hero() {
               </div>
               <div className='absolute bottom-0 left-0 z-10'>
                 <Image
-                  src='/images/hero/image-1.jpg'
+                  src='/images/hero/image-1.webp'
                   className='object-cover'
                   alt='hero-image'
                   width={350}

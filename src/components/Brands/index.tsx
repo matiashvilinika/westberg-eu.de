@@ -18,106 +18,55 @@ export default function Brands() {
           <div className='-mx-4 flex flex-wrap'>
             <div className='w-full px-4'>
               <div className='flex flex-wrap items-center justify-center'>
-                <a
-                  href='https://uideck.com/'
-                  className='mx-4 flex w-[150px] items-center justify-center py-5 2xl:w-[180px]'
-                >
+                <div className='mx-4 flex w-[300px] items-center justify-center py-5 2xl:w-[360px]'>
                   <Image
-                    src='./images/brands/uideck.svg'
-                    alt='image'
-                    className='hidden h-10 w-full dark:block'
-                    width={180}
-                    height={40}
+                    src='/images/brands/ferrari.svg'
+                    alt='Ferrari'
+                    className='h-20 w-full object-contain'
+                    width={360}
+                    height={80}
                   />
+                </div>
 
+                <div className='mx-4 flex w-[300px] items-center justify-center py-5 2xl:w-[360px]'>
                   <Image
-                    src='./images/brands/uideck-2.svg'
-                    alt='image'
-                    className='h-10 w-full dark:hidden'
-                    width={180}
-                    height={40}
+                    src='/images/brands/lamborghini.svg'
+                    alt='Lamborghini'
+                    className='h-20 w-full object-contain'
+                    width={360}
+                    height={80}
                   />
-                </a>
+                </div>
 
-                <a
-                  href='https://tailadmin.com/'
-                  className='mx-4 flex w-[150px] items-center justify-center py-5 2xl:w-[180px]'
-                >
+                <div className='mx-4 flex w-[300px] items-center justify-center py-5 2xl:w-[360px]'>
                   <Image
-                    src='./images/brands/tailadmin.svg'
-                    alt='image'
-                    className='hidden h-10 w-full dark:block'
-                    width={180}
-                    height={40}
+                    src='/images/brands/landrover.svg'
+                    alt='Land Rover'
+                    className='h-20 w-full object-contain'
+                    width={360}
+                    height={80}
                   />
-                  <Image
-                    src='./images/brands/tailadmin-2.svg'
-                    alt='image'
-                    className='h-10 w-full dark:hidden'
-                    width={180}
-                    height={40}
-                  />
-                </a>
+                </div>
 
-                <a
-                  href='https://graygrids.com/'
-                  className='mx-4 flex w-[150px] items-center justify-center py-5 2xl:w-[180px]'
-                >
+                <div className='mx-4 flex w-[300px] items-center justify-center py-5 2xl:w-[360px]'>
                   <Image
-                    src='./images/brands/graygrids.svg'
-                    alt='image'
-                    className='hidden h-10 w-full dark:block'
-                    width={180}
-                    height={40}
+                    src='/images/brands/mercedes-benz.svg'
+                    alt='Mercedes-Benz'
+                    className='h-20 w-full object-contain'
+                    width={360}
+                    height={80}
                   />
-                  <Image
-                    src='./images/brands/graygrids-2.svg'
-                    alt='image'
-                    className='h-10 w-full dark:hidden'
-                    width={180}
-                    height={40}
-                  />
-                </a>
+                </div>
 
-                <a
-                  href='https://lineicons.com/'
-                  className='mx-4 flex w-[150px] items-center justify-center py-5 2xl:w-[180px]'
-                >
+                <div className='mx-4 flex w-[300px] items-center justify-center py-5 2xl:w-[360px]'>
                   <Image
-                    src='./images/brands/lineicons.svg'
-                    alt='image'
-                    className='hidden h-10 w-full dark:block'
-                    width={180}
-                    height={40}
+                    src='/images/brands/porsche.svg'
+                    alt='Porsche'
+                    className='h-20 w-full object-contain'
+                    width={360}
+                    height={80}
                   />
-                  <Image
-                    src='./images/brands/lineicons-2.svg'
-                    alt='image'
-                    className='h-10 w-full dark:hidden'
-                    width={180}
-                    height={40}
-                  />
-                </a>
-
-                <a
-                  href='https://plainadmin.com/'
-                  className='mx-4 flex w-[150px] items-center justify-center py-5 2xl:w-[180px]'
-                >
-                  <Image
-                    src='./images/brands/plainadmin.svg'
-                    alt='image'
-                    className='hidden h-10 w-full dark:block'
-                    width={180}
-                    height={40}
-                  />
-                  <Image
-                    src='./images/brands/plainadmin-2.svg'
-                    alt='image'
-                    className='h-10 w-full dark:hidden'
-                    width={180}
-                    height={40}
-                  />
-                </a>
+                </div>
               </div>
             </div>
           </div>

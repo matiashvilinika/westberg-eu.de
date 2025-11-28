@@ -29,6 +29,7 @@ export default function FooterAbout() {
       <p className="mb-10 text-base text-dark-text">
         {t("about.description")}
       </p>
+      {/* Social Media Icons - Hidden for now
       <div className="flex items-center space-x-5">
         <a
           href="#"
@@ -93,6 +94,7 @@ export default function FooterAbout() {
           </svg>
         </a>
       </div>
+      */}
     </div>
   );
 }

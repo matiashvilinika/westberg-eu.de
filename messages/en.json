@@ -69,32 +69,24 @@
     "values": "We operate fully legally and transparently."
   },
   "features": {
-    "mainTitle": "FEATURES",
+    "mainTitle": "SERVICES",
     "title": "Our Premium Services",
     "paragraph": "Comprehensive premium automobile services tailored to your needs.",
     "feature1": {
-      "title": "Premium Vehicle Search",
-      "description": "Expert assistance in finding the perfect premium vehicle that matches your requirements and preferences."
+      "title": "Premium Car Sourcing",
+      "description": "We find your dream car. Our experts search across Germany, Switzerland, and Italy to locate the perfect premium vehicle for you."
     },
     "feature2": {
-      "title": "Premium Vehicle Sales",
-      "description": "Professional sales service with transparent pricing and detailed vehicle information for confident purchasing decisions."
+      "title": "Premium Car Selling Support",
+      "description": "Sell your premium vehicle with confidence. We handle pricing, marketing, and buyer connections to get you the best deal."
     },
     "feature3": {
-      "title": "Vehicle Exchange",
-      "description": "Seamless vehicle exchange services to upgrade or change your current premium automobile."
+      "title": "Car Exchange",
+      "description": "Trade in your current vehicle for a new one. Simple, fast, and hassle-free exchange process with fair valuations."
     },
     "feature4": {
-      "title": "Cross-Border Network",
-      "description": "Expanded network across Germany, Switzerland, and Italy for wider vehicle selection and accessibility."
-    },
-    "feature5": {
-      "title": "Digital Platform",
-      "description": "Modern digital platform for browsing and managing European premium automobile inventory."
-    },
-    "feature6": {
-      "title": "Legal Compliance",
-      "description": "Fully legal and transparent operations ensuring peace of mind in every transaction."
+      "title": "Logistics",
+      "description": "Safe and reliable vehicle transportation across Europe. We handle pickup, delivery, and all documentation."
     }
   },
   "team": {
