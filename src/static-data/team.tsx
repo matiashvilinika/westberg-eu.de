@@ -5,7 +5,7 @@ export const teamData: Team[] = [
     id: crypto.randomUUID(),
     name: "Rati Janashi",
     designation: "Project Manager",
-    image: "/images/hero/image-1.jpg",
+    image: "/images/team/image-1.webp",
     socialLinks: [
       {
         id: crypto.randomUUID(),
@@ -28,7 +28,7 @@ export const teamData: Team[] = [
     id: crypto.randomUUID(),
     name: "Sophia Martinez",
     designation: "Sales Manager",
-    image: "/images/team/image-2.jpg",
+    image: "/images/team/image-2.webp",
     socialLinks: [
       {
         id: crypto.randomUUID(),
@@ -51,7 +51,7 @@ export const teamData: Team[] = [
     id: crypto.randomUUID(),
     name: "Marcus Johnson",
     designation: "Operations Manager",
-    image: "/images/testimonial/image-1.jpg",
+    image: "/images/team/image-1.webp",
     socialLinks: [
       {
         id: crypto.randomUUID(),
