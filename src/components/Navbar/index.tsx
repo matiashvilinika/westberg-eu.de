@@ -21,6 +21,8 @@ export default function Navbar() {
   const { data: session } = useSession();
 
   const pathUrl = usePathname();
+  const isEnglish = pathUrl.startsWith("/en");
+  const homePrefix = isEnglish ? "/en" : "";
 
   const navigationHandler = () => {
     setNavigationOpen(!navigationOpen);
@@ -58,7 +60,7 @@ export default function Navbar() {
       >
         <div className="flex w-full flex-wrap px-5 lg:flex-nowrap lg:items-center lg:px-5 xl:px-10 2xl:px-20">
           <div className="z-99 relative max-w-[250px] pr-4 lg:w-full lg:max-w-[220px] xl:max-w-[280px]">
-            <Link href="/" className="inline-block">
+            <Link href={`${homePrefix}/`} className="inline-block">
               <Image
                 src="/images/logo/logo-dark.svg"
                 alt="logo"
@@ -84,7 +86,7 @@ export default function Navbar() {
                 <ul className="navbar flex flex-col items-center justify-center space-y-5 text-center lg:flex-row lg:justify-start lg:space-x-6 lg:space-y-0 xl:space-x-10">
                   <li>
                     <Link
-                      href="/#features"
+                      href={`${homePrefix}/#features`}
                       onClick={navigationHandler}
                       className={`${pathUrl === "/#features" ? "active" : ""} font-heading text-dark-text hover:text-primary inline-flex items-center justify-center text-center text-base dark:hover:text-white menu-scroll`}
                     >
@@ -93,7 +95,7 @@ export default function Navbar() {
                   </li>
                   <li>
                     <Link
-                      href="/#about"
+                      href={`${homePrefix}/#about`}
                       onClick={navigationHandler}
                       className={`${pathUrl === "/#about" ? "active" : ""} font-heading text-dark-text hover:text-primary inline-flex items-center justify-center text-center text-base dark:hover:text-white menu-scroll`}
                     >
@@ -102,7 +104,7 @@ export default function Navbar() {
                   </li>
                   <li>
                     <Link
-                      href="/#team"
+                      href={`${homePrefix}/#team`}
                       onClick={navigationHandler}
                       className={`${pathUrl === "/#team" ? "active" : ""} font-heading text-dark-text hover:text-primary inline-flex items-center justify-center text-center text-base dark:hover:text-white menu-scroll`}
                     >
@@ -111,7 +113,7 @@ export default function Navbar() {
                   </li>
                   <li>
                     <Link
-                      href="/#support"
+                      href={`${homePrefix}/#support`}
                       onClick={navigationHandler}
                       className={`${pathUrl === "/#support" ? "active" : ""} font-heading text-dark-text hover:text-primary inline-flex items-center justify-center text-center text-base dark:hover:text-white menu-scroll`}
                     >

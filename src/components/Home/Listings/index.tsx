@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 
 type ListingItem = {
   id: string;
@@ -28,6 +29,9 @@ type CategoryData = {
 
 export default function Listings() {
   const t = useTranslations("listings");
+  const pathname = usePathname();
+  const isEnglish = pathname.startsWith("/en");
+  const localePrefix = isEnglish ? "/en" : "";
   const [isMounted, setIsMounted] = useState(false);
   const [loading, setLoading] = useState(true);
   const [visibleCount, setVisibleCount] = useState(4);
@@ -157,7 +161,7 @@ export default function Listings() {
                     {visibleItems.map((item) => (
                       <Link
                         key={item.id}
-                        href={`/listings/${category.urlType}/${item.id}`}
+                        href={`${localePrefix}/listings/${category.urlType}/${item.id}`}
                         className="group block rounded-xl overflow-hidden transition-all duration-300 border border-white/10 hover:border-primary/30 shadow-lg"
                       >
                         {/* Image */}
