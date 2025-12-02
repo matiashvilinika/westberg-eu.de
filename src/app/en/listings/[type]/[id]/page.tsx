@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 type ListingDetail = {
   id: string;
@@ -42,6 +43,7 @@ const tableMap: Record<string, string> = {
 };
 
 export default function ListingDetailPage() {
+  const t = useTranslations("listings.detail");
   const params = useParams();
   const type = params.type as string;
   const id = params.id as string;
@@ -100,7 +102,7 @@ export default function ListingDetailPage() {
   }, []);
 
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat("de-DE", {
+    return new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "EUR",
       maximumFractionDigits: 0,
@@ -137,22 +139,17 @@ export default function ListingDetailPage() {
   if (!listing) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center pt-[120px]">
-        <h1 className="text-2xl font-heading text-dark dark:text-white mb-4">Listing not found</h1>
+        <h1 className="text-2xl font-heading text-dark dark:text-white mb-4">{t("notFound")}</h1>
         <Link href="/" className="text-primary hover:underline">
-          ← Back to Home
+          {t("backToHome")}
         </Link>
       </div>
     );
   }
 
   const getCategoryLabel = () => {
-    switch (type) {
-      case "cars": return "Premium Auto";
-      case "real-estate": return "Immobilie";
-      case "yachts": return "Yacht";
-      case "motorcycles": return "Motorrad";
-      default: return "Listing";
-    }
+    const categoryKey = type === "real-estate" ? "realEstate" : type;
+    return t(`category.${categoryKey}`) || t("category.default");
   };
 
   return (
@@ -163,10 +160,10 @@ export default function ListingDetailPage() {
           <div className="w-full lg:w-5/12">
             <div className="lg:sticky lg:top-[120px] rounded-2xl p-6 lg:p-8 border border-white/10">
               <h2 className="font-heading text-2xl font-semibold text-dark dark:text-white mb-2">
-                Interesse an diesem {getCategoryLabel()}?
+                {t("contactForm.title")} {getCategoryLabel()}?
               </h2>
               <p className="text-dark-text mb-6">
-                Füllen Sie das Formular aus und wir werden uns in Kürze bei Ihnen melden.
+                {t("contactForm.subtitle")}
               </p>
 
               {submitted ? (
@@ -176,15 +173,15 @@ export default function ListingDetailPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="font-heading text-xl text-dark dark:text-white mb-2">Vielen Dank!</h3>
-                  <p className="text-dark-text">Ihre Anfrage wurde erfolgreich gesendet. Wir werden uns bald bei Ihnen melden.</p>
+                  <h3 className="font-heading text-xl text-dark dark:text-white mb-2">{t("contactForm.success.title")}</h3>
+                  <p className="text-dark-text">{t("contactForm.success.message")}</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-dark dark:text-white mb-2">
-                        Vorname *
+                        {t("contactForm.firstName")} *
                       </label>
                       <input
                         type="text"
@@ -198,7 +195,7 @@ export default function ListingDetailPage() {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-dark dark:text-white mb-2">
-                        Nachname *
+                        {t("contactForm.lastName")} *
                       </label>
                       <input
                         type="text"
@@ -214,7 +211,7 @@ export default function ListingDetailPage() {
 
                   <div>
                     <label className="block text-sm font-medium text-dark dark:text-white mb-2">
-                      Mobilnummer *
+                      {t("contactForm.mobile")} *
                     </label>
                     <input
                       type="tel"
@@ -229,7 +226,7 @@ export default function ListingDetailPage() {
 
                   <div>
                     <label className="block text-sm font-medium text-dark dark:text-white mb-2">
-                      Kundentyp *
+                      {t("contactForm.customerType")} *
                     </label>
                     <div ref={dropdownRef} className="relative">
                       <button
@@ -237,7 +234,7 @@ export default function ListingDetailPage() {
                         onClick={() => setDropdownOpen(!dropdownOpen)}
                         className="w-full px-4 py-3 bg-dark-2 border border-white/20 rounded-lg text-white text-left focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition flex items-center justify-between"
                       >
-                        <span>{formData.customerType === "individual" ? "Privatperson" : "Geschäftskunde"}</span>
+                        <span>{formData.customerType === "individual" ? t("contactForm.customerTypeIndividual") : t("contactForm.customerTypeBusiness")}</span>
                         <svg 
                           className={`w-5 h-5 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} 
                           fill="none" 
@@ -258,7 +255,7 @@ export default function ListingDetailPage() {
                             }}
                             className="w-full px-4 py-3 text-left text-white bg-dark hover:bg-primary/20 transition block"
                           >
-                            Privatperson
+                            {t("contactForm.customerTypeIndividual")}
                           </button>
                           <button
                             type="button"
@@ -268,7 +265,7 @@ export default function ListingDetailPage() {
                             }}
                             className="w-full px-4 py-3 text-left text-white bg-dark hover:bg-primary/20 transition block"
                           >
-                            Geschäftskunde
+                            {t("contactForm.customerTypeBusiness")}
                           </button>
                         </div>
                       )}
@@ -277,7 +274,7 @@ export default function ListingDetailPage() {
 
                   <div>
                     <label className="block text-sm font-medium text-dark dark:text-white mb-2">
-                      Adresse
+                      {t("contactForm.address")}
                     </label>
                     <input
                       type="text"
@@ -285,13 +282,13 @@ export default function ListingDetailPage() {
                       value={formData.address}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-transparent border border-white/20 rounded-lg text-dark dark:text-white placeholder-dark-text focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
-                      placeholder="Straße, PLZ Stadt"
+                      placeholder={t("contactForm.addressPlaceholder")}
                     />
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-dark dark:text-white mb-2">
-                      Nachricht
+                      {t("contactForm.message")}
                     </label>
                     <textarea
                       name="message"
@@ -299,7 +296,7 @@ export default function ListingDetailPage() {
                       onChange={handleInputChange}
                       rows={4}
                       className="w-full px-4 py-3 bg-transparent border border-white/20 rounded-lg text-dark dark:text-white placeholder-dark-text focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition resize-none"
-                      placeholder="Ihre Nachricht an uns..."
+                      placeholder={t("contactForm.messagePlaceholder")}
                     />
                   </div>
 
@@ -314,11 +311,11 @@ export default function ListingDetailPage() {
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                         </svg>
-                        Wird gesendet...
+                        {t("contactForm.submitting")}
                       </>
                     ) : (
                       <>
-                        Anfrage senden
+                        {t("contactForm.submit")}
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
@@ -390,7 +387,7 @@ export default function ListingDetailPage() {
             {/* Specifications */}
             <div className="rounded-2xl p-6 border border-white/10 mb-6">
               <h3 className="font-heading text-lg font-semibold text-dark dark:text-white mb-4">
-                Spezifikationen
+                {t("specifications")}
               </h3>
               <div className="grid grid-cols-2 gap-4">
                 {listing.year && (
@@ -401,7 +398,7 @@ export default function ListingDetailPage() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs text-dark-text">Baujahr</p>
+                      <p className="text-xs text-dark-text">{t("specs.year")}</p>
                       <p className="font-medium text-dark dark:text-white">{listing.year}</p>
                     </div>
                   </div>
@@ -414,7 +411,7 @@ export default function ListingDetailPage() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs text-dark-text">Kilometerstand</p>
+                      <p className="text-xs text-dark-text">{t("specs.mileage")}</p>
                       <p className="font-medium text-dark dark:text-white">{listing.mileage.toLocaleString()} km</p>
                     </div>
                   </div>
@@ -427,7 +424,7 @@ export default function ListingDetailPage() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs text-dark-text">Kraftstoff</p>
+                      <p className="text-xs text-dark-text">{t("specs.fuelType")}</p>
                       <p className="font-medium text-dark dark:text-white">{listing.fuel_type}</p>
                     </div>
                   </div>
@@ -440,7 +437,7 @@ export default function ListingDetailPage() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs text-dark-text">Getriebe</p>
+                      <p className="text-xs text-dark-text">{t("specs.transmission")}</p>
                       <p className="font-medium text-dark dark:text-white">{listing.transmission}</p>
                     </div>
                   </div>
@@ -453,7 +450,7 @@ export default function ListingDetailPage() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs text-dark-text">Farbe</p>
+                      <p className="text-xs text-dark-text">{t("specs.color")}</p>
                       <p className="font-medium text-dark dark:text-white">{listing.color}</p>
                     </div>
                   </div>
@@ -467,7 +464,7 @@ export default function ListingDetailPage() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs text-dark-text">Fläche</p>
+                      <p className="text-xs text-dark-text">{t("specs.area")}</p>
                       <p className="font-medium text-dark dark:text-white">{listing.area_sqm} m²</p>
                     </div>
                   </div>
@@ -480,7 +477,7 @@ export default function ListingDetailPage() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs text-dark-text">Schlafzimmer</p>
+                      <p className="text-xs text-dark-text">{t("specs.bedrooms")}</p>
                       <p className="font-medium text-dark dark:text-white">{listing.bedrooms}</p>
                     </div>
                   </div>
@@ -494,7 +491,7 @@ export default function ListingDetailPage() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs text-dark-text">Standort</p>
+                      <p className="text-xs text-dark-text">{t("specs.location")}</p>
                       <p className="font-medium text-dark dark:text-white">{listing.location}</p>
                     </div>
                   </div>
@@ -508,7 +505,7 @@ export default function ListingDetailPage() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs text-dark-text">Länge</p>
+                      <p className="text-xs text-dark-text">{t("specs.length")}</p>
                       <p className="font-medium text-dark dark:text-white">{listing.length_m} m</p>
                     </div>
                   </div>
@@ -521,7 +518,7 @@ export default function ListingDetailPage() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs text-dark-text">Kabinen</p>
+                      <p className="text-xs text-dark-text">{t("specs.cabins")}</p>
                       <p className="font-medium text-dark dark:text-white">{listing.cabins}</p>
                     </div>
                   </div>
@@ -535,7 +532,7 @@ export default function ListingDetailPage() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs text-dark-text">Hubraum</p>
+                      <p className="text-xs text-dark-text">{t("specs.engine")}</p>
                       <p className="font-medium text-dark dark:text-white">{listing.engine_cc} cc</p>
                     </div>
                   </div>
@@ -547,7 +544,7 @@ export default function ListingDetailPage() {
             {listing.description && (
               <div className="rounded-2xl p-6 border border-white/10">
                 <h3 className="font-heading text-lg font-semibold text-dark dark:text-white mb-4">
-                  Beschreibung
+                  {t("description")}
                 </h3>
                 <p className="text-dark-text leading-relaxed">
                   {listing.description}

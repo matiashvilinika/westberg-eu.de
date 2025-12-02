@@ -143,6 +143,52 @@
         "title": "Premium Motorcycles",
         "description": "Discover high-performance motorcycles from legendary manufacturers."
       }
+    },
+    "detail": {
+      "notFound": "Listing not found",
+      "backToHome": "← Back to Home",
+      "category": {
+        "cars": "Premium Car",
+        "realEstate": "Property",
+        "yachts": "Yacht",
+        "motorcycles": "Motorcycle",
+        "default": "Listing"
+      },
+      "contactForm": {
+        "title": "Interested in this",
+        "subtitle": "Fill out the form and we will contact you shortly.",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "mobile": "Mobile Number",
+        "customerType": "Customer Type",
+        "customerTypeIndividual": "Private Person",
+        "customerTypeBusiness": "Business Customer",
+        "address": "Address",
+        "addressPlaceholder": "Street, ZIP City",
+        "message": "Message",
+        "messagePlaceholder": "Your message to us...",
+        "submit": "Send Request",
+        "submitting": "Sending...",
+        "success": {
+          "title": "Thank you!",
+          "message": "Your inquiry has been successfully sent. We will contact you soon."
+        }
+      },
+      "specifications": "Specifications",
+      "description": "Description",
+      "specs": {
+        "year": "Year",
+        "mileage": "Mileage",
+        "fuelType": "Fuel",
+        "transmission": "Transmission",
+        "color": "Color",
+        "area": "Area",
+        "bedrooms": "Bedrooms",
+        "location": "Location",
+        "length": "Length",
+        "cabins": "Cabins",
+        "engine": "Engine"
+      }
     }
   }
 }

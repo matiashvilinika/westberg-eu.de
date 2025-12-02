@@ -143,6 +143,52 @@
         "title": "Premium-Motorräder",
         "description": "Entdecken Sie Hochleistungs-Motorräder von legendären Herstellern."
       }
+    },
+    "detail": {
+      "notFound": "Angebot nicht gefunden",
+      "backToHome": "← Zurück zur Startseite",
+      "category": {
+        "cars": "Premium Auto",
+        "realEstate": "Immobilie",
+        "yachts": "Yacht",
+        "motorcycles": "Motorrad",
+        "default": "Angebot"
+      },
+      "contactForm": {
+        "title": "Interesse an diesem",
+        "subtitle": "Füllen Sie das Formular aus und wir werden uns in Kürze bei Ihnen melden.",
+        "firstName": "Vorname",
+        "lastName": "Nachname",
+        "mobile": "Mobilnummer",
+        "customerType": "Kundentyp",
+        "customerTypeIndividual": "Privatperson",
+        "customerTypeBusiness": "Geschäftskunde",
+        "address": "Adresse",
+        "addressPlaceholder": "Straße, PLZ Stadt",
+        "message": "Nachricht",
+        "messagePlaceholder": "Ihre Nachricht an uns...",
+        "submit": "Anfrage senden",
+        "submitting": "Wird gesendet...",
+        "success": {
+          "title": "Vielen Dank!",
+          "message": "Ihre Anfrage wurde erfolgreich gesendet. Wir werden uns bald bei Ihnen melden."
+        }
+      },
+      "specifications": "Spezifikationen",
+      "description": "Beschreibung",
+      "specs": {
+        "year": "Baujahr",
+        "mileage": "Kilometerstand",
+        "fuelType": "Kraftstoff",
+        "transmission": "Getriebe",
+        "color": "Farbe",
+        "area": "Fläche",
+        "bedrooms": "Schlafzimmer",
+        "location": "Standort",
+        "length": "Länge",
+        "cabins": "Kabinen",
+        "engine": "Hubraum"
+      }
     }
   }
 }
