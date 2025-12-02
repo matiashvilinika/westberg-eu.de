@@ -51,7 +51,7 @@ export const teamData: Team[] = [
     id: crypto.randomUUID(),
     name: "Marcus Johnson",
     designation: "Operations Manager",
-    image: "/images/team/image-1.webp",
+    image: "/images/team/image-3.webp",
     socialLinks: [
       {
         id: crypto.randomUUID(),

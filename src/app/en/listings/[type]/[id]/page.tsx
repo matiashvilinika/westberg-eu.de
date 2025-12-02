@@ -350,16 +350,20 @@ export default function ListingDetailPage() {
               
               {/* Thumbnail Gallery */}
               {listing.images && listing.images.length > 1 && (
-                <div className="flex gap-3 overflow-x-auto pb-2">
+                <div className="flex gap-4 overflow-x-auto pb-2">
                   {listing.images.map((img, idx) => (
                     <button
                       key={idx}
                       onClick={() => setCurrentImageIndex(idx)}
-                      className={`relative w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden transition ${
-                        currentImageIndex === idx ? "ring-4 ring-primary shadow-lg" : "opacity-60 hover:opacity-100 ring-2 ring-white/10"
+                      className={`relative w-24 h-24 flex-shrink-0 rounded-xl transition-all duration-300 ${
+                        currentImageIndex === idx 
+                          ? "shadow-2xl scale-110 brightness-100 opacity-100" 
+                          : "opacity-50 hover:opacity-80 hover:scale-105 shadow-md"
                       }`}
                     >
-                      <Image src={img} alt={`${listing.title} ${idx + 1}`} fill className="object-cover" />
+                      <div className="w-full h-full rounded-xl overflow-hidden">
+                        <Image src={img} alt={`${listing.title} ${idx + 1}`} fill className="object-cover" />
+                      </div>
                     </button>
                   ))}
                 </div>
