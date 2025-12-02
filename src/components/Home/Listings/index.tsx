@@ -135,7 +135,7 @@ export default function Listings() {
 
         return (
           <section key={category.id} id={`listings-${category.id}`} className="pt-14 sm:pt-20 lg:pt-[130px]">
-            <div className="px-4 xl:container">
+            <div className="px-6 xl:container">
               {/* Section Header */}
               <div className="relative mx-auto mb-12 max-w-[620px] pt-6 text-center md:mb-16 lg:pt-16">
                 <span className="title flex items-center justify-center gap-2">
@@ -158,7 +158,7 @@ export default function Listings() {
                       <Link
                         key={item.id}
                         href={`/listings/${category.urlType}/${item.id}`}
-                        className="group rounded-xl overflow-hidden transition-all duration-300 border border-white/10 hover:border-primary/30"
+                        className="group block rounded-xl overflow-hidden transition-all duration-300 border border-white/10 hover:border-primary/30 shadow-lg"
                       >
                         {/* Image */}
                         <div className="relative aspect-[4/3] overflow-hidden bg-dark-3">
