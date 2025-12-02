@@ -4,6 +4,7 @@ import Brands from "@/components/Brands";
 import CallToAction from "@/components/Home/CallToAction";
 import Features from "@/components/Home/Features";
 import Hero from "@/components/Home/Hero";
+import Listings from "@/components/Home/Listings";
 import Testimonials from "@/components/Home/Testimonials";
 import Support from "@/components/Support";
 import Team from "@/components/Team";
@@ -23,6 +24,7 @@ export default function Home() {
     <>
       <Hero />
       <Features />
+      <Listings />
       <About />
       <Team />
       {/* <Testimonials /> */}

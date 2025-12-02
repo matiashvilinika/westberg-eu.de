@@ -84,36 +84,36 @@ export default function Navbar() {
                 <ul className="navbar flex flex-col items-center justify-center space-y-5 text-center lg:flex-row lg:justify-start lg:space-x-6 lg:space-y-0 xl:space-x-10">
                   <li>
                     <Link
-                      href="#features"
+                      href="/#features"
                       onClick={navigationHandler}
-                      className={`${pathUrl === "#features" ? "active" : ""} font-heading text-dark-text hover:text-primary inline-flex items-center justify-center text-center text-base dark:hover:text-white menu-scroll`}
+                      className={`${pathUrl === "/#features" ? "active" : ""} font-heading text-dark-text hover:text-primary inline-flex items-center justify-center text-center text-base dark:hover:text-white menu-scroll`}
                     >
                       {t("services")}
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="#about"
+                      href="/#about"
                       onClick={navigationHandler}
-                      className={`${pathUrl === "#about" ? "active" : ""} font-heading text-dark-text hover:text-primary inline-flex items-center justify-center text-center text-base dark:hover:text-white menu-scroll`}
+                      className={`${pathUrl === "/#about" ? "active" : ""} font-heading text-dark-text hover:text-primary inline-flex items-center justify-center text-center text-base dark:hover:text-white menu-scroll`}
                     >
                       {t("about")}
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="#team"
+                      href="/#team"
                       onClick={navigationHandler}
-                      className={`${pathUrl === "#team" ? "active" : ""} font-heading text-dark-text hover:text-primary inline-flex items-center justify-center text-center text-base dark:hover:text-white menu-scroll`}
+                      className={`${pathUrl === "/#team" ? "active" : ""} font-heading text-dark-text hover:text-primary inline-flex items-center justify-center text-center text-base dark:hover:text-white menu-scroll`}
                     >
                       {t("team")}
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="#support"
+                      href="/#support"
                       onClick={navigationHandler}
-                      className={`${pathUrl === "#support" ? "active" : ""} font-heading text-dark-text hover:text-primary inline-flex items-center justify-center text-center text-base dark:hover:text-white menu-scroll`}
+                      className={`${pathUrl === "/#support" ? "active" : ""} font-heading text-dark-text hover:text-primary inline-flex items-center justify-center text-center text-base dark:hover:text-white menu-scroll`}
                     >
                       {t("contact")}
                     </Link>

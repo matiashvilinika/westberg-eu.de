@@ -114,8 +114,35 @@
     "title": "Looking for a collaboration? Get Started Today!",
     "paragraph": "Contact us to discuss your premium automobile needs.",
     "button": "Get Started Now"
+  },
+  "listings": {
+    "loading": "Loading...",
+    "showing": "Showing",
+    "of": "of",
+    "viewDetails": "View Details",
+    "comingSoon": "Coming Soon",
+    "comingSoonDesc": "We're currently sourcing premium listings for this category. Check back soon!",
+    "sections": {
+      "cars": {
+        "tag": "PREMIUM CARS",
+        "title": "Our Premium Vehicles",
+        "description": "Discover our exclusive collection of premium automobiles from top European brands."
+      },
+      "realEstate": {
+        "tag": "REAL ESTATE",
+        "title": "Luxury Properties",
+        "description": "Explore premium real estate opportunities across Germany, Switzerland, and Italy."
+      },
+      "yachts": {
+        "tag": "YACHTS",
+        "title": "Luxury Yachts",
+        "description": "Experience the finest yachts and boats for the ultimate maritime lifestyle."
+      },
+      "motorcycles": {
+        "tag": "MOTORCYCLES",
+        "title": "Premium Motorcycles",
+        "description": "Discover high-performance motorcycles from legendary manufacturers."
+      }
+    }
   }
 }
-
-
-

@@ -114,8 +114,35 @@
     "title": "Auf der Suche nach einer Zusammenarbeit? Starten Sie noch heute!",
     "paragraph": "Kontaktieren Sie uns, um Ihre Premium-Automobilbedürfnisse zu besprechen.",
     "button": "Jetzt starten"
+  },
+  "listings": {
+    "loading": "Laden...",
+    "showing": "Zeige",
+    "of": "von",
+    "viewDetails": "Details ansehen",
+    "comingSoon": "Demnächst verfügbar",
+    "comingSoonDesc": "Wir beschaffen derzeit Premium-Angebote für diese Kategorie. Schauen Sie bald wieder vorbei!",
+    "sections": {
+      "cars": {
+        "tag": "PREMIUM AUTOS",
+        "title": "Unsere Premium-Fahrzeuge",
+        "description": "Entdecken Sie unsere exklusive Sammlung von Premium-Automobilen führender europäischer Marken."
+      },
+      "realEstate": {
+        "tag": "IMMOBILIEN",
+        "title": "Luxus-Immobilien",
+        "description": "Erkunden Sie Premium-Immobilienangebote in Deutschland, der Schweiz und Italien."
+      },
+      "yachts": {
+        "tag": "YACHTEN",
+        "title": "Luxus-Yachten",
+        "description": "Erleben Sie die feinsten Yachten und Boote für den ultimativen maritimen Lebensstil."
+      },
+      "motorcycles": {
+        "tag": "MOTORRÄDER",
+        "title": "Premium-Motorräder",
+        "description": "Entdecken Sie Hochleistungs-Motorräder von legendären Herstellern."
+      }
+    }
   }
 }
-
-
-

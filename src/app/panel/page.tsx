@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
 export default function AdminPage() {
-  // Sanity Studio disabled - redirect to Supabase admin panel
-  redirect("/panel");
+  redirect("/panel/login");
 }
+
