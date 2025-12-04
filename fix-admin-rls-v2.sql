@@ -18,3 +18,5 @@ ON admin_users FOR ALL
 TO authenticated
 USING (id = auth.uid());
 
+
+

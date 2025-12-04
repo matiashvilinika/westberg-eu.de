@@ -1,10 +1,13 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
+// Set this to false when you want to launch the full website
+const COMING_SOON_MODE = true;
+
 export default function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Pass through for system routes
+  // Pass through for system routes and static files
   if (
     pathname.startsWith('/api/') ||
     pathname.startsWith('/_next') ||
@@ -13,6 +16,21 @@ export default function middleware(request: NextRequest) {
   ) {
     return NextResponse.next();
   }
+
+  // COMING SOON MODE - Redirect ALL traffic to coming-soon page
+  if (COMING_SOON_MODE) {
+    // Don't redirect if already on coming-soon page
+    if (pathname === '/coming-soon') {
+      return NextResponse.next();
+    }
+    
+    // Redirect everyone to coming-soon
+    return NextResponse.redirect(new URL('/coming-soon', request.url));
+  }
+
+  // ============================================
+  // NORMAL MODE (when COMING_SOON_MODE = false)
+  // ============================================
 
   // Auth and app-specific paths - no locale processing needed
   if (

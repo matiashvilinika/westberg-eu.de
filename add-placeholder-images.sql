@@ -69,3 +69,5 @@ UPDATE motorcycles SET images = ARRAY[
   'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800&h=600&fit=crop'
 ] WHERE id = (SELECT id FROM motorcycles LIMIT 1 OFFSET 1);
 
+
+

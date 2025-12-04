@@ -17,3 +17,5 @@ END $$;
 -- Disable RLS on admin_users (simplest solution)
 ALTER TABLE admin_users DISABLE ROW LEVEL SECURITY;
 
+
+
