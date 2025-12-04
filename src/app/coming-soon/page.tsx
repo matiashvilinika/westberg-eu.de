@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 
 interface TimeLeft {
@@ -8,6 +8,16 @@ interface TimeLeft {
   hours: number;
   minutes: number;
   seconds: number;
+}
+
+interface Star {
+  id: number;
+  size: number;
+  left: number;
+  top: number;
+  opacity: number;
+  delay: number;
+  duration: number;
 }
 
 export default function ComingSoonPage() {
@@ -18,6 +28,19 @@ export default function ComingSoonPage() {
     seconds: 0,
   });
   const [mounted, setMounted] = useState(false);
+  
+  // Generate stars once and keep them fixed
+  const stars = useMemo<Star[]>(() => {
+    return Array.from({ length: 150 }, (_, i) => ({
+      id: i,
+      size: Math.random() * 2 + 1,
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      opacity: Math.random() * 0.7 + 0.3,
+      delay: Math.random() * 3,
+      duration: Math.random() * 2 + 2,
+    }));
+  }, []); // Empty dependency array means this runs once
 
   useEffect(() => {
     setMounted(true);
@@ -52,11 +75,23 @@ export default function ComingSoonPage() {
 
   return (
     <div className="fixed inset-0 bg-[#030014] overflow-hidden">
-      {/* Stars Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="stars" />
-        <div className="stars2" />
-        <div className="stars3" />
+      {/* Stars Background - Fixed positions, gently twinkling */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {stars.map((star) => (
+          <div
+            key={star.id}
+            className="absolute rounded-full bg-white animate-twinkle"
+            style={{
+              width: `${star.size}px`,
+              height: `${star.size}px`,
+              left: `${star.left}%`,
+              top: `${star.top}%`,
+              opacity: star.opacity,
+              animationDelay: `${star.delay}s`,
+              animationDuration: `${star.duration}s`,
+            }}
+          />
+        ))}
       </div>
 
       {/* Rotating Earth - Positioned at bottom */}
@@ -100,66 +135,25 @@ export default function ComingSoonPage() {
         </div>
 
         {/* Launch Date */}
-        <div className="mb-8 text-center">
+        <div className="text-center">
           <p className="text-sm text-white/40 md:text-base">Launch Date</p>
           <p className="text-xl font-semibold text-cyan-400 md:text-2xl">December 16, 2025</p>
-        </div>
-
-        {/* Email Signup */}
-        <div className="w-full max-w-md">
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <input
-              type="email"
-              placeholder="Enter your email for updates"
-              className="flex-1 rounded-xl border border-white/10 bg-white/5 px-5 py-3.5 text-white placeholder-white/40 backdrop-blur-sm transition-all focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400/20"
-            />
-            <button className="whitespace-nowrap rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-7 py-3.5 font-semibold text-white transition-all hover:from-cyan-400 hover:to-blue-500 hover:shadow-lg hover:shadow-cyan-500/25">
-              Notify Me
-            </button>
-          </div>
         </div>
       </div>
 
       <style jsx>{`
-        /* Stars Animation */
-        .stars, .stars2, .stars3 {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          width: 100%;
-          height: 100%;
-          display: block;
-        }
-
-        .stars {
-          background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle fill="%23ffffff" cx="50" cy="50" r="1"/></svg>') repeat;
-          background-size: 100px 100px;
-          animation: animateStars 100s linear infinite;
-        }
-
-        .stars2 {
-          background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle fill="%23ffffff" cx="30" cy="70" r="0.8"/></svg>') repeat;
-          background-size: 150px 150px;
-          animation: animateStars 150s linear infinite;
-          opacity: 0.5;
-        }
-
-        .stars3 {
-          background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle fill="%23ffffff" cx="70" cy="30" r="0.5"/></svg>') repeat;
-          background-size: 200px 200px;
-          animation: animateStars 200s linear infinite;
-          opacity: 0.3;
-        }
-
-        @keyframes animateStars {
-          from {
-            transform: translateY(0);
+        /* Gentle Twinkle Animation - Stars stay in place */
+        @keyframes twinkle {
+          0%, 100% {
+            opacity: 0.4;
           }
-          to {
-            transform: translateY(-100%);
+          50% {
+            opacity: 1;
           }
+        }
+        
+        .animate-twinkle {
+          animation: twinkle 3s ease-in-out infinite;
         }
 
         /* Earth Container */
@@ -183,32 +177,41 @@ export default function ComingSoonPage() {
           }
         }
 
-        /* Earth Sphere */
+        /* Real Earth Image */
         .earth {
           position: absolute;
           top: 50%;
           left: 50%;
-          transform: translate(-50%, -50%);
           width: 100%;
           height: 100%;
           border-radius: 50%;
-          background: 
-            linear-gradient(
-              to right,
-              rgba(0, 0, 0, 0.9) 0%,
-              transparent 25%,
-              transparent 75%,
-              rgba(0, 0, 0, 0.9) 100%
-            ),
-            url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Earth_Western_Hemisphere_transparent_background.png/1200px-Earth_Western_Hemisphere_transparent_background.png');
-          background-size: cover, 200% 100%;
-          background-position: center, 0 0;
+          overflow: hidden;
+          transform: translate(-50%, -50%);
           box-shadow: 
-            inset -100px -50px 150px rgba(0, 0, 0, 0.9),
-            inset 30px 30px 60px rgba(100, 200, 255, 0.15),
-            0 0 150px rgba(100, 200, 255, 0.4),
-            0 0 300px rgba(50, 150, 255, 0.2);
-          animation: rotateEarth 30s linear infinite;
+            inset -80px -40px 120px rgba(0, 0, 0, 0.7),
+            inset 25px 25px 50px rgba(100, 200, 255, 0.15),
+            0 0 120px rgba(100, 200, 255, 0.4),
+            0 0 250px rgba(50, 150, 255, 0.25);
+        }
+        
+        /* Rotating Earth Image */
+        .earth::before {
+          content: '';
+          position: absolute;
+          inset: -10%;
+          background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Earth_Western_Hemisphere_transparent_background.png/1200px-Earth_Western_Hemisphere_transparent_background.png') center/cover no-repeat;
+          animation: rotateEarthSurface 60s linear infinite;
+        }
+        
+        /* Light/Shadow overlay */
+        .earth::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          border-radius: 50%;
+          background: 
+            radial-gradient(circle at 35% 35%, rgba(255,255,255,0.25) 0%, transparent 45%),
+            radial-gradient(circle at 70% 70%, rgba(0,0,0,0.5) 0%, transparent 50%);
         }
 
         /* Earth Glow Effect */
@@ -229,12 +232,12 @@ export default function ComingSoonPage() {
           animation: pulse 4s ease-in-out infinite;
         }
 
-        @keyframes rotateEarth {
-          from {
-            background-position: center, 0 0;
+        @keyframes rotateEarthSurface {
+          0% {
+            transform: rotate(0deg) scale(1.1);
           }
-          to {
-            background-position: center, 200% 0;
+          100% {
+            transform: rotate(360deg) scale(1.1);
           }
         }
 
