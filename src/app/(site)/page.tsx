@@ -1,3 +1,19 @@
+import { redirect } from 'next/navigation';
+
+// ⚠️ COMING SOON MODE - Set to false on December 16, 2025 to launch
+const COMING_SOON_MODE = true;
+
+export default function Home() {
+  if (COMING_SOON_MODE) {
+    redirect('/coming-soon');
+  }
+
+  // This code will never execute while COMING_SOON_MODE is true
+  return null;
+}
+
+// ORIGINAL CODE - UNCOMMENT ON DECEMBER 16, 2025
+/*
 import About from "@/components/About";
 import HomeBlogSection from "@/components/Blog/HomeBlogSection";
 import Brands from "@/components/Brands";
@@ -27,11 +43,10 @@ export default function Home() {
       <Listings />
       <About />
       <Team />
-      {/* <Testimonials /> */}
-      <Brands />
-      {/* {integrations?.isSanityEnabled && <HomeBlogSection />} */}
       <Support />
       <CallToAction />
+      <Brands />
     </>
   );
 }
+*/
