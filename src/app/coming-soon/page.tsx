@@ -45,7 +45,7 @@ export default function ComingSoonPage() {
   useEffect(() => {
     setMounted(true);
     
-    const targetDate = new Date("2025-12-16T00:00:00").getTime();
+    const targetDate = new Date("2025-12-30T00:00:00").getTime();
 
     const calculateTimeLeft = () => {
       const now = new Date().getTime();
@@ -137,7 +137,7 @@ export default function ComingSoonPage() {
         {/* Launch Date */}
         <div className="text-center">
           <p className="text-sm text-white/40 md:text-base">Launch Date</p>
-          <p className="text-xl font-semibold text-cyan-400 md:text-2xl">December 16, 2025</p>
+          <p className="text-xl font-semibold text-cyan-400 md:text-2xl">December 30, 2025</p>
         </div>
       </div>
 

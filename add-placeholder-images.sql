@@ -71,3 +71,4 @@ UPDATE motorcycles SET images = ARRAY[
 
 
 
+
