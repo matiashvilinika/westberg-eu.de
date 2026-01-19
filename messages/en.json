@@ -25,7 +25,7 @@
     "support": "Support",
     "rights": "All rights reserved",
     "about": {
-      "description": "West Berg Europe (W.B.E.) GmbH - Your trusted partner for premium automobiles across Europe.",
+      "description": "A Germany-based automotive trading company operating with a capital-focused, asset-driven model.",
       "company": "Company",
       "supportSection": "Support",
       "getInTouch": "Get in touch",
@@ -45,7 +45,7 @@
     "badge": "Premium Automobiles",
     "title": "West Berg Europe",
     "subtitle": "Your Premium Automobile Partner",
-    "description": "West Berg Europe (W.B.E.) GmbH is a premium automobile company focused on finding, selling, and exchanging premium vehicles. We operate fully legally and transparently, expanding our network across Germany, Switzerland, and Italy.",
+    "description": "West Berg Europe is a Germany-based automotive trading company operating with a capital-focused, asset-driven model.",
     "cta": "Contact Us"
   },
   "about": {
@@ -55,18 +55,18 @@
     "aboutTitle": "About Us",
     "missionTitle": "Our Mission",
     "visionTitle": "Our Vision",
-    "aboutDescription": "West Berg Europe (W.B.E.) GmbH is a premium automobile company specializing in premium vehicle services. We focus on finding, selling, and exchanging premium automobiles, expanding our network across Germany–Switzerland–Italy, and creating a digital platform for European premium automobiles.",
-    "missionDescription": "Our mission is to provide premium automobile services with full legal compliance and transparency. We work tirelessly to find the perfect premium vehicles for our clients and ensure a seamless experience throughout the process.",
-    "visionDescription": "Our vision is to become the leading digital platform for European premium automobiles, connecting buyers and sellers across Germany, Switzerland, and Italy. We aim to expand our network while maintaining the highest standards of legal compliance and transparency."
+    "aboutDescription": "West Berg Europe operates with a low-noise, high-discipline philosophy. We believe that professionalism is demonstrated through process, and that consistency is more valuable than speed. Our operations are designed to remain flexible, liquid, and resilient under varying market conditions.",
+    "missionDescription": "Our mission is to source and manage vehicles through structured processes and strict operational discipline, treating each vehicle as a managed asset. We focus on compliant sourcing, clear documentation, and controlled execution to deliver reliably.",
+    "visionDescription": "To build a disciplined, Germany-based operation defined by reliability and transparency. We aim for stable operations, capital protection, and predictable outcomes while adhering to the highest German standards."
   },
   "company": {
-    "focusTitle": "What We Focus On",
-    "focus1": "Finding premium automobiles",
-    "focus2": "Selling premium automobiles",
-    "focus3": "Automobile exchange",
-    "focus4": "Network expansion across Germany–Switzerland–Italy",
-    "focus5": "Creating a digital platform for European premium automobiles",
-    "values": "We operate fully legally and transparently."
+    "focusTitle": "Our Approach",
+    "focus1": "German operating standards",
+    "focus2": "Asset-focused decision-making",
+    "focus3": "Short holding periods",
+    "focus4": "Liquidity awareness",
+    "focus5": "Clear accountability",
+    "values": "We operate with a capital-focused, asset-driven model."
   },
   "features": {
     "mainTitle": "SERVICES",

@@ -25,7 +25,7 @@
     "support": "Support",
     "rights": "Alle Rechte vorbehalten",
     "about": {
-      "description": "West Berg Europe (W.B.E.) GmbH - Ihr vertrauenswürdiger Partner für Premium-Automobile in ganz Europa.",
+      "description": "Ein in Deutschland ansässiges Automobilhandelsunternehmen, das nach einem kapitalfokussierten, vermögenswertorientierten Modell arbeitet.",
       "company": "Unternehmen",
       "supportSection": "Support",
       "getInTouch": "Kontakt aufnehmen",
@@ -45,7 +45,7 @@
     "badge": "Premium Automobile",
     "title": "West Berg Europe",
     "subtitle": "Ihr Premium Automobil Partner",
-    "description": "West Berg Europe (W.B.E.) GmbH ist ein Premium-Automobilunternehmen, das sich auf die Suche, den Verkauf und den Tausch von Premium-Fahrzeugen konzentriert. Wir arbeiten vollständig legal und transparent und erweitern unser Netzwerk in Deutschland, der Schweiz und Italien.",
+    "description": "West Berg Europe ist ein in Deutschland ansässiges Automobilhandelsunternehmen, das nach einem kapitalfokussierten, vermögenswertorientierten Modell arbeitet.",
     "cta": "Kontaktieren Sie uns"
   },
   "about": {
@@ -55,18 +55,18 @@
     "aboutTitle": "Über uns",
     "missionTitle": "Unsere Mission",
     "visionTitle": "Unsere Vision",
-    "aboutDescription": "West Berg Europe (W.B.E.) GmbH ist ein Premium-Automobilunternehmen, das sich auf Premium-Fahrzeugdienstleistungen spezialisiert. Wir konzentrieren uns auf die Suche, den Verkauf und den Tausch von Premium-Automobilen, die Erweiterung unseres Netzwerks in Deutschland–Schweiz–Italien und die Schaffung einer digitalen Plattform für europäische Premium-Automobile.",
-    "missionDescription": "Unsere Mission ist es, Premium-Automobildienstleistungen mit vollständiger rechtlicher Compliance und Transparenz anzubieten. Wir arbeiten unermüdlich daran, die perfekten Premium-Fahrzeuge für unsere Kunden zu finden und sicherzustellen, dass der gesamte Prozess nahtlos verläuft.",
-    "visionDescription": "Unsere Vision ist es, die führende digitale Plattform für europäische Premium-Automobile zu werden und Käufer und Verkäufer in Deutschland, der Schweiz und Italien zu verbinden. Wir streben an, unser Netzwerk zu erweitern und gleichzeitig die höchsten Standards der rechtlichen Compliance und Transparenz aufrechtzuerhalten."
+    "aboutDescription": "West Berg Europe arbeitet nach einer Philosophie der geringen Geräuschentwicklung und hohen Disziplin. Wir glauben, dass sich Professionalität durch Prozesse zeigt und dass Beständigkeit wertvoller ist als Geschwindigkeit. Unsere Abläufe sind darauf ausgelegt, unter wechselnden Marktbedingungen flexibel, liquide und widerstandsfähig zu bleiben.",
+    "missionDescription": "Unsere Mission ist es, Fahrzeuge durch strukturierte Prozesse und strenge operative Disziplin zu beschaffen und zu verwalten, wobei jedes Fahrzeug als verwalteter Vermögenswert behandelt wird. Wir konzentrieren uns auf eine konforme Beschaffung, klare Dokumentation und kontrollierte Ausführung, um zuverlässig zu liefern.",
+    "visionDescription": "Aufbau eines disziplinierten, in Deutschland ansässigen Betriebs, der durch Zuverlässigkeit und Transparenz definiert ist. Wir streben nach stabilen Abläufen, Kapitalschutz und vorhersehbaren Ergebnissen unter Einhaltung höchster deutscher Standards."
   },
   "company": {
-    "focusTitle": "Worauf wir uns konzentrieren",
-    "focus1": "Suche nach Premium-Automobilen",
-    "focus2": "Verkauf von Premium-Automobilen",
-    "focus3": "Automobiltausch",
-    "focus4": "Netzwerkerweiterung in Deutschland–Schweiz–Italien",
-    "focus5": "Schaffung einer digitalen Plattform für europäische Premium-Automobile",
-    "values": "Wir arbeiten vollständig legal und transparent."
+    "focusTitle": "Unser Ansatz",
+    "focus1": "Deutsche Betriebsstandards",
+    "focus2": "Vermögenswertorientierte Entscheidungsfindung",
+    "focus3": "Kurze Haltedauern",
+    "focus4": "Liquiditätsbewusstsein",
+    "focus5": "Klare Verantwortlichkeit",
+    "values": "Wir arbeiten nach einem kapitalfokussierten, vermögenswertorientierten Modell."
   },
   "features": {
     "mainTitle": "DIENSTLEISTUNGEN",
