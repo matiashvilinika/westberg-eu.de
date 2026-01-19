@@ -2,12 +2,12 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 // ⚠️ SET TO FALSE ON DECEMBER 16, 2025 TO LAUNCH THE WEBSITE
-const COMING_SOON_MODE = true;
+const COMING_SOON_MODE = false;
 
 export function middleware(request: NextRequest) {
   // Skip middleware for static files and API routes
   const { pathname } = request.nextUrl;
-  
+
   // Always allow these paths
   if (
     pathname.startsWith('/_next') ||
@@ -23,7 +23,7 @@ export function middleware(request: NextRequest) {
     if (pathname === '/coming-soon') {
       return NextResponse.next();
     }
-    
+
     // Redirect ALL other requests to coming-soon
     const url = request.nextUrl.clone();
     url.pathname = '/coming-soon';
