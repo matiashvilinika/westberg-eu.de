@@ -45,9 +45,9 @@ export default function AboutContent() {
         {activeTab === "about" && (
           <TabPanel
             title={tCompany("focusTitle")}
-            image1='/images/about/image-1.webp'
+            image1='/images/about/image-1.jpeg'
             image1Alt='about image 1'
-            image2='/images/about/image-2.webp'
+            image2='/images/about/image-2.jpeg'
             image2Alt='about image 2'
           >
             <p className='mb-6 text-base text-dark-text'>
