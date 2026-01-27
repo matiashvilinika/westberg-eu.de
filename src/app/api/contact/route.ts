@@ -18,17 +18,31 @@ export async function POST(req: NextRequest) {
       listingId,
     } = body;
 
+    console.log('📧 Contact form submitted:', { name, mobile, listingTitle });
+
     // Validate required fields
     if (!name || !mobile || !message) {
+      console.error('❌ Missing required fields');
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
       );
     }
 
+    // Check if API key exists
+    if (!process.env.RESEND_API_KEY) {
+      console.error('❌ RESEND_API_KEY not found in environment variables');
+      return NextResponse.json(
+        { error: 'Email service not configured' },
+        { status: 500 }
+      );
+    }
+
+    console.log('📤 Attempting to send email via Resend...');
+
     // Send email to admin
     const { data, error } = await resend.emails.send({
-      from: 'West Berg Europe <noreply@westberg-eu.de>', // Change this to your verified domain
+      from: 'West Berg Europe <onboarding@resend.dev>', // Using Resend test address
       to: ['ceo@westberg-eu.de'], // Your email
       replyTo: mobile.includes('@') ? mobile : undefined,
       subject: `New Inquiry: ${listingTitle || 'Contact Form'}`,
@@ -108,19 +122,21 @@ export async function POST(req: NextRequest) {
     });
 
     if (error) {
-      console.error('Resend error:', error);
+      console.error('❌ Resend error:', error);
       return NextResponse.json(
-        { error: 'Failed to send email' },
+        { error: 'Failed to send email', details: error },
         { status: 500 }
       );
     }
+
+    console.log('✅ Email sent successfully!', { messageId: data?.id });
 
     return NextResponse.json(
       { success: true, messageId: data?.id },
       { status: 200 }
     );
   } catch (error: any) {
-    console.error('API error:', error);
+    console.error('❌ API error:', error);
     return NextResponse.json(
       { error: error.message || 'Internal server error' },
       { status: 500 }

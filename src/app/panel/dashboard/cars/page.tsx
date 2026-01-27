@@ -82,7 +82,6 @@ export default function CarsPage() {
             <thead className="bg-slate-700/50">
               <tr>
                 <th className="px-6 py-4 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Car</th>
-                <th className="px-6 py-4 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Price</th>
                 <th className="px-6 py-4 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Status</th>
                 <th className="px-6 py-4 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Actions</th>
               </tr>
@@ -102,9 +101,6 @@ export default function CarsPage() {
                         <p className="text-sm text-slate-400">{car.brand} {car.model} • {car.year}</p>
                       </div>
                     </div>
-                  </td>
-                  <td className="px-6 py-4">
-                    <span className="text-white font-medium">€{car.price?.toLocaleString()}</span>
                   </td>
                   <td className="px-6 py-4">
                     <button

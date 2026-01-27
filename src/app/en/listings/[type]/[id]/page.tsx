@@ -111,9 +111,11 @@ export default function ListingDetailPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('🚀 Form submitted!', formData);
     setSubmitting(true);
     
     try {
+      console.log('📤 Calling /api/contact...');
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -127,13 +129,20 @@ export default function ListingDetailPage() {
         }),
       });
 
+      console.log('📨 Response status:', response.status);
+
       if (!response.ok) {
+        const errorData = await response.json();
+        console.error('❌ API error:', errorData);
         throw new Error('Failed to send message');
       }
 
+      const result = await response.json();
+      console.log('✅ Success:', result);
+      
       setSubmitted(true);
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('❌ Error submitting form:', error);
       alert('There was an error sending your message. Please try again.');
     } finally {
       setSubmitting(false);

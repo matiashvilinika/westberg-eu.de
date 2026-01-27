@@ -1,18 +1,40 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createClient } from "@/lib/supabase/client";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function NewCarPage() {
+interface Car {
+  id: string;
+  title: string;
+  brand: string;
+  model: string;
+  year: number;
+  price: number;
+  mileage: number;
+  fuel_type: string;
+  transmission: string;
+  color: string;
+  description: string;
+  images: string[];
+  status: string;
+  featured: boolean;
+}
+
+export default function EditCarPage() {
   const router = useRouter();
+  const params = useParams();
+  const id = params.id as string;
   const supabase = createClient();
-  const [loading, setLoading] = useState(false);
+  
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const [previewUrls, setPreviewUrls] = useState<string[]>([]);
+  const [existingImages, setExistingImages] = useState<string[]>([]);
   const [formData, setFormData] = useState({
     title: "",
     brand: "",
@@ -28,31 +50,73 @@ export default function NewCarPage() {
     featured: false,
   });
 
+  // Load existing car data
+  useEffect(() => {
+    const fetchCar = async () => {
+      const { data, error } = await supabase
+        .from("cars")
+        .select("*")
+        .eq("id", id)
+        .single();
+
+      if (error) {
+        alert("Error loading car: " + error.message);
+        router.push("/panel/dashboard/cars");
+        return;
+      }
+
+      if (data) {
+        setFormData({
+          title: data.title || "",
+          brand: data.brand || "",
+          model: data.model || "",
+          year: data.year || new Date().getFullYear(),
+          price: data.price || 0,
+          mileage: data.mileage || 0,
+          fuel_type: data.fuel_type || "Petrol",
+          transmission: data.transmission || "Automatic",
+          color: data.color || "",
+          description: data.description || "",
+          status: data.status || "draft",
+          featured: data.featured || false,
+        });
+        setExistingImages(data.images || []);
+      }
+      
+      setLoading(false);
+    };
+
+    fetchCar();
+  }, [id, supabase, router]);
+
   const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
     
-    // Limit to 5 images
-    if (files.length + selectedFiles.length > 5) {
+    // Check total images (existing + new)
+    const totalImages = existingImages.length + selectedFiles.length + files.length;
+    if (totalImages > 5) {
       alert("Maximum 5 images allowed");
       return;
     }
 
-    // Create preview URLs
     const newPreviewUrls = files.map(file => URL.createObjectURL(file));
     
     setSelectedFiles([...selectedFiles, ...files]);
     setPreviewUrls([...previewUrls, ...newPreviewUrls]);
   };
 
-  const removeImage = (index: number) => {
+  const removeNewImage = (index: number) => {
     const newFiles = selectedFiles.filter((_, i) => i !== index);
     const newPreviews = previewUrls.filter((_, i) => i !== index);
     
-    // Revoke the object URL to free memory
     URL.revokeObjectURL(previewUrls[index]);
     
     setSelectedFiles(newFiles);
     setPreviewUrls(newPreviews);
+  };
+
+  const removeExistingImage = (index: number) => {
+    setExistingImages(existingImages.filter((_, i) => i !== index));
   };
 
   const uploadImages = async (): Promise<string[]> => {
@@ -67,7 +131,7 @@ export default function NewCarPage() {
         const fileName = `${Math.random().toString(36).substring(2)}-${Date.now()}.${fileExt}`;
         const filePath = `cars/${fileName}`;
 
-        const { error: uploadError, data } = await supabase.storage
+        const { error: uploadError } = await supabase.storage
           .from('listings')
           .upload(filePath, file, {
             cacheControl: '3600',
@@ -79,7 +143,6 @@ export default function NewCarPage() {
           throw uploadError;
         }
 
-        // Get public URL
         const { data: { publicUrl } } = supabase.storage
           .from('listings')
           .getPublicUrl(filePath);
@@ -98,30 +161,44 @@ export default function NewCarPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
+    setSaving(true);
 
     try {
-      // Upload images first
-      const imageUrls = await uploadImages();
+      // Upload new images
+      const newImageUrls = await uploadImages();
+      
+      // Combine existing and new images
+      const allImages = [...existingImages, ...newImageUrls];
 
-      // Insert car with image URLs
-      const { error } = await supabase.from("cars").insert([{
-        ...formData,
-        images: imageUrls,
-      }]);
+      // Update car
+      const { error } = await supabase
+        .from("cars")
+        .update({
+          ...formData,
+          images: allImages,
+        })
+        .eq("id", id);
 
       if (error) {
-        alert("Error creating car: " + error.message);
-        setLoading(false);
+        alert("Error updating car: " + error.message);
+        setSaving(false);
         return;
       }
 
       router.push("/panel/dashboard/cars");
     } catch (error: any) {
       alert("Error: " + error.message);
-      setLoading(false);
+      setSaving(false);
     }
   };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -135,8 +212,8 @@ export default function NewCarPage() {
           </svg>
         </Link>
         <div>
-          <h1 className="text-3xl font-bold text-white">Add New Car</h1>
-          <p className="text-slate-400 mt-1">Create a new car listing</p>
+          <h1 className="text-3xl font-bold text-white">Edit Car</h1>
+          <p className="text-slate-400 mt-1">Update car listing details</p>
         </div>
       </div>
 
@@ -261,55 +338,86 @@ export default function NewCarPage() {
               />
             </div>
 
-            {/* Image Upload Section */}
+            {/* Images Section */}
             <div className="md:col-span-2">
               <label className="block text-sm font-medium text-slate-300 mb-2">
-                Images (Max 5)
+                Images (Max 5 total)
               </label>
               
-              {/* Upload Button */}
+              {/* Existing Images */}
+              {existingImages.length > 0 && (
+                <div className="mb-4">
+                  <p className="text-sm text-slate-400 mb-2">Current Images:</p>
+                  <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    {existingImages.map((url, index) => (
+                      <div key={index} className="relative group">
+                        <div className="aspect-square rounded-lg overflow-hidden bg-slate-700">
+                          <Image
+                            src={url}
+                            alt={`Image ${index + 1}`}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => removeExistingImage(index)}
+                          className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition"
+                        >
+                          ×
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Upload New Images */}
               <div className="mb-4">
                 <label className="cursor-pointer inline-flex items-center gap-2 px-4 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                   </svg>
-                  Choose Images
+                  Add More Images
                   <input
                     type="file"
                     accept="image/*"
                     multiple
                     onChange={handleFileSelect}
                     className="hidden"
-                    disabled={selectedFiles.length >= 5}
+                    disabled={existingImages.length + selectedFiles.length >= 5}
                   />
                 </label>
                 <span className="ml-3 text-sm text-slate-400">
-                  {selectedFiles.length}/5 images selected
+                  {existingImages.length + selectedFiles.length}/5 images
                 </span>
               </div>
 
-              {/* Image Previews */}
+              {/* New Image Previews */}
               {previewUrls.length > 0 && (
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                  {previewUrls.map((url, index) => (
-                    <div key={index} className="relative group">
-                      <div className="aspect-square rounded-lg overflow-hidden bg-slate-700">
-                        <Image
-                          src={url}
-                          alt={`Preview ${index + 1}`}
-                          fill
-                          className="object-cover"
-                        />
+                <div>
+                  <p className="text-sm text-slate-400 mb-2">New Images:</p>
+                  <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    {previewUrls.map((url, index) => (
+                      <div key={index} className="relative group">
+                        <div className="aspect-square rounded-lg overflow-hidden bg-slate-700">
+                          <Image
+                            src={url}
+                            alt={`New ${index + 1}`}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => removeNewImage(index)}
+                          className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition"
+                        >
+                          ×
+                        </button>
                       </div>
-                      <button
-                        type="button"
-                        onClick={() => removeImage(index)}
-                        className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition"
-                      >
-                        ×
-                      </button>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
@@ -330,10 +438,10 @@ export default function NewCarPage() {
           <div className="flex items-center gap-4 pt-6 border-t border-slate-700">
             <button
               type="submit"
-              disabled={loading || uploading}
+              disabled={saving || uploading}
               className="px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-600/50 text-white font-medium rounded-lg transition"
             >
-              {uploading ? "Uploading Images..." : loading ? "Creating..." : "Create Car"}
+              {uploading ? "Uploading Images..." : saving ? "Updating..." : "Update Car"}
             </button>
             <Link
               href="/panel/dashboard/cars"
