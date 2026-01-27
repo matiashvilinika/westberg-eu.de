@@ -22,6 +22,12 @@ export default function FooterBottom() {
             >
               {t("support")}
             </a>
+            <a
+              href="/legal-notice"
+              className="font-heading text-base text-dark-text hover:text-primary"
+            >
+              {t("legalNotice")}
+            </a>
           </div>
         </div>
         <div className="w-full px-4 md:w-1/2 lg:w-1/3">
