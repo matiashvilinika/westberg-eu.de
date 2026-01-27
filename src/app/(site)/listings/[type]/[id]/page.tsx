@@ -111,12 +111,31 @@ export default function ListingDetailPage() {
     e.preventDefault();
     setSubmitting(true);
     
-    // Here you would typically send to an API or Supabase
-    // For now, we'll simulate a submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setSubmitted(true);
-    setSubmitting(false);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          listingTitle: listing.title,
+          listingType: type,
+          listingId: id,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Es gab einen Fehler beim Senden Ihrer Nachricht. Bitte versuchen Sie es erneut.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -382,13 +401,10 @@ export default function ListingDetailPage() {
                 {listing.title}
               </h1>
               {listing.brand && listing.model && (
-                <p className="text-xl text-dark-text mb-4">
+                <p className="text-xl text-dark-text">
                   {listing.brand} {listing.model} {listing.year && `• ${listing.year}`}
                 </p>
               )}
-              <div className="text-3xl lg:text-4xl font-bold text-primary">
-                {formatPrice(listing.price)}
-              </div>
             </div>
 
             {/* Specifications */}
