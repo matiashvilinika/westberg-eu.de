@@ -180,10 +180,6 @@ export default function Listings() {
                               </svg>
                             </div>
                           )}
-                          {/* Price Badge */}
-                          <div className="absolute top-3 right-3 bg-primary text-white px-3 py-1 rounded-lg text-sm font-semibold shadow-lg">
-                            {formatPrice(item.price)}
-                          </div>
                         </div>
 
                         {/* Content */}
