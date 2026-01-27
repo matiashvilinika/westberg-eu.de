@@ -110,6 +110,12 @@ export default function ListingDetailPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log('🚀 Form submitted!', formData);
+    
+    if (!listing) {
+      alert('Listing data not available. Please try again.');
+      return;
+    }
+    
     setSubmitting(true);
     
     try {
