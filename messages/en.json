@@ -26,7 +26,7 @@
     "legalNotice": "Legal Notice",
     "rights": "All rights reserved",
     "about": {
-      "description": "A Germany-based automotive trading company operating with a capital-focused, asset-driven model.",
+      "description": "West Berg Europe is a Germany-based automotive trading company operating with disciplined processes, asset-focused logic, and a commitment to reliable execution.",
       "company": "Company",
       "supportSection": "Support",
       "getInTouch": "Get in touch",
@@ -43,51 +43,53 @@
     }
   },
   "hero": {
-    "badge": "Premium Automobiles",
+    "badge": "Germany-Based Automotive Trading",
     "title": "West Berg Europe",
-    "subtitle": "Your Premium Automobile Partner",
-    "description": "West Berg Europe is a Germany-based automotive trading company operating with a capital-focused, asset-driven model.",
+    "subtitle": "Disciplined Operations. Asset-Focused Logic.",
+    "description": "A Germany-based automotive trading company operating with disciplined processes, asset-focused logic, and a commitment to reliable execution.",
     "cta": "Contact Us"
   },
   "about": {
-    "mainTitle": "ABOUT US",
-    "title": "About West Berg Europe",
-    "paragraph": "Learn about our premium automobile services and commitment to excellence.",
-    "aboutTitle": "About Us",
+    "mainTitle": "OUR APPROACH",
+    "title": "Vision & Mission",
+    "paragraph": "West Berg Europe GmbH - Operating with discipline, transparency, and German standards.",
+    "aboutTitle": "Our Approach",
     "missionTitle": "Our Mission",
     "visionTitle": "Our Vision",
-    "aboutDescription": "West Berg Europe operates with a low-noise, high-discipline philosophy. We believe that professionalism is demonstrated through process, and that consistency is more valuable than speed. Our operations are designed to remain flexible, liquid, and resilient under varying market conditions.",
-    "missionDescription": "Our mission is to source and manage vehicles through structured processes and strict operational discipline, treating each vehicle as a managed asset. We focus on compliant sourcing, clear documentation, and controlled execution to deliver reliably.",
-    "visionDescription": "To build a disciplined, Germany-based operation defined by reliability and transparency. We aim for stable operations, capital protection, and predictable outcomes while adhering to the highest German standards."
+    "aboutDescription": "West Berg Europe operates with a low-noise, high-discipline philosophy. We believe that professionalism is demonstrated through process, not promotion, and that consistency is more valuable than speed. Fewer, well-managed transactions outperform uncontrolled volume. Our operations are designed to remain flexible, liquid, and resilient under varying market conditions.",
+    "missionDescription": "Our mission is to source and manage vehicles through structured processes, careful selection, and strict operational discipline, treating each vehicle as a managed asset rather than a speculative product. We focus on compliant sourcing, clear documentation, controlled execution, and responsible capital use. Every transaction is approached with the same objective: execute correctly, protect capital, and deliver reliably.",
+    "visionDescription": "To build a disciplined, Germany-based automotive trading operation defined by reliability, transparency, and consistent execution. West Berg Europe aims to operate quietly and professionally, adhering to German standards while maintaining long-term trust with partners, clients, and stakeholders. The company's vision is not rapid expansion or public visibility, but stable operations, capital protection, and predictable outcomes."
   },
   "company": {
-    "focusTitle": "Our Approach",
+    "focusTitle": "What Defines Us",
     "focus1": "German operating standards",
     "focus2": "Asset-focused decision-making",
-    "focus3": "Short holding periods",
-    "focus4": "Liquidity awareness",
-    "focus5": "Clear accountability",
-    "values": "We operate with a capital-focused, asset-driven model."
+    "focus3": "Short holding periods and liquidity awareness",
+    "focus4": "Clear accountability and responsibility",
+    "focus5": "Process discipline over personality",
+    "values": "We do not pursue growth for its own sake. Expansion is considered only when it strengthens operational stability and financial discipline.",
+    "commitment": "Our Commitment",
+    "commitmentValues": "West Berg Europe is committed to transparent communication, responsible trading practices, and long-term operational integrity. Trust is built through execution, not statements."
   },
   "features": {
-    "mainTitle": "SERVICES",
-    "title": "Our Premium Services",
-    "paragraph": "Comprehensive premium automobile services tailored to your needs.",
+    "mainTitle": "OPERATING PHILOSOPHY",
+    "title": "How We Operate",
+    "paragraph": "The company operates under the following principles that define our approach to automotive trading.",
     "feature1": {
-      "title": "Premium Car Sourcing",
-      "description": "We find your dream car. Our experts search across Germany, Switzerland, and Italy to locate the perfect premium vehicle for you."
+      "title": "Quiet Execution",
+      "description": "No public promises, no exaggerated positioning, no unnecessary exposure. We focus on professional execution rather than promotion."
     },
     "feature2": {
-      "title": "Premium Car Selling Support",
-      "description": "Sell your premium vehicle with confidence. We handle pricing, marketing, and buyer connections to get you the best deal."
+      "title": "Asset-First Logic",
+      "description": "Every vehicle is evaluated as a deployable asset with defined risk, margin, and exit timeline. Capital protection is as important as profitability."
     },
     "feature3": {
-      "title": "Car Exchange",
-      "description": "Trade in your current vehicle for a new one. Simple, fast, and hassle-free exchange process with fair valuations."
+      "title": "Short Holding Periods",
+      "description": "Capital is not locked; it is reused. We maintain liquidity awareness and focus on efficient capital deployment with predictable timelines."
     },
     "feature4": {
-      "title": "Logistics",
-      "description": "Safe and reliable vehicle transportation across Europe. We handle pickup, delivery, and all documentation."
+      "title": "Process Over Personality",
+      "description": "Decisions are driven by structure, not emotion. We believe that discipline creates trust and consistency builds credibility."
     }
   },
   "team": {
@@ -112,9 +114,9 @@
     "ceoEmail": "ceo@westberg-eu.de"
   },
   "cta": {
-    "title": "Looking for a collaboration? Get Started Today!",
-    "paragraph": "Contact us to discuss your premium automobile needs.",
-    "button": "Get Started Now"
+    "title": "Looking for Professional Automotive Trading?",
+    "paragraph": "Contact us to discuss structured vehicle sourcing and asset management opportunities.",
+    "button": "Contact Us"
   },
   "listings": {
     "loading": "Loading...",

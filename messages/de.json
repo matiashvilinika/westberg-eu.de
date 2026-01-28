@@ -26,7 +26,7 @@
     "legalNotice": "Impressum",
     "rights": "Alle Rechte vorbehalten",
     "about": {
-      "description": "Ein in Deutschland ansässiges Automobilhandelsunternehmen, das nach einem kapitalfokussierten, vermögenswertorientierten Modell arbeitet.",
+      "description": "West Berg Europe ist ein in Deutschland ansässiges Automobilhandelsunternehmen mit disziplinierten Prozessen, vermögenswertorientierter Logik und dem Engagement für zuverlässige Ausführung.",
       "company": "Unternehmen",
       "supportSection": "Support",
       "getInTouch": "Kontakt aufnehmen",
@@ -43,51 +43,53 @@
     }
   },
   "hero": {
-    "badge": "Premium Automobile",
+    "badge": "In Deutschland ansässiger Automobilhandel",
     "title": "West Berg Europe",
-    "subtitle": "Ihr Premium Automobil Partner",
-    "description": "West Berg Europe ist ein in Deutschland ansässiges Automobilhandelsunternehmen, das nach einem kapitalfokussierten, vermögenswertorientierten Modell arbeitet.",
+    "subtitle": "Disziplinierter Betrieb. Vermögenswertorientierte Logik.",
+    "description": "Ein in Deutschland ansässiges Automobilhandelsunternehmen mit disziplinierten Prozessen, vermögenswertorientierter Logik und dem Engagement für zuverlässige Ausführung.",
     "cta": "Kontaktieren Sie uns"
   },
   "about": {
-    "mainTitle": "ÜBER UNS",
-    "title": "Über West Berg Europe",
-    "paragraph": "Erfahren Sie mehr über unsere Premium-Automobildienstleistungen und unser Engagement für Exzellenz.",
-    "aboutTitle": "Über uns",
+    "mainTitle": "UNSER ANSATZ",
+    "title": "Vision & Mission",
+    "paragraph": "West Berg Europe GmbH - Betrieb mit Disziplin, Transparenz und deutschen Standards.",
+    "aboutTitle": "Unser Ansatz",
     "missionTitle": "Unsere Mission",
     "visionTitle": "Unsere Vision",
-    "aboutDescription": "West Berg Europe arbeitet nach einer Philosophie der geringen Geräuschentwicklung und hohen Disziplin. Wir glauben, dass sich Professionalität durch Prozesse zeigt und dass Beständigkeit wertvoller ist als Geschwindigkeit. Unsere Abläufe sind darauf ausgelegt, unter wechselnden Marktbedingungen flexibel, liquide und widerstandsfähig zu bleiben.",
-    "missionDescription": "Unsere Mission ist es, Fahrzeuge durch strukturierte Prozesse und strenge operative Disziplin zu beschaffen und zu verwalten, wobei jedes Fahrzeug als verwalteter Vermögenswert behandelt wird. Wir konzentrieren uns auf eine konforme Beschaffung, klare Dokumentation und kontrollierte Ausführung, um zuverlässig zu liefern.",
-    "visionDescription": "Aufbau eines disziplinierten, in Deutschland ansässigen Betriebs, der durch Zuverlässigkeit und Transparenz definiert ist. Wir streben nach stabilen Abläufen, Kapitalschutz und vorhersehbaren Ergebnissen unter Einhaltung höchster deutscher Standards."
+    "aboutDescription": "West Berg Europe arbeitet nach einer Philosophie der geringen öffentlichen Sichtbarkeit und hohen Disziplin. Wir glauben, dass sich Professionalität durch Prozesse zeigt, nicht durch Werbung, und dass Beständigkeit wertvoller ist als Geschwindigkeit. Weniger, gut verwaltete Transaktionen übertreffen unkontrolliertes Volumen. Unsere Abläufe sind darauf ausgelegt, unter wechselnden Marktbedingungen flexibel, liquide und widerstandsfähig zu bleiben.",
+    "missionDescription": "Unsere Mission ist es, Fahrzeuge durch strukturierte Prozesse, sorgfältige Auswahl und strenge operative Disziplin zu beschaffen und zu verwalten, wobei jedes Fahrzeug als verwalteter Vermögenswert und nicht als spekulatives Produkt behandelt wird. Wir konzentrieren uns auf konforme Beschaffung, klare Dokumentation, kontrollierte Ausführung und verantwortungsvollen Kapitaleinsatz. Jede Transaktion wird mit demselben Ziel angegangen: korrekt ausführen, Kapital schützen und zuverlässig liefern.",
+    "visionDescription": "Aufbau eines disziplinierten, in Deutschland ansässigen Automobilhandelsbetriebs, der durch Zuverlässigkeit, Transparenz und konsequente Ausführung definiert ist. West Berg Europe strebt an, ruhig und professionell zu operieren, sich an deutsche Standards zu halten und gleichzeitig langfristiges Vertrauen bei Partnern, Kunden und Stakeholdern aufrechtzuerhalten. Die Vision des Unternehmens ist nicht schnelle Expansion oder öffentliche Sichtbarkeit, sondern stabile Abläufe, Kapitalschutz und vorhersehbare Ergebnisse."
   },
   "company": {
-    "focusTitle": "Unser Ansatz",
+    "focusTitle": "Was uns definiert",
     "focus1": "Deutsche Betriebsstandards",
     "focus2": "Vermögenswertorientierte Entscheidungsfindung",
-    "focus3": "Kurze Haltedauern",
-    "focus4": "Liquiditätsbewusstsein",
-    "focus5": "Klare Verantwortlichkeit",
-    "values": "Wir arbeiten nach einem kapitalfokussierten, vermögenswertorientierten Modell."
+    "focus3": "Kurze Haltedauern und Liquiditätsbewusstsein",
+    "focus4": "Klare Verantwortlichkeit und Rechenschaftspflicht",
+    "focus5": "Prozessdisziplin über Persönlichkeit",
+    "values": "Wir streben kein Wachstum um seiner selbst willen an. Expansion wird nur in Betracht gezogen, wenn sie die operative Stabilität und finanzielle Disziplin stärkt.",
+    "commitment": "Unser Engagement",
+    "commitmentValues": "West Berg Europe verpflichtet sich zu transparenter Kommunikation, verantwortungsvollen Handelspraktiken und langfristiger operativer Integrität. Vertrauen wird durch Ausführung aufgebaut, nicht durch Aussagen."
   },
   "features": {
-    "mainTitle": "DIENSTLEISTUNGEN",
-    "title": "Unsere Premium-Dienstleistungen",
-    "paragraph": "Umfassende Premium-Automobildienstleistungen, die auf Ihre Bedürfnisse zugeschnitten sind.",
+    "mainTitle": "BETRIEBSPHILOSOPHIE",
+    "title": "Wie wir arbeiten",
+    "paragraph": "Das Unternehmen arbeitet nach folgenden Prinzipien, die unseren Ansatz im Automobilhandel definieren.",
     "feature1": {
-      "title": "Premium-Fahrzeugbeschaffung",
-      "description": "Wir finden Ihr Traumauto. Unsere Experten suchen in Deutschland, der Schweiz und Italien nach dem perfekten Premium-Fahrzeug für Sie."
+      "title": "Ruhige Ausführung",
+      "description": "Keine öffentlichen Versprechen, keine übertriebene Positionierung, keine unnötige Exposition. Wir konzentrieren uns auf professionelle Ausführung statt auf Werbung."
     },
     "feature2": {
-      "title": "Premium-Fahrzeugverkaufsunterstützung",
-      "description": "Verkaufen Sie Ihr Premium-Fahrzeug mit Vertrauen. Wir kümmern uns um Preisgestaltung, Marketing und Käuferverbindungen."
+      "title": "Vermögenswert-First-Logik",
+      "description": "Jedes Fahrzeug wird als einsatzbereiter Vermögenswert mit definiertem Risiko, Marge und Ausstiegszeitplan bewertet. Kapitalschutz ist genauso wichtig wie Profitabilität."
     },
     "feature3": {
-      "title": "Fahrzeugtausch",
-      "description": "Tauschen Sie Ihr aktuelles Fahrzeug gegen ein neues ein. Einfacher, schneller und unkomplizierter Tauschprozess mit fairen Bewertungen."
+      "title": "Kurze Haltedauern",
+      "description": "Kapital wird nicht gebunden; es wird wiederverwendet. Wir pflegen Liquiditätsbewusstsein und konzentrieren uns auf effizienten Kapitaleinsatz mit vorhersehbaren Zeitplänen."
     },
     "feature4": {
-      "title": "Logistik",
-      "description": "Sicherer und zuverlässiger Fahrzeugtransport in ganz Europa. Wir übernehmen Abholung, Lieferung und alle Dokumente."
+      "title": "Prozess über Persönlichkeit",
+      "description": "Entscheidungen werden durch Struktur getrieben, nicht durch Emotion. Wir glauben, dass Disziplin Vertrauen schafft und Beständigkeit Glaubwürdigkeit aufbaut."
     }
   },
   "team": {
@@ -112,9 +114,9 @@
     "ceoEmail": "ceo@westberg-eu.de"
   },
   "cta": {
-    "title": "Auf der Suche nach einer Zusammenarbeit? Starten Sie noch heute!",
-    "paragraph": "Kontaktieren Sie uns, um Ihre Premium-Automobilbedürfnisse zu besprechen.",
-    "button": "Jetzt starten"
+    "title": "Suchen Sie professionellen Automobilhandel?",
+    "paragraph": "Kontaktieren Sie uns, um strukturierte Fahrzeugbeschaffung und Vermögensverwaltungsmöglichkeiten zu besprechen.",
+    "button": "Kontaktieren Sie uns"
   },
   "listings": {
     "loading": "Laden...",

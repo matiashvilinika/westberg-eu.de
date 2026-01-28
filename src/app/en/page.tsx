@@ -13,9 +13,9 @@ import { Metadata } from "next";
 const siteName = process.env.SITE_NAME;
 
 export const metadata: Metadata = {
-  title: `West Berg Europe - Premium Automobiles | ${siteName}`,
+  title: `West Berg Europe - Germany-Based Automotive Trading | ${siteName}`,
   description:
-    "West Berg Europe (W.B.E.) GmbH - Premium automobile company specializing in finding, selling, and exchanging premium vehicles. Operating legally and transparently across Germany, Switzerland, and Italy.",
+    "West Berg Europe (W.B.E.) GmbH - A Germany-based automotive trading company operating with disciplined processes, asset-focused logic, and a commitment to reliable execution.",
 };
 
 export default function Home() {

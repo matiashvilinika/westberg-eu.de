@@ -23,6 +23,11 @@ export default function AboutContent() {
       id: "vision",
       title: t("visionTitle"),
       value: "vision"
+    },
+    {
+      id: "commitment",
+      title: tCompany("commitment"),
+      value: "commitment"
     }
   ];
 
@@ -96,6 +101,21 @@ export default function AboutContent() {
           >
             <p className='mb-6 text-base text-dark-text'>
               {t("visionDescription")}
+            </p>
+          </TabPanel>
+        )}
+
+        {activeTab === "commitment" && (
+          <TabPanel
+            title={tCompany("commitment")}
+            image1='/images/about/image-1.jpeg'
+            image1Alt='about image 1'
+            image2='/images/about/image-2.jpeg'
+            image2Alt='about image 2'
+            leftContent
+          >
+            <p className='mb-6 text-base text-dark-text'>
+              {tCompany("commitmentValues")}
             </p>
           </TabPanel>
         )}
