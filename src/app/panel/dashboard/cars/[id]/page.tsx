@@ -12,7 +12,6 @@ interface Car {
   brand: string;
   model: string;
   year: number;
-  price: number;
   mileage: number;
   fuel_type: string;
   transmission: string;
@@ -40,7 +39,6 @@ export default function EditCarPage() {
     brand: "",
     model: "",
     year: new Date().getFullYear(),
-    price: 0,
     mileage: 0,
     fuel_type: "Petrol",
     transmission: "Automatic",
@@ -71,7 +69,6 @@ export default function EditCarPage() {
           brand: data.brand || "",
           model: data.model || "",
           year: data.year || new Date().getFullYear(),
-          price: data.price || 0,
           mileage: data.mileage || 0,
           fuel_type: data.fuel_type || "Petrol",
           transmission: data.transmission || "Automatic",
@@ -455,4 +452,3 @@ export default function EditCarPage() {
     </div>
   );
 }
-

@@ -13,7 +13,7 @@ type ListingDetail = {
   brand?: string;
   model?: string;
   year?: number;
-  price: number;
+  price?: number | null;
   description?: string;
   images: string[];
   mileage?: number;
@@ -100,14 +100,6 @@ export default function ListingDetailPage() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "EUR",
-      maximumFractionDigits: 0,
-    }).format(price);
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -365,13 +357,13 @@ export default function ListingDetailPage() {
           <div className="w-full lg:w-7/12">
             {/* Image Gallery */}
             <div className="mb-6">
-              <div className="relative mb-4 aspect-[4/3] overflow-hidden rounded-2xl bg-stroke/40">
+              <div className="relative mb-4 aspect-[4/3] overflow-hidden rounded-2xl bg-white">
                 {listing.images && listing.images.length > 0 ? (
                   <Image
                     src={listing.images[currentImageIndex]}
                     alt={listing.title}
                     fill
-                    className="object-cover"
+                    className="object-contain p-4"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-dark-text">
@@ -395,8 +387,13 @@ export default function ListingDetailPage() {
                           : "opacity-50 hover:opacity-80 hover:scale-105 shadow-md"
                       }`}
                     >
-                      <div className="w-full h-full rounded-xl overflow-hidden">
-                        <Image src={img} alt={`${listing.title} ${idx + 1}`} fill className="object-cover" />
+                      <div className="w-full h-full rounded-xl overflow-hidden bg-white">
+                        <Image
+                          src={img}
+                          alt={`${listing.title} ${idx + 1}`}
+                          fill
+                          className="object-contain p-2"
+                        />
                       </div>
                     </button>
                   ))}

@@ -17,7 +17,7 @@ CREATE TABLE cars (
   brand TEXT NOT NULL,
   model TEXT NOT NULL,
   year INTEGER NOT NULL,
-  price DECIMAL(12, 2) NOT NULL,
+  price DECIMAL(12, 2),
   mileage INTEGER,
   fuel_type TEXT,
   transmission TEXT,
@@ -39,7 +39,7 @@ CREATE TABLE real_estate (
   property_type TEXT NOT NULL,
   location TEXT NOT NULL,
   address TEXT,
-  price DECIMAL(12, 2) NOT NULL,
+  price DECIMAL(12, 2),
   area_sqm DECIMAL(10, 2),
   bedrooms INTEGER,
   bathrooms INTEGER,
@@ -60,7 +60,7 @@ CREATE TABLE yachts (
   brand TEXT NOT NULL,
   model TEXT NOT NULL,
   year INTEGER NOT NULL,
-  price DECIMAL(12, 2) NOT NULL,
+  price DECIMAL(12, 2),
   length_m DECIMAL(6, 2),
   cabins INTEGER,
   engine_type TEXT,
@@ -81,7 +81,7 @@ CREATE TABLE motorcycles (
   brand TEXT NOT NULL,
   model TEXT NOT NULL,
   year INTEGER NOT NULL,
-  price DECIMAL(12, 2) NOT NULL,
+  price DECIMAL(12, 2),
   mileage INTEGER,
   engine_cc INTEGER,
   color TEXT,
@@ -168,4 +168,3 @@ CREATE POLICY "Admins can update listing images" ON storage.objects FOR UPDATE U
 CREATE POLICY "Admins can delete listing images" ON storage.objects FOR DELETE USING (
   bucket_id = 'listings' AND EXISTS (SELECT 1 FROM admin_users WHERE id = auth.uid())
 );
-

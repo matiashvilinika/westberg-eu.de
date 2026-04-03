@@ -8,7 +8,7 @@ export interface Car {
   brand: string;
   model: string;
   year: number;
-  price: number;
+  price?: number | null;
   mileage: number;
   fuel_type: string;
   transmission: string;
@@ -27,7 +27,7 @@ export interface RealEstate {
   property_type: string;
   location: string;
   address: string;
-  price: number;
+  price?: number | null;
   area_sqm: number;
   bedrooms: number;
   bathrooms: number;
@@ -45,7 +45,7 @@ export interface Yacht {
   brand: string;
   model: string;
   year: number;
-  price: number;
+  price?: number | null;
   length_m: number;
   cabins: number;
   engine_type: string;
@@ -63,7 +63,7 @@ export interface Motorcycle {
   brand: string;
   model: string;
   year: number;
-  price: number;
+  price?: number | null;
   mileage: number;
   engine_cc: number;
   color: string;
@@ -79,4 +79,3 @@ export interface AdminUser {
   role: 'admin' | 'editor';
   created_at: string;
 }
-

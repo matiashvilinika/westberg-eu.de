@@ -13,7 +13,7 @@ type ListingItem = {
   title: string;
   brand?: string;
   model?: string;
-  price: number;
+  price?: number | null;
   images: string[];
   status: string;
 };
@@ -89,27 +89,49 @@ export default function Listings() {
     }
   }, [isMounted]);
 
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat("de-DE", {
-      style: "currency",
-      currency: "EUR",
-      maximumFractionDigits: 0,
-    }).format(price);
+  const getSlidePositions = (itemCount: number, pageSize: number) => {
+    const maxIndex = Math.max(0, itemCount - pageSize);
+    const pageCount = Math.ceil(itemCount / pageSize);
+
+    return Array.from({ length: pageCount }, (_, idx) =>
+      Math.min(idx * pageSize, maxIndex)
+    );
   };
 
-  const handlePrev = (categoryId: string) => {
+  const getActiveSlideIndex = (slidePositions: number[], currentIndex: number) => {
+    let activeIndex = 0;
+
+    slidePositions.forEach((position, idx) => {
+      if (currentIndex >= position) {
+        activeIndex = idx;
+      }
+    });
+
+    return activeIndex;
+  };
+
+  const handlePrev = (categoryId: string, slidePositions: number[]) => {
     setCategories(prev => prev.map(cat => {
       if (cat.id === categoryId) {
-        return { ...cat, currentIndex: Math.max(cat.currentIndex - visibleCount, 0) };
+        const activeSlideIndex = getActiveSlideIndex(slidePositions, cat.currentIndex);
+        const previousIndex = Math.max(activeSlideIndex - 1, 0);
+
+        return { ...cat, currentIndex: slidePositions[previousIndex] ?? 0 };
       }
       return cat;
     }));
   };
 
-  const handleNext = (categoryId: string, maxIndex: number) => {
+  const handleNext = (categoryId: string, slidePositions: number[]) => {
     setCategories(prev => prev.map(cat => {
       if (cat.id === categoryId) {
-        return { ...cat, currentIndex: Math.min(cat.currentIndex + visibleCount, maxIndex) };
+        const activeSlideIndex = getActiveSlideIndex(slidePositions, cat.currentIndex);
+        const nextIndex = Math.min(activeSlideIndex + 1, slidePositions.length - 1);
+
+        return {
+          ...cat,
+          currentIndex: slidePositions[nextIndex] ?? cat.currentIndex,
+        };
       }
       return cat;
     }));
@@ -133,8 +155,14 @@ export default function Listings() {
 
   return (
     <>
-      {categories.map((category) => {
-        const maxIndex = Math.max(0, category.items.length - visibleCount);
+      {categories
+        .filter((category) => category.items.length > 0)
+        .map((category) => {
+        const slidePositions = getSlidePositions(category.items.length, visibleCount);
+        const activeSlideIndex = getActiveSlideIndex(
+          slidePositions,
+          category.currentIndex
+        );
         const visibleItems = category.items.slice(category.currentIndex, category.currentIndex + visibleCount);
 
         return (
@@ -154,115 +182,104 @@ export default function Listings() {
                 </p>
               </div>
 
-              {category.items.length > 0 ? (
-                <>
-                  {/* Items Grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {visibleItems.map((item) => (
-                      <Link
-                        key={item.id}
-                        href={`${localePrefix}/listings/${category.urlType}/${item.id}`}
-                        className="group block overflow-hidden rounded-xl border border-stroke bg-white shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-lg"
-                      >
-                        {/* Image */}
-                        <div className="relative aspect-[4/3] overflow-hidden bg-stroke/40">
-                          {item.images && item.images.length > 0 ? (
-                            <Image
-                              src={item.images[0]}
-                              alt={item.title}
-                              fill
-                              className="object-cover group-hover:scale-105 transition-transform duration-500"
-                            />
-                          ) : (
-                            <div className="w-full h-full flex items-center justify-center text-dark-text">
-                              <svg className="w-16 h-16 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                              </svg>
-                            </div>
-                          )}
+              {/* Items Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {visibleItems.map((item) => (
+                  <Link
+                    key={item.id}
+                    href={`${localePrefix}/listings/${category.urlType}/${item.id}`}
+                    className="group block overflow-hidden rounded-xl border border-stroke bg-white shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-lg"
+                  >
+                    {/* Image */}
+                    <div className="relative aspect-[4/3] overflow-hidden bg-white">
+                      {item.images && item.images.length > 0 ? (
+                        <Image
+                          src={item.images[0]}
+                          alt={item.title}
+                          fill
+                          className="object-contain p-4 transition-transform duration-300"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-dark-text">
+                          <svg className="w-16 h-16 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          </svg>
                         </div>
+                      )}
+                    </div>
 
-                        {/* Content */}
-                        <div className="p-5">
-                          <h3 className="font-heading text-lg font-semibold text-dark dark:text-white mb-2 line-clamp-1 group-hover:text-primary transition-colors">
-                            {item.title}
-                          </h3>
-                          {item.brand && item.model && (
-                            <p className="text-dark-text text-sm mb-3">
-                              {item.brand} {item.model}
-                            </p>
-                          )}
-                          <span className="block w-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white py-2.5 rounded-lg font-medium transition-all duration-300 text-center">
-                            {t("viewDetails")}
-                          </span>
-                        </div>
-                      </Link>
+                    {/* Content */}
+                    <div className="p-5">
+                      <h3 className="font-heading text-lg font-semibold text-dark dark:text-white mb-2 line-clamp-1 group-hover:text-primary transition-colors">
+                        {item.title}
+                      </h3>
+                      {item.brand && item.model && (
+                        <p className="text-dark-text text-sm mb-3">
+                          {item.brand} {item.model}
+                        </p>
+                      )}
+                      <span className="block w-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white py-2.5 rounded-lg font-medium transition-all duration-300 text-center">
+                        {t("viewDetails")}
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+
+              {/* Navigation & Dots */}
+              <div className="flex items-center justify-center gap-6 mt-10">
+                {/* Previous Button */}
+                <button
+                  onClick={() => handlePrev(category.id, slidePositions)}
+                  disabled={activeSlideIndex === 0}
+                  className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 ${
+                    activeSlideIndex === 0
+                      ? "cursor-not-allowed bg-stroke/60 text-dark-text opacity-50"
+                      : "bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/25"
+                  }`}
+                  aria-label="Previous"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+
+                {/* Dots Indicator */}
+                {slidePositions.length > 1 && (
+                  <div className="flex items-center gap-2">
+                    {slidePositions.map((position, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCategories(prev => prev.map(cat => 
+                          cat.id === category.id ? { ...cat, currentIndex: position } : cat
+                        ))}
+                        className={`h-2.5 rounded-full transition-all duration-300 ${
+                          activeSlideIndex === idx
+                            ? "bg-primary w-8"
+                            : "w-2.5 bg-stroke hover:bg-dark/20"
+                        }`}
+                        aria-label={`Go to slide ${idx + 1}`}
+                      />
                     ))}
                   </div>
+                )}
 
-                  {/* Navigation & Dots */}
-                  <div className="flex items-center justify-center gap-6 mt-10">
-                    {/* Previous Button */}
-                    <button
-                      onClick={() => handlePrev(category.id)}
-                      disabled={category.currentIndex === 0}
-                      className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 ${
-                        category.currentIndex === 0
-                          ? "cursor-not-allowed bg-stroke/60 text-dark-text opacity-50"
-                          : "bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/25"
-                      }`}
-                      aria-label="Previous"
-                    >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                      </svg>
-                    </button>
-
-                    {/* Dots Indicator */}
-                    {category.items.length > visibleCount && (
-                      <div className="flex items-center gap-2">
-                        {Array.from({ length: Math.ceil(category.items.length / visibleCount) }).map((_, idx) => (
-                          <button
-                            key={idx}
-                            onClick={() => setCategories(prev => prev.map(cat => 
-                              cat.id === category.id ? { ...cat, currentIndex: idx * visibleCount } : cat
-                            ))}
-                            className={`h-2.5 rounded-full transition-all duration-300 ${
-                              Math.floor(category.currentIndex / visibleCount) === idx
-                                ? "bg-primary w-8"
-                                : "w-2.5 bg-stroke hover:bg-dark/20"
-                            }`}
-                            aria-label={`Go to slide ${idx + 1}`}
-                          />
-                        ))}
-                      </div>
-                    )}
-
-                    {/* Next Button */}
-                    <button
-                      onClick={() => handleNext(category.id, maxIndex)}
-                      disabled={category.currentIndex >= maxIndex}
-                      className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 ${
-                        category.currentIndex >= maxIndex
-                          ? "cursor-not-allowed bg-stroke/60 text-dark-text opacity-50"
-                          : "bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/25"
-                      }`}
-                      aria-label="Next"
-                    >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
-                  </div>
-                </>
-              ) : (
-                /* Empty State - Coming Soon */
-                <div className="flex flex-col items-center justify-center py-16 px-4">
-                  <div className="text-6xl mb-4">{category.icon}</div>
-                  <p className="text-xl font-heading text-dark dark:text-white mb-2">{t("comingSoon")}</p>
-                  <p className="text-dark-text text-center max-w-md">{t("comingSoonDesc")}</p>
-                </div>
-              )}
+                {/* Next Button */}
+                <button
+                  onClick={() => handleNext(category.id, slidePositions)}
+                  disabled={activeSlideIndex >= slidePositions.length - 1}
+                  className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 ${
+                    activeSlideIndex >= slidePositions.length - 1
+                      ? "cursor-not-allowed bg-stroke/60 text-dark-text opacity-50"
+                      : "bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/25"
+                  }`}
+                  aria-label="Next"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
             </div>
           </section>
         );

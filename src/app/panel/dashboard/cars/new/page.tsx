@@ -18,7 +18,6 @@ export default function NewCarPage() {
     brand: "",
     model: "",
     year: new Date().getFullYear(),
-    price: 0,
     mileage: 0,
     fuel_type: "Petrol",
     transmission: "Automatic",
@@ -347,4 +346,3 @@ export default function NewCarPage() {
     </div>
   );
 }
-

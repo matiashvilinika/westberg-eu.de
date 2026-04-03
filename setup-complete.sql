@@ -29,7 +29,7 @@ CREATE TABLE cars (
   brand TEXT NOT NULL,
   model TEXT NOT NULL,
   year INTEGER NOT NULL,
-  price DECIMAL(12, 2) NOT NULL,
+  price DECIMAL(12, 2),
   mileage INTEGER,
   fuel_type TEXT,
   transmission TEXT,
@@ -49,7 +49,7 @@ CREATE TABLE real_estate (
   property_type TEXT NOT NULL,
   location TEXT NOT NULL,
   address TEXT,
-  price DECIMAL(12, 2) NOT NULL,
+  price DECIMAL(12, 2),
   area_sqm DECIMAL(10, 2),
   bedrooms INTEGER,
   bathrooms INTEGER,
@@ -68,7 +68,7 @@ CREATE TABLE yachts (
   brand TEXT NOT NULL,
   model TEXT NOT NULL,
   year INTEGER NOT NULL,
-  price DECIMAL(12, 2) NOT NULL,
+  price DECIMAL(12, 2),
   length_m DECIMAL(6, 2),
   cabins INTEGER,
   engine_type TEXT,
@@ -87,7 +87,7 @@ CREATE TABLE motorcycles (
   brand TEXT NOT NULL,
   model TEXT NOT NULL,
   year INTEGER NOT NULL,
-  price DECIMAL(12, 2) NOT NULL,
+  price DECIMAL(12, 2),
   mileage INTEGER,
   engine_cc INTEGER,
   color TEXT,
@@ -194,4 +194,3 @@ FOR DELETE USING (
 -- STEP 2: After creating the auth user, run this:
 -- INSERT INTO admin_users (id, email, role)
 -- VALUES ('YOUR_USER_ID', 'admin@westberg-eu.de', 'admin');
-
