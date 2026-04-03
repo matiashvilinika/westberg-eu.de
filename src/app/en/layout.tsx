@@ -36,7 +36,8 @@ export default function EnglishLayout({
           <ThemeProvider
             enableSystem={false}
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="light"
+            forcedTheme="light"
           >
             <AuthProvider>
               <ToasterContext />

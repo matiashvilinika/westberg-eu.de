@@ -162,10 +162,10 @@ export default function Listings() {
                       <Link
                         key={item.id}
                         href={`${localePrefix}/listings/${category.urlType}/${item.id}`}
-                        className="group block rounded-xl overflow-hidden transition-all duration-300 border border-white/10 hover:border-primary/30 shadow-lg"
+                        className="group block overflow-hidden rounded-xl border border-stroke bg-white shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-lg"
                       >
                         {/* Image */}
-                        <div className="relative aspect-[4/3] overflow-hidden bg-dark-3">
+                        <div className="relative aspect-[4/3] overflow-hidden bg-stroke/40">
                           {item.images && item.images.length > 0 ? (
                             <Image
                               src={item.images[0]}
@@ -208,7 +208,7 @@ export default function Listings() {
                       disabled={category.currentIndex === 0}
                       className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 ${
                         category.currentIndex === 0
-                          ? "bg-white/5 text-dark-text cursor-not-allowed opacity-50"
+                          ? "cursor-not-allowed bg-stroke/60 text-dark-text opacity-50"
                           : "bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/25"
                       }`}
                       aria-label="Previous"
@@ -230,7 +230,7 @@ export default function Listings() {
                             className={`h-2.5 rounded-full transition-all duration-300 ${
                               Math.floor(category.currentIndex / visibleCount) === idx
                                 ? "bg-primary w-8"
-                                : "bg-white/20 hover:bg-white/40 w-2.5"
+                                : "w-2.5 bg-stroke hover:bg-dark/20"
                             }`}
                             aria-label={`Go to slide ${idx + 1}`}
                           />
@@ -244,7 +244,7 @@ export default function Listings() {
                       disabled={category.currentIndex >= maxIndex}
                       className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 ${
                         category.currentIndex >= maxIndex
-                          ? "bg-white/5 text-dark-text cursor-not-allowed opacity-50"
+                          ? "cursor-not-allowed bg-stroke/60 text-dark-text opacity-50"
                           : "bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/25"
                       }`}
                       aria-label="Next"

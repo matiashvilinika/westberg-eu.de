@@ -39,7 +39,7 @@ const GlobalSearchModal = (props: Props) => {
 
   return (
     <div className="z-99999! backdrop-blur-xs fixed left-0 top-0 flex h-full min-h-screen w-full justify-center bg-[rgba(0,0,0,0.25)] px-4 py-[12vh]">
-      <div className="modal-content dark:bg-dark relative w-full max-w-[600px] overflow-hidden rounded-xl bg-white">
+      <div className="modal-content relative w-full max-w-[600px] overflow-hidden rounded-xl border border-stroke bg-white shadow-xl">
         <InstantSearch
           // insights={false}
           searchClient={algoliaClient}
@@ -48,9 +48,9 @@ const GlobalSearchModal = (props: Props) => {
           <SearchBox
             placeholder="Search Entire Site | Products, Docs, Pages ..."
             classNames={{
-              form: "sticky top-0 z-999 border-b border-stroke dark:border-white/20 dark:bg-black",
+              form: "sticky top-0 z-999 border-b border-stroke bg-white",
               input:
-                "h-[74px] w-full rounded-t-lg pl-[60px] pr-5 text-dark outline-hidden dark:bg-dark dark:text-white",
+                "h-[74px] w-full rounded-t-lg bg-white pl-[60px] pr-5 text-dark outline-hidden",
               submitIcon:
                 "absolute left-0 top-0 flex h-[74px] w-[60px] p-5 items-center justify-center fill-current",
               reset: "hidden",

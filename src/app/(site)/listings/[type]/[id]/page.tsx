@@ -195,7 +195,7 @@ export default function ListingDetailPage() {
         <div className="flex flex-col-reverse lg:flex-row gap-8 lg:gap-12">
           {/* Left Side - Contact Form */}
           <div className="w-full lg:w-5/12">
-            <div className="lg:sticky lg:top-[120px] rounded-2xl p-6 lg:p-8 border border-white/10">
+            <div className="lg:sticky lg:top-[120px] rounded-2xl border border-stroke bg-white p-6 shadow-sm lg:p-8">
               <h2 className="font-heading text-2xl font-semibold text-dark dark:text-white mb-2">
                 Interesse an diesem {getCategoryLabel()}?
               </h2>
@@ -226,7 +226,7 @@ export default function ListingDetailPage() {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 bg-transparent border border-white/20 rounded-lg text-dark dark:text-white placeholder-dark-text focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
+                        className="w-full rounded-lg border border-stroke bg-white px-4 py-3 text-dark placeholder-dark-text transition focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
                         placeholder="Max"
                       />
                     </div>
@@ -240,7 +240,7 @@ export default function ListingDetailPage() {
                         value={formData.surname}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 bg-transparent border border-white/20 rounded-lg text-dark dark:text-white placeholder-dark-text focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
+                        className="w-full rounded-lg border border-stroke bg-white px-4 py-3 text-dark placeholder-dark-text transition focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
                         placeholder="Mustermann"
                       />
                     </div>
@@ -256,7 +256,7 @@ export default function ListingDetailPage() {
                       value={formData.mobile}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-transparent border border-white/20 rounded-lg text-dark dark:text-white placeholder-dark-text focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
+                      className="w-full rounded-lg border border-stroke bg-white px-4 py-3 text-dark placeholder-dark-text transition focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
                       placeholder="+49 123 456 7890"
                     />
                   </div>
@@ -269,7 +269,7 @@ export default function ListingDetailPage() {
                       <button
                         type="button"
                         onClick={() => setDropdownOpen(!dropdownOpen)}
-                        className="w-full px-4 py-3 bg-dark-2 border border-white/20 rounded-lg text-white text-left focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition flex items-center justify-between"
+                        className="flex w-full items-center justify-between rounded-lg border border-stroke bg-white px-4 py-3 text-left text-dark transition focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
                       >
                         <span>{formData.customerType === "individual" ? "Privatperson" : "Geschäftskunde"}</span>
                         <svg 
@@ -283,14 +283,14 @@ export default function ListingDetailPage() {
                       </button>
                       
                       {dropdownOpen && (
-                        <div className="absolute z-50 w-full mt-2 bg-dark rounded-lg border border-white/20 shadow-2xl overflow-hidden">
+                        <div className="absolute z-50 mt-2 w-full overflow-hidden rounded-lg border border-stroke bg-white shadow-xl">
                           <button
                             type="button"
                             onClick={() => {
                               setFormData(prev => ({ ...prev, customerType: "individual" }));
                               setDropdownOpen(false);
                             }}
-                            className="w-full px-4 py-3 text-left text-white bg-dark hover:bg-primary/20 transition block"
+                            className="block w-full px-4 py-3 text-left text-dark transition hover:bg-primary/10"
                           >
                             Privatperson
                           </button>
@@ -300,7 +300,7 @@ export default function ListingDetailPage() {
                               setFormData(prev => ({ ...prev, customerType: "business" }));
                               setDropdownOpen(false);
                             }}
-                            className="w-full px-4 py-3 text-left text-white bg-dark hover:bg-primary/20 transition block"
+                            className="block w-full px-4 py-3 text-left text-dark transition hover:bg-primary/10"
                           >
                             Geschäftskunde
                           </button>
@@ -318,7 +318,7 @@ export default function ListingDetailPage() {
                       name="address"
                       value={formData.address}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-transparent border border-white/20 rounded-lg text-dark dark:text-white placeholder-dark-text focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
+                      className="w-full rounded-lg border border-stroke bg-white px-4 py-3 text-dark placeholder-dark-text transition focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
                       placeholder="Straße, PLZ Stadt"
                     />
                   </div>
@@ -333,7 +333,7 @@ export default function ListingDetailPage() {
                       onChange={handleInputChange}
                       required
                       rows={4}
-                      className="w-full px-4 py-3 bg-transparent border border-white/20 rounded-lg text-dark dark:text-white placeholder-dark-text focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition resize-none"
+                      className="w-full resize-none rounded-lg border border-stroke bg-white px-4 py-3 text-dark placeholder-dark-text transition focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
                       placeholder="Ihre Nachricht an uns..."
                     />
                   </div>
@@ -369,7 +369,7 @@ export default function ListingDetailPage() {
           <div className="w-full lg:w-7/12">
             {/* Image Gallery */}
             <div className="mb-6">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-dark-3 mb-4">
+              <div className="relative mb-4 aspect-[4/3] overflow-hidden rounded-2xl bg-stroke/40">
                 {listing.images && listing.images.length > 0 ? (
                   <Image
                     src={listing.images[currentImageIndex]}
@@ -424,7 +424,7 @@ export default function ListingDetailPage() {
             </div>
 
             {/* Specifications */}
-            <div className="rounded-2xl p-6 border border-white/10 mb-6">
+            <div className="mb-6 rounded-2xl border border-stroke bg-white p-6 shadow-sm">
               <h3 className="font-heading text-lg font-semibold text-dark dark:text-white mb-4">
                 Spezifikationen
               </h3>
@@ -581,7 +581,7 @@ export default function ListingDetailPage() {
 
             {/* Description */}
             {listing.description && (
-              <div className="rounded-2xl p-6 border border-white/10">
+              <div className="rounded-2xl border border-stroke bg-white p-6 shadow-sm">
                 <h3 className="font-heading text-lg font-semibold text-dark dark:text-white mb-4">
                   Beschreibung
                 </h3>
@@ -596,4 +596,3 @@ export default function ListingDetailPage() {
     </div>
   );
 }
-

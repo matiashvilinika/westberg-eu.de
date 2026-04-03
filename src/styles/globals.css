@@ -27,7 +27,7 @@ layer(base);
   --color-dark: #111722;
   --color-stroke: #e5e7eb;
 
-  --background-image-noise-pattern: url('/images/NoisePattern.svg');
+  --background-image-noise-pattern: url('/images/NoisePatternLight.svg');
 
   --drop-shadow-light: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.1));
 }
@@ -193,12 +193,13 @@ layer(base);
   }
 
   body {
-    @apply font-body;
+    @apply bg-white font-body text-dark;
   }
 }
 
 @layer components {
   html {
-    @apply scroll-smooth;
+    @apply scroll-smooth bg-white;
+    color-scheme: light;
   }
 }

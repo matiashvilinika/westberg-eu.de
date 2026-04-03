@@ -8,7 +8,6 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import GlobalSearchModal from "../GlobalSearch";
-import ThemeToggler from "./ThemeToggler";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
@@ -158,17 +157,13 @@ export default function Navbar() {
           </div>
 
             <div className="absolute right-5 top-1/2 z-50 flex -translate-y-1/2 items-center space-x-3 lg:static lg:ml-4 lg:translate-y-0 xl:ml-6">
-              <div className="flex items-center justify-end">
+            <div className="flex items-center justify-end">
               {/* Search hidden and disabled */}
               <button
                 aria-hidden="true"
                 tabIndex={-1}
                 className="hidden h-10 w-10"
               />
-
-              <div className="hidden relative flex h-10 w-10 items-center justify-center">
-                <ThemeToggler />
-              </div>
               <LanguageSwitcher />
             </div>
 
