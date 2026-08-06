@@ -197,6 +197,7 @@ export default function Listings() {
                           src={item.images[0]}
                           alt={item.title}
                           fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                           className="object-contain p-4 transition-transform duration-300"
                         />
                       ) : (
@@ -218,7 +219,7 @@ export default function Listings() {
                           {item.brand} {item.model}
                         </p>
                       )}
-                      <span className="block w-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white py-2.5 rounded-lg font-medium transition-all duration-300 text-center">
+                      <span className="block w-full bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white py-2.5 rounded-lg font-medium transition-all duration-300 text-center">
                         {t("viewDetails")}
                       </span>
                     </div>
@@ -235,7 +236,7 @@ export default function Listings() {
                   className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 ${
                     activeSlideIndex === 0
                       ? "cursor-not-allowed bg-stroke/60 text-dark-text opacity-50"
-                      : "bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/25"
+                      : "bg-accent text-white hover:bg-accent/90 shadow-lg shadow-accent/25"
                   }`}
                   aria-label="Previous"
                 >
@@ -255,7 +256,7 @@ export default function Listings() {
                         ))}
                         className={`h-2.5 rounded-full transition-all duration-300 ${
                           activeSlideIndex === idx
-                            ? "bg-primary w-8"
+                            ? "bg-accent w-8"
                             : "w-2.5 bg-stroke hover:bg-dark/20"
                         }`}
                         aria-label={`Go to slide ${idx + 1}`}
@@ -271,7 +272,7 @@ export default function Listings() {
                   className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 ${
                     activeSlideIndex >= slidePositions.length - 1
                       ? "cursor-not-allowed bg-stroke/60 text-dark-text opacity-50"
-                      : "bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/25"
+                      : "bg-accent text-white hover:bg-accent/90 shadow-lg shadow-accent/25"
                   }`}
                   aria-label="Next"
                 >

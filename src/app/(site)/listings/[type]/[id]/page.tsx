@@ -282,7 +282,7 @@ export default function ListingDetailPage() {
                               setFormData(prev => ({ ...prev, customerType: "individual" }));
                               setDropdownOpen(false);
                             }}
-                            className="block w-full px-4 py-3 text-left text-dark transition hover:bg-primary/10"
+                            className="block w-full px-4 py-3 text-left text-dark transition hover:bg-accent/10"
                           >
                             Privatperson
                           </button>
@@ -292,7 +292,7 @@ export default function ListingDetailPage() {
                               setFormData(prev => ({ ...prev, customerType: "business" }));
                               setDropdownOpen(false);
                             }}
-                            className="block w-full px-4 py-3 text-left text-dark transition hover:bg-primary/10"
+                            className="block w-full px-4 py-3 text-left text-dark transition hover:bg-accent/10"
                           >
                             Geschäftskunde
                           </button>
@@ -333,7 +333,7 @@ export default function ListingDetailPage() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full py-4 bg-primary hover:bg-primary/90 disabled:bg-primary/50 text-white font-heading font-medium rounded-lg transition duration-300 flex items-center justify-center gap-2"
+                    className="w-full py-4 bg-accent hover:bg-accent/90 disabled:bg-accent/50 text-white font-heading font-medium rounded-lg transition duration-300 flex items-center justify-center gap-2"
                   >
                     {submitting ? (
                       <>

@@ -6,11 +6,11 @@ export default function Support() {
   const t = useTranslations("support");
 
   return (
-    <section id="support" className="pt-14 sm:pt-20 lg:pt-[130px]">
+    <section id="support" className="pt-14 sm:pt-20 lg:pt-[130px] bg-accent">
       <div className="px-4 xl:container">
         <div className="-mx-4 flex flex-wrap justify-center">
           <div className="w-full px-4 xl:w-10/12">
-            <div className="flex flex-wrap items-center border-b pb-14 lg:pb-0 dark:border-[#2E333D]">
+            <div className="flex flex-wrap items-center border-b border-[#102542] pb-14 lg:pb-0">
               <div className="w-full px-4 lg:w-1/2">
                 <div className="relative mb-12 max-w-[500px] pt-6 md:mb-14 lg:pt-16">
                   <span className="title left-0! translate-x-0!">
@@ -276,7 +276,7 @@ export default function Support() {
               </div>
 
               <div className="w-full px-4">
-                <button className="bg-primary font-heading hover:bg-primary/90 flex w-full items-center justify-center rounded-sm px-8 py-[14px] text-base text-white">
+                <button className="bg-accent font-heading hover:bg-accent/90 flex w-full items-center justify-center rounded-none px-8 py-[14px] text-base text-white">
                   Send Message
                 </button>
               </div>

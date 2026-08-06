@@ -33,7 +33,7 @@ export default function LanguageSwitcher() {
         aria-label="Deutsch"
         onClick={() => switchTo("de")}
         disabled={isPending}
-        className={`font-heading text-sm ${currentLocale === "de" ? "text-primary" : "text-dark-text hover:text-primary dark:text-white"}`}
+        className={`font-heading text-sm bg-transparent ${currentLocale === "de" ? "text-accent" : "text-dark-text hover:text-accent dark:text-white"}`}
       >
         DE
       </button>
@@ -42,7 +42,7 @@ export default function LanguageSwitcher() {
         aria-label="English"
         onClick={() => switchTo("en")}
         disabled={isPending}
-        className={`font-heading text-sm ${currentLocale === "en" ? "text-primary" : "text-dark-text hover:text-primary dark:text-white"}`}
+        className={`font-heading text-sm bg-transparent ${currentLocale === "en" ? "text-accent" : "text-dark-text hover:text-accent dark:text-white"}`}
       >
         EN
       </button>

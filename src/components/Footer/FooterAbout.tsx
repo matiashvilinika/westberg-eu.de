@@ -9,20 +9,14 @@ export default function FooterAbout() {
 
   return (
     <div className="mb-20 max-w-[330px]">
+      {/* Logo sized so the lockup keeps its required clear space (X = half the lockup height) on every side */}
       <Link href="/" className="mb-6 inline-block">
         <Image
-          src="/images/logo/logo-dark.svg"
-          alt="logo"
-          width={215}
-          height={50}
-          className="hidden dark:block"
-        />
-        <Image
-          src="/images/logo/logo-light.svg"
-          alt="logo"
-          width={215}
-          height={50}
-          className="dark:hidden"
+          src="/images/logo/logo-dark-horizontal.svg"
+          alt="West Berg Europe"
+          width={389}
+          height={80}
+          className="h-9 w-auto"
         />
       </Link>
 

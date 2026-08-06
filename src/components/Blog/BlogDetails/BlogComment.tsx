@@ -87,7 +87,7 @@ export default function BlogComment() {
           </div>
 
           <div className="w-full px-4">
-            <button className="bg-primary font-heading hover:bg-primary/90 flex items-center justify-center rounded-sm px-8 py-[14px] text-base text-white">
+            <button className="bg-accent font-heading hover:bg-accent/90 flex items-center justify-center rounded-none px-8 py-[14px] text-base text-white">
               Submit Comment
             </button>
           </div>

@@ -32,7 +32,7 @@ export default function SinglePortfolio({
           <div className="pl-4 sm:pl-5 lg:pl-4 xl:pl-5">
             <a
               href="#"
-              className="dark:hover:us-bg-primary hover:bg-primary flex size-10 items-center justify-center rounded-full bg-[#f8f8f8]/[15%] text-white"
+              className="dark:hover:us-bg-primary hover:bg-accent flex size-10 items-center justify-center rounded-full bg-[#f8f8f8]/[15%] text-white"
             >
               <svg
                 width="20"

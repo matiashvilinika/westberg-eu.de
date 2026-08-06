@@ -9,7 +9,7 @@ export default function Team() {
   const t = useTranslations("team");
 
   return (
-    <section id="team" className="pt-14 sm:pt-20 lg:pt-[130px]">
+    <section id="team" className="pt-14 sm:pt-20 lg:pt-[130px] bg-[#f4f5f3]">
       <div className="px-4 xl:container">
         <SectionTitle
           mainTitle={t("mainTitle")}

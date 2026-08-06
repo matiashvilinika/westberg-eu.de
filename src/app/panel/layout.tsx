@@ -1,7 +1,18 @@
 import "@/styles/globals.css";
-import { Inter } from "next/font/google";
+import { Archivo, Heebo } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const archivo = Archivo({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-archivo",
+});
+
+const heebo = Heebo({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-heebo",
+});
 
 export const metadata = {
   title: "Admin Panel | West Berg Europe",
@@ -15,7 +26,7 @@ export default function AdminRootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} bg-slate-900 text-white`} suppressHydrationWarning>
+      <body className={`${archivo.variable} ${heebo.variable} bg-slate-900 text-white`} suppressHydrationWarning>
         {children}
       </body>
     </html>

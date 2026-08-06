@@ -19,7 +19,7 @@ export default function Error() {
             </p>
             <Link
               href="/"
-              className="inline-flex items-center justify-center rounded-sm bg-primary px-8 py-[14px] text-sm font-semibold text-white"
+              className="inline-flex items-center justify-center rounded-none bg-accent px-8 py-[14px] text-sm font-semibold text-white"
             >
               {" "}
               Back to Home{" "}

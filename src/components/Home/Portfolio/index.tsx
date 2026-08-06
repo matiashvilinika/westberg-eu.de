@@ -63,7 +63,7 @@ export default function Portfolio() {
           <div className='w-full pt-10 text-center'>
             <a
               href='#'
-              className='bg-primary font-heading hover:bg-primary/90 inline-flex items-center rounded-sm px-8 py-[14px] text-base text-white'
+              className='bg-accent font-heading hover:bg-accent/90 inline-flex items-center rounded-none px-8 py-[14px] text-base text-white'
             >
               See More Projects
               <span className='pl-3'>

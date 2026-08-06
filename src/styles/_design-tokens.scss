@@ -1,0 +1,78 @@
+// Core palette
+$color-navy-950: #0C121D;
+$color-navy-900: #121830;
+$color-navy-800: #1C3360;
+$color-navy-700: #273E7F;
+$color-navy-600: #324F9D;
+$color-navy-500: #4968B9;
+$color-navy-400: #6A88C4;
+$color-navy-300: #8BA8D0;
+$color-navy-200: #B1C4E0;
+$color-navy-100: #D7E1F2;
+$color-navy-50: #EFF4FB;
+
+$color-cyan-950: #0A4F60;
+$color-cyan-900: #0B5F72;
+$color-cyan-800: #0E7B8E;
+$color-cyan-700: #2196A8;
+$color-cyan-600: #2EA3BC;
+$color-cyan-500: #43A5BE;
+$color-cyan-400: #6AB9D0;
+$color-cyan-300: #96CFDF;
+$color-cyan-200: #C2E3EE;
+$color-cyan-100: #E6F3F7;
+$color-cyan-50: #F3FAFC;
+
+$color-sand-950: #56412E;
+$color-sand-900: #7A5F48;
+$color-sand-800: #9F7E61;
+$color-sand-700: #B59476;
+$color-sand-600: #C7A987;
+$color-sand-500: #C9AB81;
+$color-sand-400: #D9BB96;
+$color-sand-300: #E8D2B4;
+$color-sand-200: #F1E4CD;
+$color-sand-100: #F6EEE4;
+$color-sand-50: #FBF7F0;
+
+$color-slate-950: #161F2F;
+$color-slate-900: #212B3D;
+$color-slate-800: #2E3A4D;
+$color-slate-700: #4C5568;
+$color-slate-600: #6B7280;
+$color-slate-500: #848E9F;
+$color-slate-400: #9AA3B0;
+$color-slate-300: #B8C0CC;
+$color-slate-200: #D4D9E1;
+$color-slate-100: #EAEDF2;
+$color-slate-50: #F6F8FB;
+
+$color-cream-950: #7A6D5E;
+$color-cream-900: #A39282;
+$color-cream-800: #BDB1A4;
+$color-cream-700: #D0C6B8;
+$color-cream-600: #D8CFC0;
+$color-cream-500: #E2D9CE;
+$color-cream-400: #E9E1D8;
+$color-cream-300: #EFE9DD;
+$color-cream-200: #F4F0E8;
+$color-cream-100: #F9F5EF;
+$color-cream-50: #FEFCF9;
+
+// Semantic tokens
+$color-background: $color-cream-50;
+$color-surface: #ffffff;
+$color-card: $color-cream-100;
+$color-primary: $color-navy-900;
+$color-primary-hover: $color-navy-950;
+$color-secondary: $color-sand-500;
+$color-accent: $color-cyan-500;
+$color-text-primary: $color-navy-950;
+$color-text-secondary: $color-slate-700;
+$color-text-muted: $color-slate-500;
+$color-border: $color-slate-200;
+$color-divider: $color-slate-300;
+$color-success: #1F7A53;
+$color-warning: #B67D33;
+$color-error: #B43957;
+$color-info: $color-cyan-600;

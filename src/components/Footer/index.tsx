@@ -24,7 +24,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="pt-14 sm:pt-20 lg:pt-[130px]">
+    <footer className="bg-[#f4f5f3] pt-14 sm:pt-20 lg:pt-[130px]">
       <div className="px-4 xl:container">
         <div className="-mx-4 flex flex-wrap justify-between">
           <div className="w-full px-4 sm:w-1/2 md:w-5/12 lg:w-4/12 xl:w-4/12">

@@ -38,7 +38,7 @@ export default function Features() {
   return (
     <section
       id='features'
-      className='pt-14 sm:pt-20 lg:pt-[130px]'
+      className='pt-14 sm:pt-20 lg:pt-[130px] bg-[#f4f5f3]'
     >
       <div className='px-4 xl:container'>
         <SectionTitle

@@ -5,14 +5,25 @@ import "@/styles/globals.css";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "next-themes";
-import { Inter } from "next/font/google";
+import { Archivo, Heebo } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 import AuthProvider from "../context/AuthContext";
 import ToasterContext from "../context/ToastContext";
 import { NextIntlClientProvider } from "next-intl";
 import enMessages from "../../../messages/en.json";
 
-const inter = Inter({ subsets: ["latin"] });
+const archivo = Archivo({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-archivo",
+});
+
+const heebo = Heebo({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-heebo",
+});
 
 export default function EnglishLayout({
   children,
@@ -21,7 +32,10 @@ export default function EnglishLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className} suppressHydrationWarning>
+      <body
+        className={`${archivo.variable} ${heebo.variable}`}
+        suppressHydrationWarning
+      >
         <NextTopLoader
           color="#006BFF"
           crawlSpeed={300}

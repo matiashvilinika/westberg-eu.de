@@ -44,7 +44,7 @@
   --color-cyan-900: #07525d;
   --color-cyan-800: #087282;
   --color-cyan-700: #1495aa;
-  --color-cyan-600: #007c92;
+  --color-cyan-600: #24aec5;
   --color-cyan-500: #3bc0d8;
   --color-cyan-400: #62cde0;
   --color-cyan-300: #91dbe8;
@@ -69,7 +69,7 @@
   --color-slate-800: #394250;
   --color-slate-700: #566171;
   --color-slate-600: #6d7887;
-  --color-slate-500: #5b6777;
+  --color-slate-500: #8994a3;
   --color-slate-400: #a8b1bd;
   --color-slate-300: #c5ccd5;
   --color-slate-200: #dce1e7;
@@ -100,13 +100,13 @@
   --color-accent: var(--color-cyan-500);
   --color-text-primary: var(--color-navy-950);
   --color-text-secondary: var(--color-slate-700);
-  --color-text-muted: var(--color-slate-700);
+  --color-text-muted: var(--color-slate-500);
   --color-border: var(--color-slate-200);
   --color-divider: var(--color-slate-300);
   --color-success: #1f7a53;
-  --color-warning: #8e5814;
+  --color-warning: #b67d33;
   --color-error: #b43957;
-  --color-info: var(--color-cyan-800);
+  --color-info: var(--color-cyan-600);
   --color-stroke: #e5e7eb;
 
   --background-image-noise-pattern: url('/images/NoisePatternLight.svg');
