@@ -77,8 +77,8 @@ export default function LegalNoticePage() {
               {/* Back to Home Button */}
               <div className="pt-6">
                 <Link
-                  href="/en"
-                  className="inline-flex items-center justify-center rounded-sm bg-primary px-8 py-[14px] text-sm font-semibold text-white hover:bg-primary/90"
+                  href="/"
+                  className="inline-flex items-center justify-center rounded-sm bg-accent px-8 py-[14px] text-sm font-semibold text-white hover:bg-accent/90"
                 >
                   ← Back to Home
                 </Link>

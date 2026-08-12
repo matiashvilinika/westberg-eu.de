@@ -1,4 +1,18 @@
 import "@/styles/globals.css";
+import { Archivo, Heebo } from "next/font/google";
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-archivo",
+});
+
+const heebo = Heebo({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-heebo",
+});
 
 export const metadata = {
   title: "Coming Soon - WESTBERG",
@@ -14,7 +28,7 @@ export default function ComingSoonLayout({
     <html lang="en" suppressHydrationWarning className="dark">
       <body 
         suppressHydrationWarning 
-        className="bg-[#030014] text-white min-h-screen overflow-x-hidden"
+        className={`${archivo.variable} ${heebo.variable} bg-[#030014] text-white min-h-screen overflow-x-hidden`}
         style={{ backgroundColor: '#030014' }}
       >
         {children}

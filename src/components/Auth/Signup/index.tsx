@@ -294,7 +294,7 @@ export default function Signup() {
                       </label>
                     </div>
                     <div className="w-full px-4">
-                      <button className="bg-primary flex items-center justify-center rounded-sm px-14 py-[14px] text-sm font-semibold text-white">
+                      <button className="bg-accent flex items-center justify-center rounded-none px-14 py-[14px] text-sm font-semibold text-white">
                         Create Account
                       </button>
                     </div>

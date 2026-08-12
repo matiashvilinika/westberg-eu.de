@@ -85,7 +85,7 @@ export default function SinglePricing({ price }: any) {
         </ul>
         <button
           onClick={handleSubscription}
-          className={`inline-flex items-center rounded-sm px-8 py-[14px] font-heading text-base text-white duration-200 ${price?.nickname === "Professional" ? "bg-primary hover:bg-primary/90" : "bg-dark hover:bg-dark/90"}`}
+          className={`inline-flex items-center rounded-none px-8 py-[14px] font-heading text-base text-white duration-200 ${price?.nickname === "Professional" ? "bg-primary hover:bg-primary/90" : "bg-dark hover:bg-dark/90"}`}
         >
           Join This Plan
           <span className="pl-3">

@@ -12,7 +12,7 @@ export default function FooterLinkItem({ linkItem }: { linkItem: FooterLink }) {
         {linkItem?.title}
 
         {linkItem?.badge && (
-          <span className="ml-4 rounded-sm bg-primary px-2 py-1 font-heading text-xs text-white">
+          <span className="ml-4 rounded-sm bg-accent px-2 py-1 font-heading text-xs text-white">
             {linkItem?.badge?.text}
           </span>
         )}

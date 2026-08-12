@@ -15,6 +15,7 @@ export default function SingleBlog({ blog }: { blog: Blog }) {
             src={imageBuilder(mainImage).url()}
             alt={title}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
             className="size-full object-cover duration-300 group-hover:scale-110"
           />
         ) : (
@@ -22,9 +23,9 @@ export default function SingleBlog({ blog }: { blog: Blog }) {
         )}
 
         {blog.tags && (
-          <Link
+            <Link
             href={`/blog/tag/${blog?.tags[0]}`}
-            className="bg-primary font-heading absolute left-5 top-5 z-10 rounded-sm px-4 py-[6px] text-sm font-medium text-white"
+            className="bg-accent font-heading absolute left-5 top-5 z-10 rounded-sm px-4 py-[6px] text-sm font-medium text-white"
           >
             {blog?.tags[0]}
           </Link>

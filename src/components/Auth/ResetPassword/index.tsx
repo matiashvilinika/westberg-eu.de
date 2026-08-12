@@ -94,7 +94,7 @@ const ResetPassword = ({ token }: { token: string }) => {
 
                 <button
                   aria-label='login with email and password'
-                  className={`inline-flex items-center justify-center rounded bg-primary px-14 py-[14px] text-sm font-semibold text-white ${
+                  className={`inline-flex items-center justify-center rounded bg-accent px-14 py-[14px] text-sm font-semibold text-white ${
                     error.length > 0 || !data.password
                       ? "bg-gray-600"
                       : "bg-black  "

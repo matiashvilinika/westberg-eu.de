@@ -38,13 +38,14 @@ export default function Brands() {
                   />
                 </div>
 
-                <div className='mx-4 flex w-[300px] items-center justify-center py-5 2xl:w-[360px]'>
+                <div className='mx-4 flex w-[300px] items-center justify-center py-5 px-4 2xl:w-[360px]'>
                   <Image
                     src='/images/brands/landrover.svg'
                     alt='Land Rover'
-                    className='h-20 w-full object-contain'
+                    className='h-[56px] max-w-[160px] w-auto object-contain'
                     width={360}
                     height={80}
+                    style={{ height: 56, width: 'auto' }}
                   />
                 </div>
 

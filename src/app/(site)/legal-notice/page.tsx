@@ -78,7 +78,7 @@ export default function LegalNoticePage() {
               <div className="pt-6">
                 <Link
                   href="/"
-                  className="inline-flex items-center justify-center rounded-sm bg-primary px-8 py-[14px] text-sm font-semibold text-white hover:bg-primary/90"
+                  className="inline-flex items-center justify-center rounded-none bg-accent px-8 py-[14px] text-sm font-semibold text-white hover:bg-accent/90"
                 >
                   ← Back to Home
                 </Link>

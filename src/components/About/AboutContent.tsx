@@ -35,12 +35,12 @@ export default function AboutContent() {
 
   return (
     <>
-      <div className='tabButtons flex w-full items-center justify-around'>
+      <div className='tabButtons flex flex-wrap w-full items-center justify-center gap-2'>
         {tabButtons.map((tabButton) => (
           <button
             key={tabButton?.id}
             onClick={() => setActiveTab(tabButton?.value)}
-            className={`w-full border-b px-2 pb-6 pt-8 font-heading text-base font-medium lg:pb-7 lg:pt-9 ${activeTab === tabButton?.value ? "border-primary text-primary dark:border-primary" : "hover:border-primary hover:text-primary dark:border-[#4B4E56] dark:text-white dark:hover:border-primary"}`}
+            className={`flex-1 min-w-[120px] max-w-[250px] border-b px-2 pb-4 pt-6 font-heading text-xs sm:text-sm font-medium lg:pb-6 lg:pt-8 whitespace-nowrap ${activeTab === tabButton?.value ? "border-primary text-primary dark:border-primary" : "hover:border-primary hover:text-primary dark:border-[#4B4E56] dark:text-white dark:hover:border-primary"}`}
           >
             {tabButton?.title}
           </button>
@@ -55,14 +55,14 @@ export default function AboutContent() {
             image2='/images/about/image-2.jpeg'
             image2Alt='about image 2'
           >
-            <p className='mb-6 text-base text-dark-text'>
+            <p className='mb-6 text-sm lg:text-base text-dark-text'>
               {t("aboutDescription")}
             </p>
             <div className='mb-6'>
-              <h4 className='mb-4 font-heading text-lg font-semibold text-dark-text dark:text-white'>
+              <h4 className='mb-4 font-heading text-base font-semibold text-dark-text dark:text-white'>
                 {tCompany("focusTitle")}:
               </h4>
-              <ul className='list-disc pl-6 space-y-2 text-base text-dark-text'>
+              <ul className='list-disc pl-6 space-y-2 text-sm lg:text-base text-dark-text'>
                 <li>{tCompany("focus1")}</li>
                 <li>{tCompany("focus2")}</li>
                 <li>{tCompany("focus3")}</li>
@@ -70,7 +70,7 @@ export default function AboutContent() {
                 <li>{tCompany("focus5")}</li>
               </ul>
             </div>
-            <p className='text-base text-dark-text font-medium'>
+            <p className='text-sm lg:text-base text-dark-text font-medium'>
               {tCompany("values")}
             </p>
           </TabPanel>

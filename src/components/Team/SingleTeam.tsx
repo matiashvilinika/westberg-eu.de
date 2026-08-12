@@ -10,6 +10,7 @@ export default function SingleTeam({ team }: { team: Team }) {
             src={team?.image}
             alt={team?.name}
             fill
+            sizes="(max-width: 768px) 300px, (max-width: 1024px) 50vw, 370px"
             className="w-full object-cover"
           />
         </div>

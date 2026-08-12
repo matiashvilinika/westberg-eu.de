@@ -76,7 +76,7 @@ const ForgetPassword = () => {
 
                 <button
                   aria-label="reset password"
-                  className="inline-flex items-center justify-center rounded-sm bg-primary px-14 py-[14px] text-sm font-semibold text-white"
+                  className="inline-flex items-center justify-center rounded-none bg-accent px-14 py-[14px] text-sm font-semibold text-white"
                   type="submit"
                 >
                   Send Reset Link

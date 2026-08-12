@@ -57,8 +57,8 @@ export default function CallToAction() {
                   y2="628.947"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stopColor="#ABBCFF" />
-                  <stop offset="0.859375" stopColor="#4A6CF7" />
+                  <stop stopColor="#C2E3EE" />
+                  <stop offset="0.859375" stopColor="#43A5BE" />
                 </linearGradient>
               </defs>
             </svg>
@@ -79,7 +79,7 @@ export default function CallToAction() {
               <div className="text-center lg:text-right">
                 <a
                   href="#support"
-                  className="bg-primary font-heading hover:bg-primary/90 inline-flex items-center rounded-sm px-8 py-[14px] text-base text-white"
+                  className="bg-accent font-heading hover:bg-accent/90 inline-flex items-center rounded-none px-8 py-[14px] text-base text-white"
                 >
                   {t("button")}
                 </a>
