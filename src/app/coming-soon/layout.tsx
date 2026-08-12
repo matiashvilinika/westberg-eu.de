@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import FaviconLinks from "@/components/Common/FaviconLinks";
 import { Archivo, Heebo } from "next/font/google";
 
 const archivo = Archivo({
@@ -31,6 +32,7 @@ export default function ComingSoonLayout({
         className={`${archivo.variable} ${heebo.variable} bg-[#030014] text-white min-h-screen overflow-x-hidden`}
         style={{ backgroundColor: '#030014' }}
       >
+        <FaviconLinks />
         {children}
       </body>
     </html>

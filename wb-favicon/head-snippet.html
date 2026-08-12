@@ -1,0 +1,27 @@
+<!-- WB favicons — paste inside <head>. Assumes files live at the site root. -->
+
+<!-- Modern browsers: single SVG that follows the OS light/dark setting -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+<!-- Legacy fallback (16/32/48 in one file) -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+
+<!-- PNG fallbacks, theme-aware (Chromium + Safari honour `media`) -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-dark.png" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16-dark.png" media="(prefers-color-scheme: dark)">
+
+<!-- iOS home screen -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- Safari pinned tab (older Safari) -->
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#202A38">
+
+<!-- PWA / Android -->
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-config" content="/browserconfig.xml">
+
+<!-- Browser UI colour -->
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#202A38" media="(prefers-color-scheme: dark)">

@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import FaviconLinks from "@/components/Common/FaviconLinks";
 import { Archivo, Heebo } from "next/font/google";
 
 const archivo = Archivo({
@@ -27,6 +28,7 @@ export default function AdminRootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${archivo.variable} ${heebo.variable} bg-slate-900 text-white`} suppressHydrationWarning>
+        <FaviconLinks />
         {children}
       </body>
     </html>
