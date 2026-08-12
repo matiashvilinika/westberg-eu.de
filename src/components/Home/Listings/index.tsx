@@ -219,7 +219,7 @@ export default function Listings() {
                           {item.brand} {item.model}
                         </p>
                       )}
-                      <span className="block w-full bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white py-2.5 rounded-lg font-medium transition-all duration-300 text-center">
+                      <span className="block w-full bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white py-2.5 rounded-none font-medium transition-all duration-300 text-center">
                         {t("viewDetails")}
                       </span>
                     </div>
