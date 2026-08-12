@@ -42,10 +42,10 @@ export default function Hero() {
           <div className="relative">
             <div className="border-border overflow-hidden border bg-navy-950 shadow-[0_40px_120px_-40px_rgba(15,23,42,0.18)]">
               <Image
-                src="/images/hero/image-2.webp"
+                src="/images/hero/ferrari.webp"
                 alt="West Berg Europe hero"
-                width={920}
-                height={700}
+                width={2448}
+                height={1790}
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="h-[380px] w-full object-cover sm:h-[460px] lg:h-[520px]"

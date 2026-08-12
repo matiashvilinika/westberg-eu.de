@@ -188,7 +188,7 @@ export default function Listings() {
                   <Link
                     key={item.id}
                     href={`${localePrefix}/listings/${category.urlType}/${item.id}`}
-                    className="group block overflow-hidden rounded-xl border border-stroke bg-white shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-lg"
+                    className="group block overflow-hidden rounded-none border border-stroke bg-white shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-lg"
                   >
                     {/* Image */}
                     <div className="relative aspect-[4/3] overflow-hidden bg-white">
