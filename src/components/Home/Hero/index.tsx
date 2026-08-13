@@ -40,7 +40,7 @@ export default function Hero() {
           </div>
 
           <div className="relative">
-            <div className="border-border overflow-hidden border bg-navy-950 shadow-[0_40px_120px_-40px_rgba(15,23,42,0.18)]">
+            <div className="overflow-hidden ">
               <Image
                 src="/images/hero/image-2.webp"
                 alt="West Berg Europe hero"
