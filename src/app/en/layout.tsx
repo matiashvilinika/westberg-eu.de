@@ -3,6 +3,7 @@
 import "@/styles/globals.css";
 
 import FaviconLinks from "@/components/Common/FaviconLinks";
+import GoogleAnalytics from "@/components/Common/GoogleAnalytics";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "next-themes";
@@ -38,6 +39,7 @@ export default function EnglishLayout({
         suppressHydrationWarning
       >
         <FaviconLinks />
+        <GoogleAnalytics />
         <NextTopLoader
           color="#006BFF"
           crawlSpeed={300}

@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import FaviconLinks from "@/components/Common/FaviconLinks";
+import GoogleAnalytics from "@/components/Common/GoogleAnalytics";
 import { Archivo, Heebo } from "next/font/google";
 
 const archivo = Archivo({
@@ -33,6 +34,7 @@ export default function ComingSoonLayout({
         style={{ backgroundColor: '#030014' }}
       >
         <FaviconLinks />
+        <GoogleAnalytics />
         {children}
       </body>
     </html>
