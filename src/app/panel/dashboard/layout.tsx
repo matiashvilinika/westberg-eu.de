@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
+import { isSectionEnabled } from "@/config/sections";
 
-const menuItems = [
+const allMenuItems = [
   {
     name: "Dashboard",
     href: "/panel/dashboard",
@@ -17,6 +18,7 @@ const menuItems = [
   },
   {
     name: "Real Estate",
+    section: "realEstate",
     href: "/panel/dashboard/real-estate",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -26,6 +28,7 @@ const menuItems = [
   },
   {
     name: "Cars",
+    section: "cars",
     href: "/panel/dashboard/cars",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -36,6 +39,7 @@ const menuItems = [
   },
   {
     name: "Yachts",
+    section: "yachts",
     href: "/panel/dashboard/yachts",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -45,6 +49,7 @@ const menuItems = [
   },
   {
     name: "Motorcycles",
+    section: "motorcycles",
     href: "/panel/dashboard/motorcycles",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -53,6 +58,11 @@ const menuItems = [
     ),
   },
 ];
+
+// Categories switched off in src/config/sections.ts are hidden from the sidebar
+const menuItems = allMenuItems.filter(
+  (item) => !item.section || isSectionEnabled(item.section)
+);
 
 export default function DashboardLayout({
   children,

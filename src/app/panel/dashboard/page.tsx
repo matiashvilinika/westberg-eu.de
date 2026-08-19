@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import Link from "next/link";
+import { isSectionEnabled } from "@/config/sections";
 
 interface Stats {
   cars: number;
@@ -42,9 +43,10 @@ export default function AdminDashboard() {
     fetchStats();
   }, [supabase]);
 
-  const statCards = [
+  const allStatCards = [
     {
       name: "Real Estate",
+      section: "realEstate",
       count: stats.realEstate,
       href: "/panel/dashboard/real-estate",
       color: "from-emerald-500 to-emerald-600",
@@ -56,6 +58,7 @@ export default function AdminDashboard() {
     },
     {
       name: "Cars",
+      section: "cars",
       count: stats.cars,
       href: "/panel/dashboard/cars",
       color: "from-blue-500 to-blue-600",
@@ -68,6 +71,7 @@ export default function AdminDashboard() {
     },
     {
       name: "Yachts",
+      section: "yachts",
       count: stats.yachts,
       href: "/panel/dashboard/yachts",
       color: "from-cyan-500 to-cyan-600",
@@ -79,6 +83,7 @@ export default function AdminDashboard() {
     },
     {
       name: "Motorcycles",
+      section: "motorcycles",
       count: stats.motorcycles,
       href: "/panel/dashboard/motorcycles",
       color: "from-orange-500 to-orange-600",
@@ -90,6 +95,23 @@ export default function AdminDashboard() {
     },
   ];
 
+  // Categories switched off in src/config/sections.ts are hidden from the panel
+  const statCards = allStatCards.filter((card) => isSectionEnabled(card.section));
+
+  const quickActions = [
+    { section: "cars", href: "/panel/dashboard/cars/new", label: "Add New Car", color: "text-blue-400" },
+    { section: "realEstate", href: "/panel/dashboard/real-estate/new", label: "Add New Property", color: "text-emerald-400" },
+    { section: "yachts", href: "/panel/dashboard/yachts/new", label: "Add New Yacht", color: "text-cyan-400" },
+    { section: "motorcycles", href: "/panel/dashboard/motorcycles/new", label: "Add New Motorcycle", color: "text-orange-400" },
+  ].filter((action) => isSectionEnabled(action.section));
+
+  const gettingStarted = [
+    { section: "realEstate", name: "Real Estate", description: "Properties for sale" },
+    { section: "cars", name: "Cars", description: "Premium vehicles" },
+    { section: "yachts", name: "Yachts", description: "Luxury boats" },
+    { section: "motorcycles", name: "Motorcycles", description: "Premium bikes" },
+  ].filter((entry) => isSectionEnabled(entry.section));
+
   return (
     <div>
       <div className="mb-8">
@@ -99,8 +121,8 @@ export default function AdminDashboard() {
 
       {loading ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="bg-slate-800 rounded-xl p-6 animate-pulse">
+          {statCards.map((card) => (
+            <div key={card.name} className="bg-slate-800 rounded-xl p-6 animate-pulse">
               <div className="h-8 w-8 bg-slate-700 rounded mb-4"></div>
               <div className="h-6 w-20 bg-slate-700 rounded mb-2"></div>
               <div className="h-10 w-16 bg-slate-700 rounded"></div>
@@ -132,34 +154,16 @@ export default function AdminDashboard() {
         <div className="bg-slate-800 border border-slate-700 rounded-xl p-6">
           <h2 className="text-xl font-semibold text-white mb-4">Quick Actions</h2>
           <div className="space-y-3">
-            <Link
-              href="/panel/dashboard/cars/new"
-              className="flex items-center gap-3 p-3 bg-slate-700/50 hover:bg-slate-700 rounded-lg transition"
-            >
-              <span className="text-blue-400">+</span>
-              <span className="text-slate-300">Add New Car</span>
-            </Link>
-            <Link
-              href="/panel/dashboard/real-estate/new"
-              className="flex items-center gap-3 p-3 bg-slate-700/50 hover:bg-slate-700 rounded-lg transition"
-            >
-              <span className="text-emerald-400">+</span>
-              <span className="text-slate-300">Add New Property</span>
-            </Link>
-            <Link
-              href="/panel/dashboard/yachts/new"
-              className="flex items-center gap-3 p-3 bg-slate-700/50 hover:bg-slate-700 rounded-lg transition"
-            >
-              <span className="text-cyan-400">+</span>
-              <span className="text-slate-300">Add New Yacht</span>
-            </Link>
-            <Link
-              href="/panel/dashboard/motorcycles/new"
-              className="flex items-center gap-3 p-3 bg-slate-700/50 hover:bg-slate-700 rounded-lg transition"
-            >
-              <span className="text-orange-400">+</span>
-              <span className="text-slate-300">Add New Motorcycle</span>
-            </Link>
+            {quickActions.map((action) => (
+              <Link
+                key={action.href}
+                href={action.href}
+                className="flex items-center gap-3 p-3 bg-slate-700/50 hover:bg-slate-700 rounded-lg transition"
+              >
+                <span className={action.color}>+</span>
+                <span className="text-slate-300">{action.label}</span>
+              </Link>
+            ))}
           </div>
         </div>
 
@@ -168,10 +172,11 @@ export default function AdminDashboard() {
           <div className="space-y-4 text-slate-400">
             <p>Welcome to your admin panel! Here you can manage:</p>
             <ul className="list-disc list-inside space-y-2">
-              <li><strong className="text-white">Real Estate</strong> - Properties for sale</li>
-              <li><strong className="text-white">Cars</strong> - Premium vehicles</li>
-              <li><strong className="text-white">Yachts</strong> - Luxury boats</li>
-              <li><strong className="text-white">Motorcycles</strong> - Premium bikes</li>
+              {gettingStarted.map((entry) => (
+                <li key={entry.section}>
+                  <strong className="text-white">{entry.name}</strong> - {entry.description}
+                </li>
+              ))}
             </ul>
             <p className="text-sm">
               All published listings will appear on the main website automatically.

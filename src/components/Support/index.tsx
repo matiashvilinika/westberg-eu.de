@@ -10,7 +10,7 @@ export default function Support() {
       <div className="px-4 xl:container">
         <div className="-mx-4 flex flex-wrap justify-center">
           <div className="w-full px-4 xl:w-10/12">
-            <div className="flex flex-wrap items-center border-b border-[#102542] pb-14 lg:pb-0">
+            <div className="flex flex-wrap items-center pb-14 lg:pb-0">
               <div className="w-full px-4 lg:w-1/2">
                 <div className="relative mb-12 max-w-[500px] pt-6 md:mb-14 lg:pt-16">
                   <span className="title left-0! translate-x-0!">
@@ -27,7 +27,6 @@ export default function Support() {
 
               <div className="w-full px-4 lg:w-1/2">
                 <div className="flex items-center">
-                  <span className="bg-dark mr-10 h-1 w-full max-w-[200px] dark:bg-white"></span>
                   <a
                     href={`mailto:${t("ceoEmail")}`}
                     className="font-heading text-dark text-xl md:text-3xl lg:text-xl xl:text-3xl dark:text-white"
