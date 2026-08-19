@@ -64,14 +64,31 @@ export default function LegalNoticePage() {
                 </div>
               </div>
 
-              {/* Registration Information */}
+              {/* Registration & Tax Information */}
               <div>
                 <h3 className="mb-2 font-heading text-xl font-medium text-dark dark:text-white">
-                  Company Registration
+                  Company Registration &amp; Tax IDs
                 </h3>
-                <p className="text-base text-dark-text">
-                  <span className="font-medium">EUID:</span> DEF1103R.HRB248481B
-                </p>
+                <dl className="divide-y divide-stroke border-y border-stroke dark:divide-[#2E333D] dark:border-[#2E333D]">
+                  <div className="flex flex-col gap-1 py-3 sm:flex-row sm:items-baseline sm:gap-6">
+                    <dt className="font-heading text-sm font-medium uppercase tracking-wide text-dark dark:text-white sm:w-[190px] sm:shrink-0">
+                      EUID
+                    </dt>
+                    <dd className="text-base text-dark-text">DEF1103R.HRB248481B</dd>
+                  </div>
+                  <div className="flex flex-col gap-1 py-3 sm:flex-row sm:items-baseline sm:gap-6">
+                    <dt className="font-heading text-sm font-medium uppercase tracking-wide text-dark dark:text-white sm:w-[190px] sm:shrink-0">
+                      VAT ID (USt-IdNr.)
+                    </dt>
+                    <dd className="text-base text-dark-text">DE361406222</dd>
+                  </div>
+                  <div className="flex flex-col gap-1 py-3 sm:flex-row sm:items-baseline sm:gap-6">
+                    <dt className="font-heading text-sm font-medium uppercase tracking-wide text-dark dark:text-white sm:w-[190px] sm:shrink-0">
+                      Tax Number (Steuernummer)
+                    </dt>
+                    <dd className="text-base text-dark-text">29/566/30139</dd>
+                  </div>
+                </dl>
               </div>
 
               {/* Back to Home Button */}

@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
+import { isSectionEnabled } from "@/config/sections";
 
 type ListingItem = {
   id: string;
@@ -37,12 +38,14 @@ export default function Listings() {
   const [visibleCount, setVisibleCount] = useState(4);
   const supabase = createClient();
 
-  const [categories, setCategories] = useState<CategoryData[]>([
-    { id: "cars", table: "cars", urlType: "cars", icon: "🚗", items: [], currentIndex: 0 },
-    { id: "realEstate", table: "real_estate", urlType: "real-estate", icon: "🏠", items: [], currentIndex: 0 },
-    { id: "yachts", table: "yachts", urlType: "yachts", icon: "⛵", items: [], currentIndex: 0 },
-    { id: "motorcycles", table: "motorcycles", urlType: "motorcycles", icon: "🏍️", items: [], currentIndex: 0 },
-  ]);
+  const [categories, setCategories] = useState<CategoryData[]>(
+    [
+      { id: "cars", table: "cars", urlType: "cars", icon: "🚗", items: [], currentIndex: 0 },
+      { id: "realEstate", table: "real_estate", urlType: "real-estate", icon: "🏠", items: [], currentIndex: 0 },
+      { id: "yachts", table: "yachts", urlType: "yachts", icon: "⛵", items: [], currentIndex: 0 },
+      { id: "motorcycles", table: "motorcycles", urlType: "motorcycles", icon: "🏍️", items: [], currentIndex: 0 },
+    ].filter((category) => isSectionEnabled(category.id))
+  );
 
   useEffect(() => {
     setIsMounted(true);

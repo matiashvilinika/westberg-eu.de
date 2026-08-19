@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { isUrlTypeEnabled } from "@/config/sections";
 
 type ListingDetail = {
   id: string;
@@ -67,7 +68,8 @@ export default function ListingDetailPage() {
   useEffect(() => {
     const fetchListing = async () => {
       const tableName = tableMap[type];
-      if (!tableName) {
+      // Categories switched off in src/config/sections.ts are treated as not found
+      if (!tableName || !isUrlTypeEnabled(type)) {
         setLoading(false);
         return;
       }
