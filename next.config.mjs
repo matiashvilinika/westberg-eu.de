@@ -4,11 +4,14 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async rewrites() {
+  async redirects() {
     return [
-      // Serve the static offers page at a clean /offers URL.
-      // The file itself lives at public/offers/index.html.
-      { source: '/offers', destination: '/offers/index.html' },
+      // Send /offers to the real file path. This must be a redirect, not a
+      // rewrite: the page loads its assets with relative URLs, which the
+      // browser resolves against the current directory. Serving the HTML at
+      // /offers would resolve "./support.js" to /support.js and 404 every
+      // asset, so the browser has to actually sit at /offers/index.html.
+      { source: '/offers', destination: '/offers/index.html', permanent: false },
     ];
   },
   images: {
