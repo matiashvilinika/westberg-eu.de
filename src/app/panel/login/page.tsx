@@ -45,6 +45,15 @@ export default function AdminLogin() {
         return;
       }
 
+      // Pages that bounce here (e.g. /signature.html) pass ?redirect=. Only
+      // same-origin paths are honoured, and they need a full load because the
+      // target may be a route handler rather than an app page.
+      const redirect = new URLSearchParams(window.location.search).get("redirect");
+      if (redirect && /^\/[^\/]/.test(redirect)) {
+        window.location.assign(redirect);
+        return;
+      }
+
       router.push("/panel/dashboard");
     } catch (err) {
       setError("An error occurred. Please try again.");
