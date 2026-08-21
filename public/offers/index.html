@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail" data-bg-color="#07101E">
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#07101E"/><text x="600" y="300" text-anchor="middle" fill="#F4F5F3" font-family="Helvetica,sans-serif" font-size="130" font-weight="700" letter-spacing="8">WBE</text><rect x="380" y="350" width="440" height="12" fill="#3BC0D8"/><text x="600" y="450" text-anchor="middle" fill="#93A0B4" font-family="Helvetica,sans-serif" font-size="44" letter-spacing="14">PRIVATE OFFER</text></svg>
+</template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&amp;family=Archivo+Narrow:wght@600;700&amp;display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+  html,body{margin:0;padding:0;background:#07101E;color:#102542;font-family:'Archivo',sans-serif;}
+  a{color:#102542;text-decoration:none;}
+  a:hover{color:#0E93A8;}
+  *{scrollbar-width:thin;}
+  [data-rev]{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);}
+  [data-rev].wbe-in{opacity:1;transform:none;}
+  [data-briefline]{color:#102542;transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1),color .75s ease;}
+  [data-briefline].wbe-hot{color:#0E93A8;}
+  [data-subname]{opacity:0;transform:translateY(7px);transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1);}
+  [data-subname].wbe-in{opacity:1;transform:none;}
+  [data-wipe]{clip-path:inset(0 0 100% 0);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1),clip-path 1.25s cubic-bezier(.16,1,.3,1);}
+  [data-wipe].wbe-in{clip-path:inset(0 0 0 0);}
+  [data-carcard] > div:first-child{transition:transform .6s cubic-bezier(.16,1,.3,1),filter 1.45s ease;}
+  [data-carcard] img{transition:transform 9s linear;}
+  [data-carcard] > div:last-child > *{transition:transform .7s cubic-bezier(.16,1,.3,1);}
+  [data-cardtint]{transition:opacity .55s ease;}
+  [data-cardcta]{transition:color .3s ease,border-color .3s ease,background .3s ease;}
+  [data-cardrule]{transition:background .45s ease;}
+  @media (hover:hover) and (pointer:fine){
+    [data-rail]:hover [data-carcard] > div:first-child{filter:grayscale(1);transition-delay:.33s;}
+    [data-rail]:hover [data-carcard] [data-cardtint]{opacity:.3;transition-delay:.33s;}
+    [data-carcard]:hover > div:first-child{filter:none !important;transition-delay:0s;transform:translateY(-14px);}
+    [data-carcard]:hover img{transform:scale(1.12);}
+    [data-carcard]:hover > div:last-child > *:nth-child(1){transform:translateY(-12px);transition-delay:.09s;}
+    [data-carcard]:hover > div:last-child > *:nth-child(2){transform:translateY(-12px);transition-delay:.16s;}
+    [data-carcard]:hover > div:last-child > *:nth-child(3){transform:translateY(-12px);transition-delay:.23s;}
+    [data-carcard]:hover > div:last-child > *:nth-child(4){transform:translateY(-12px);transition-delay:.3s;}
+    [data-carcard]:hover > div:last-child > *:nth-child(5){transform:translateY(-12px);transition-delay:.37s;}
+    [data-carcard]:hover [data-cardtint]{opacity:.34 !important;}
+    [data-carcard]:hover [data-cardcta]{color:#0E93A8;border-color:#0E93A8;background:rgba(14,147,168,.07);}
+    [data-carcard]:hover [data-cardrule]{background:#3BC0D8;}
+  }
+  [data-wipe] img{transform:scale(1.14);transition:transform 1.8s cubic-bezier(.16,1,.3,1);}
+  [data-wipe].wbe-in img{transform:scale(1);}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;}
+  img,video{backface-visibility:hidden;}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    [data-rev],[data-wipe],[data-subname],[data-briefline]{transition-duration:1ms !important;}
+  }
+  @media (max-width:760px){
+    [data-screen-label="Hero"]{height:auto !important;min-height:0 !important;}
+    [data-videopanel]{display:none !important;}
+    [data-heroshift]{position:static !important;width:auto !important;max-width:none !important;right:auto !important;bottom:auto !important;transform:none !important;opacity:1 !important;}
+    [data-heroshift="-80"]{padding:calc(env(safe-area-inset-top,0px) + 108px) 20px 26px !important;}
+    [data-heroshift="-40"]{padding:0 20px 44px !important;}
+    #anchor-car > div:first-child{position:relative !important;top:0 !important;height:66svh !important;}
+    #anchor-car > div:nth-child(2){margin-top:-66svh !important;height:66svh !important;min-height:0 !important;}
+    [data-lockhero]{position:relative !important;top:0 !important;height:52svh !important;}
+    [data-railpane]{padding-top:32px !important;}
+    [data-rail]{overflow-x:auto !important;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;scrollbar-width:none;}
+    [data-rail]::-webkit-scrollbar{display:none;}
+    [data-rail] > article{scroll-snap-align:start;flex:0 0 82vw !important;}
+    [data-rail] > article > div:first-child{height:auto !important;aspect-ratio:16/10;}
+    [data-rail]{touch-action:pan-x pan-y;overscroll-behavior-x:contain;}
+    [data-raildots]{display:flex !important;}
+    [data-collapse]{height:auto !important;opacity:1 !important;}
+    [data-collapse] > div{transform:none !important;}
+    [data-touch]{min-height:44px;}
+  }
+</style>
+</helmet>
+<div style="background:#F4F5F3;color:#102542;overflow-x:clip;">
+
+  <!-- ============ FIXED HEADER ============ -->
+  <header data-screen-label="Header" style="position:fixed;top:0;left:0;right:0;z-index:60;display:flex;flex-direction:column;box-sizing:border-box;">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:clamp(14px,2vw,22px) clamp(20px,4vw,56px);background:{{hdrBg}};box-sizing:border-box;">
+    <span style="display:{{lgtI}};"><img src="assets/logo-white.png" alt="West Berg Europe" style="height:26px;display:block;"></span>
+    <span style="display:{{lgdI}};"><img src="assets/logo-navy.png" alt="West Berg Europe" style="height:26px;display:block;"></span>
+    <div style="display:flex;align-items:center;gap:clamp(12px,2vw,22px);">
+      <span style="font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:{{hdrMeta}};white-space:nowrap;">WB‑2026‑084</span>
+      <span style="display:inline-flex;border:1px solid {{hdrLine}};">
+        <button onClick="{{setEn}}" style="border:none;cursor:pointer;padding:7px 13px;font-family:'Archivo',sans-serif;font-size:11px;font-weight:600;letter-spacing:.14em;background:{{enBg}};color:{{enC}};">EN</button>
+        <button onClick="{{setDe}}" style="border:none;cursor:pointer;padding:7px 13px;font-family:'Archivo',sans-serif;font-size:11px;font-weight:600;letter-spacing:.14em;background:{{deBg}};color:{{deC}};">DE</button>
+      </span>
+    </div>
+  </div>
+  <div data-subwrap="" style="height:0px;overflow:hidden;">
+    <div data-subbar="" style="display:flex;height:37px;align-items:center;gap:14px;padding:0 clamp(20px,4vw,56px);background:#102542;color:#F4F5F3;font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;box-sizing:border-box;">
+      <span data-subtext="" style="display:flex;align-items:center;gap:14px;transform:translateY(9px);opacity:0;">
+        <span style="color:rgba(244,245,243,.55);"><span style="display:{{ei}};">Prepared for</span><span style="display:{{di}};">Erstellt für</span></span>
+        <span data-subname="" style="letter-spacing:.16em;">{{buyerName}}</span>
+      </span>
+    </div>
+  </div>
+  </header>
+
+  <!-- ============ HERO — parallax collage ============ -->
+  <section data-screen-label="Hero" style="position:relative;height:100svh;min-height:640px;overflow:hidden;background:#07101E;">
+    <div data-par="14" style="position:absolute;left:0;right:0;top:-9%;bottom:-9%;">
+      <img data-zoom="" src="assets/hero/267.jpg" alt="Porsche Cayenne S Coupé" style="width:100%;height:100%;object-fit:cover;display:block;transform-origin:60% 55%;">
+    </div>
+    <div style="position:absolute;inset:0;background:rgba(14,62,110,.42);mix-blend-mode:multiply;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(4,9,17,.88) 0%,rgba(4,9,17,.55) 42%,rgba(4,9,17,.35) 70%,rgba(4,9,17,.8) 100%);"></div>
+    <div data-videopanel="" style="position:absolute;left:58%;top:8%;width:clamp(180px,26vw,420px);height:60%;overflow:hidden;">
+      <div data-par="-110" style="position:absolute;left:0;right:0;top:-20%;bottom:-20%;transition:transform 2.1s cubic-bezier(.16,1,.3,1);">
+        
+      <video ref="{{ videoRef }}" src="assets/video/cayenne-electric.mp4" autoPlay="{{ true }}" playsInline="{{ true }}" poster="assets/hero/287.jpg" style="width: 389px; height: 566px; object-fit: cover; display: block"></video></div>
+    </div>
+    <div data-heroshift="-80" style="position:absolute;left:0;top:0;bottom:0;width:min(520px,44vw);display:flex;flex-direction:column;justify-content:center;padding:0 clamp(20px,4vw,56px);box-sizing:border-box;color:#F4F5F3;">
+      <div data-rev="" style="font-size:clamp(11px,1.1vw,13px);font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:rgba(244,245,243,.72);">
+        <span style="display:{{ei}};">Private offer for</span><span style="display:{{di}};">Privates Angebot für</span> {{buyerName}}</div>
+      <h1 data-rev="" style="margin:clamp(16px,2.5vw,28px) 0 0;font-family:'Archivo Narrow',sans-serif;font-size:clamp(44px,7.2vw,124px);font-weight:700;line-height:.86;letter-spacing:-.03em;text-transform:uppercase;">
+        <span style="display:{{ei}};">Four cars.<br>One answer.</span><span style="display:{{di}};">Vier Autos.<br>Eine Antwort.</span></h1>
+      <p data-rev="" style="margin:clamp(18px,2.5vw,30px) 0 0;font-size:clamp(13px,1.3vw,17px);font-weight:400;letter-spacing:.02em;line-height:1.5;color:rgba(244,245,243,.82);max-width:420px;text-wrap:pretty;">
+        <span style="display:{{ei}};">Performance SUV, family use, no accident history, Dubai before November — selected in Cologne, verified before you pay.</span><span style="display:{{di}};">Performance‑SUV, familientauglich, unfallfrei, Dubai vor November — in Köln ausgewählt, geprüft vor jeder Zahlung.</span></p>
+    </div>
+    <div data-heroshift="-40" style="position:absolute;right:clamp(20px,4vw,56px);bottom:clamp(28px,5vw,64px);width:min(400px,42vw);color:#F4F5F3;">
+      <p data-rev="" style="margin:0 0 20px;font-size:clamp(13px,1.2vw,16px);font-weight:300;line-height:1.6;color:rgba(244,245,243,.88);text-wrap:pretty;">
+        <span style="display:{{ei}};">Three cars from our current consignment, one sourced through the network. Each one states what it meets — and what it doesn't.</span><span style="display:{{di}};">Drei Fahrzeuge aus unserem Bestand, eines über das Netzwerk. Jedes benennt, was es erfüllt — und was nicht.</span></p>
+      <a data-rev="" href="#anchor-car" style="display:inline-flex;align-items:center;gap:18px;border:1px solid rgba(244,245,243,.75);background:rgba(244,245,243,.08);padding:16px 22px;color:#F4F5F3;font-size:clamp(11px,1vw,13px);font-weight:600;letter-spacing:.16em;text-transform:uppercase;" style-hover="background:rgba(244,245,243,.2);color:#F4F5F3;">
+        <span><span style="display:{{ei}};">See our recommendation</span><span style="display:{{di}};">Unsere Empfehlung</span></span>
+        <span style="font-size:15px;line-height:1;">→</span></a>
+    </div>
+  </section>
+
+  <!-- ============ 1 · THE BRIEF ============ -->
+  <section data-screen-label="01 The Brief" style="position:relative;background:#F4F5F3;">
+    <div style="max-width:1160px;margin:0 auto;padding:clamp(64px,10vw,140px) clamp(20px,5vw,64px) clamp(48px,7vw,96px);box-sizing:border-box;">
+      <div data-rev="" style="font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#67718A;">
+        <span style="display:{{ei}};">The brief, in your words</span><span style="display:{{di}};">Ihre Anfrage, in Ihren Worten</span></div>
+      <div style="margin-top:clamp(28px,5vw,56px);border-top:1px solid rgba(16,37,66,.16);">
+        <div data-collapse="" style="border-bottom:1px solid rgba(16,37,66,.16);will-change:height;"><div data-rev="" data-briefline="" style="padding:clamp(18px,3vw,28px) 0;font-family:'Archivo Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:-.02em;line-height:.95;font-size:clamp(30px,5.6vw,64px);transform-origin:top center;">
+          <span style="display:{{ei}};">Budget up to €120,000</span><span style="display:{{di}};">Budget bis 120.000&nbsp;€</span></div></div>
+        <div data-collapse="" style="border-bottom:1px solid rgba(16,37,66,.16);will-change:height;"><div data-rev="" data-briefline="" style="padding:clamp(18px,3vw,28px) 0;font-family:'Archivo Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:-.02em;line-height:.95;font-size:clamp(30px,5.6vw,64px);transform-origin:top center;">
+          <span style="display:{{ei}};">Performance SUV, family use</span><span style="display:{{di}};">Performance‑SUV, familientauglich</span></div></div>
+        <div data-collapse="" style="border-bottom:1px solid rgba(16,37,66,.16);will-change:height;"><div data-rev="" data-briefline="" style="padding:clamp(18px,3vw,28px) 0;font-family:'Archivo Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:-.02em;line-height:.95;font-size:clamp(30px,5.6vw,64px);transform-origin:top center;">
+          <span style="display:{{ei}};">No accident history</span><span style="display:{{di}};">Unfallfrei</span></div></div>
+        <div data-collapse="" style="border-bottom:1px solid rgba(16,37,66,.16);will-change:height;"><div data-rev="" data-briefline="" style="padding:clamp(18px,3vw,28px) 0;font-family:'Archivo Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:-.02em;line-height:.95;font-size:clamp(30px,5.6vw,64px);transform-origin:top center;">
+          <span style="display:{{ei}};">Delivery to Dubai before November</span><span style="display:{{di}};">Lieferung nach Dubai vor November</span></div></div>
+      </div>
+      <div data-rev="" style="margin-top:clamp(28px,4vw,44px);display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,64px);font-size:13px;color:#67718A;font-variant-numeric:tabular-nums;">
+        <div><span style="font-weight:600;letter-spacing:.22em;text-transform:uppercase;font-size:11px;display:block;margin-bottom:6px;"><span style="display:{{ei}};">Date</span><span style="display:{{di}};">Datum</span></span>21.08.2026</div>
+        <div><span style="font-weight:600;letter-spacing:.22em;text-transform:uppercase;font-size:11px;display:block;margin-bottom:6px;"><span style="display:{{ei}};">Valid until</span><span style="display:{{di}};">Gültig bis</span></span>04.09.2026</div>
+        <div><span style="font-weight:600;letter-spacing:.22em;text-transform:uppercase;font-size:11px;display:block;margin-bottom:6px;"><span style="display:{{ei}};">Prepared by</span><span style="display:{{di}};">Erstellt von</span></span>Rati Janashia</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2 · ANCHOR CAR — parallax divider + specs ============ -->
+  <section id="anchor-car" data-screen-label="02 Anchor Car" style="position:relative;background:#07101E;">
+    <div style="position:sticky;top:107px;height:calc(100vh - 107px);overflow:hidden;">
+      <div data-par="16" style="position:absolute;left:0;right:0;top:-10%;bottom:-10%;">
+        <img src="assets/hero/255.jpg" alt="Porsche Cayenne S Coupé, rear three-quarter" style="width:100%;height:100%;object-fit:cover;display:block;transform-origin:55% 55%;will-change:transform;">
+      </div>
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,9,17,.62) 0%,rgba(4,9,17,.18) 42%,rgba(4,9,17,.92) 100%);"></div>
+    </div>
+    <div style="position:relative;margin-top:calc(-100vh + 107px);height:calc(100vh - 107px);min-height:420px;box-sizing:border-box;">
+      <div style="position:absolute;inset:0;max-width:1160px;margin:0 auto;padding:clamp(80px,10vw,120px) clamp(20px,5vw,64px) clamp(28px,5vw,56px);box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;color:#F4F5F3;">
+        <div data-rev="" style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;">
+          <span style="color:#3BC0D8;"><span style="display:{{ei}};">Our recommendation · 01 of 04</span><span style="display:{{di}};">Unsere Empfehlung · 01 von 04</span></span>
+          <span style="display:inline-flex;align-items:center;gap:10px;color:#3BC0D8;"><span style="width:9px;height:9px;background:#3BC0D8;"></span><span style="display:{{ei}};">Available</span><span style="display:{{di}};">Verfügbar</span></span>
+        </div>
+        <div>
+          <h2 data-rev="" style="margin:0;font-family:'Archivo Narrow',sans-serif;font-size:clamp(40px,8vw,120px);font-weight:700;line-height:.88;letter-spacing:-.03em;text-transform:uppercase;">Porsche Cayenne <span style="color:rgba(244,245,243,.42);">S Coupé</span></h2>
+          <div data-rev="" style="margin-top:18px;font-size:11px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:rgba(244,245,243,.8);">Motorworld Köln · <span style="display:{{ei}};">In our showroom today</span><span style="display:{{di}};">Heute in unserem Showroom</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="position:relative;background:linear-gradient(180deg,rgba(4,9,17,.72) 0%,rgba(4,9,17,.9) 22%,rgba(4,9,17,.94) 100%);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:clamp(40px,6vw,80px) clamp(20px,5vw,64px) clamp(48px,7vw,88px);box-sizing:border-box;color:#F4F5F3;">
+     <div style="max-width:1160px;margin:0 auto;">
+      <div data-rev="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border-top:1px solid rgba(244,245,243,.18);border-bottom:1px solid rgba(244,245,243,.18);">
+        <div style="padding:18px 18px 18px 0;"><div style="font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,245,243,.5);"><span style="display:{{ei}};">First registration</span><span style="display:{{di}};">Erstzulassung</span></div><div style="margin-top:8px;font-size:18px;font-weight:500;font-variant-numeric:tabular-nums;">03 / 2024</div></div>
+        <div style="padding:18px 18px 18px 0;"><div style="font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,245,243,.5);"><span style="display:{{ei}};">Mileage</span><span style="display:{{di}};">Laufleistung</span></div><div style="margin-top:8px;font-size:18px;font-weight:500;font-variant-numeric:tabular-nums;">8,400 km</div></div>
+        <div style="padding:18px 18px 18px 0;"><div style="font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,245,243,.5);"><span style="display:{{ei}};">Power</span><span style="display:{{di}};">Leistung</span></div><div style="margin-top:8px;font-size:18px;font-weight:500;font-variant-numeric:tabular-nums;">349 kW (474 PS)</div></div>
+        <div style="padding:18px 18px 18px 0;"><div style="font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,245,243,.5);"><span style="display:{{ei}};">Transmission</span><span style="display:{{di}};">Getriebe</span></div><div style="margin-top:8px;font-size:18px;font-weight:500;">Tiptronic S</div></div>
+        <div style="padding:18px 0;"><div style="font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,245,243,.5);"><span style="display:{{ei}};">Drivetrain</span><span style="display:{{di}};">Antrieb</span></div><div style="margin-top:8px;font-size:18px;font-weight:500;">AWD</div></div>
+      </div>
+      <div style="margin-top:clamp(28px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(28px,5vw,72px);align-items:start;">
+        <div data-rev="">
+          <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,56px);align-items:baseline;">
+            <div><div style="font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,245,243,.5);"><span style="display:{{ei}};">EU price incl. 19% VAT</span><span style="display:{{di}};">EU‑Preis inkl. 19% MwSt.</span></div><div style="margin-top:8px;font-family:'Archivo Narrow',sans-serif;font-size:clamp(30px,4vw,44px);font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;">€114,900</div></div>
+            <div><div style="font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,245,243,.5);"><span style="display:{{ei}};">Export net price</span><span style="display:{{di}};">Export‑Nettopreis</span></div><div style="margin-top:8px;font-family:'Archivo Narrow',sans-serif;font-size:clamp(30px,4vw,44px);font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;">€96,554</div></div>
+          </div>
+          <p style="margin:16px 0 0;font-size:14px;color:rgba(244,245,243,.66);display:{{eb}};">VAT deductible — the net price applies to export outside the EU. Shipping and export handling quoted separately below.</p>
+          <p style="margin:16px 0 0;font-size:14px;color:rgba(244,245,243,.66);display:{{db}};">MwSt. ausweisbar — für Exporte außerhalb der EU gilt der Nettopreis. Versand und Exportabwicklung siehe unten.</p>
+          <div style="display:{{galDisp}};grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-top:26px;">
+            <img src="assets/hero/271.jpg" alt="Wheel detail" style="width:100%;height:104px;object-fit:cover;display:block;">
+            <img src="assets/hero/305.jpg" alt="Cockpit" style="width:100%;height:104px;object-fit:cover;display:block;">
+            <img src="assets/hero/344.jpg" alt="Panoramic roof" style="width:100%;height:104px;object-fit:cover;display:block;">
+          </div>
+        </div>
+        <div data-rev="" style="border-top:1px solid rgba(244,245,243,.18);padding-top:20px;">
+          <p style="margin:0;font-size:clamp(16px,2vw,18px);font-weight:300;line-height:1.65;color:rgba(244,245,243,.86);display:{{eb}};text-wrap:pretty;">This is the car I would put your family in. One owner, Porsche‑maintained, no paint on the body — I measured it myself. It is the only car in this offer that meets every line of your brief, including the November deadline: it can be at Jebel Ali in roughly four weeks from reservation. The one honest caveat is European specification, not GCC — cooling is unmodified, and the warranty is European. At this mileage and price I would still take it over a GCC car with a story.</p>
+          <p style="margin:0;font-size:clamp(16px,2vw,18px);font-weight:300;line-height:1.65;color:rgba(244,245,243,.86);display:{{db}};text-wrap:pretty;">Dieses Fahrzeug würde ich Ihrer Familie geben. Ein Halter, Porsche‑scheckheftgepflegt, keine Nachlackierung — selbst nachgemessen. Es ist das einzige Fahrzeug dieses Angebots, das jede Zeile Ihrer Anfrage erfüllt, auch den November‑Termin: ab Reservierung in rund vier Wochen in Jebel Ali. Der einzige ehrliche Vorbehalt: EU‑Spezifikation, nicht GCC — Kühlung unverändert, Garantie europäisch. Bei dieser Laufleistung und diesem Preis dennoch meine erste Wahl.</p>
+          <div style="margin-top:18px;font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,245,243,.5);">— Rati Janashia</div>
+        </div>
+      </div>
+     </div>
+    </div>
+  </section>
+
+  <!-- ============ 3 · LISTING RAIL (marketplace-style) ============ -->
+  <section data-screen-label="03 Alternatives" style="background:#FFFFFF;">
+   <div ref="{{railWrap}}" style="position:relative;">
+    <div ref="{{railPane}}" data-railpane="" style="position:sticky;top:107px;height:calc(100vh - 107px);display:flex;flex-direction:column;justify-content:flex-start;padding-top:clamp(28px,5vh,72px);overflow:hidden;">
+    <div style="max-width:1160px;width:100%;margin:0 auto;padding:0 clamp(20px,5vw,64px);box-sizing:border-box;">
+      <div data-rev="" style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+        <h2 style="margin:0;font-family:'Archivo Narrow',sans-serif;font-size:clamp(32px,5vw,64px);font-weight:700;line-height:.92;letter-spacing:-.02em;text-transform:uppercase;"><span style="display:{{ei}};">In our showroom</span><span style="display:{{di}};">In unserem Showroom</span></h2>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <button onClick="{{railPrev}}" style="width:46px;height:46px;border:1px solid rgba(16,37,66,.3);background:transparent;color:#102542;cursor:pointer;font-size:16px;">←</button>
+          <button onClick="{{railNext}}" style="width:46px;height:46px;border:1px solid rgba(16,37,66,.3);background:transparent;color:#102542;cursor:pointer;font-size:16px;">→</button>
+        </div>
+      </div>
+      <p data-rev="" style="margin:16px 0 0;max-width:520px;font-size:15px;font-weight:300;line-height:1.55;color:#67718A;display:{{eb}};">Listing detail as you would read it on a marketplace — with the part a marketplace leaves out.</p>
+      <p data-rev="" style="margin:16px 0 0;max-width:520px;font-size:15px;font-weight:300;line-height:1.55;color:#67718A;display:{{db}};">Inseratsdaten wie auf einem Marktplatz — samt dem Teil, den ein Marktplatz weglässt.</p>
+    </div>
+    <div ref="{{rail}}" data-rail="" style="flex:none;display:flex;align-items:flex-start;gap:clamp(16px,2vw,28px);overflow-x:hidden;padding:clamp(20px,3vw,32px) clamp(20px,5vw,64px);scroll-padding-left:clamp(20px,5vw,64px);">
+
+      <article data-carcard="" style="flex:0 0 clamp(280px,32vw,420px);display:flex;flex-direction:column;background:transparent;">
+        <div style="position:relative;overflow:hidden;height:clamp(190px,20vw,250px);mask-image:radial-gradient(115% 115% at 50% 50%, #000 55%, rgba(0,0,0,.35) 82%, transparent 100%);-webkit-mask-image:radial-gradient(115% 115% at 50% 50%, #000 55%, rgba(0,0,0,.35) 82%, transparent 100%);">
+          <img src="assets/cards/gle53.png" alt="Mercedes-AMG GLE 53 Coupé" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div data-cardtint="" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,62,110,.34) 0%,rgba(10,44,84,.18) 45%,rgba(14,62,110,.40) 100%);mix-blend-mode:multiply;pointer-events:none;"></div>
+        </div>
+        <div style="padding:18px 0 6px;display:flex;flex-direction:column;gap:10px;">
+          <div style="font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#67718A;display:flex;align-items:center;gap:12px;"><span>Mercedes‑AMG</span><span data-cardrule="" style="flex:1;height:1px;background:rgba(16,37,66,.14);"></span><span style="color:#102542;"><span style="display:{{ei}};">In preparation</span><span style="display:{{di}};">In Aufbereitung</span></span></div>
+          <h3 style="margin:0;font-family:'Archivo Narrow',sans-serif;font-size:clamp(24px,2.4vw,32px);font-weight:700;line-height:1.12;letter-spacing:-.02em;text-transform:uppercase;min-height:2.24em;display:flex;align-items:flex-start;">GLE 53 Coupé</h3>
+          <div style="font-size:13px;color:#67718A;font-variant-numeric:tabular-nums;">06/2023 · 21,300 km · 320 kW (435 PS) · AWD</div>
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding-top:2px;">
+            <div><div style="font-family:'Archivo Narrow',sans-serif;font-size:30px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;">€93,500</div><div style="font-size:11px;color:#67718A;margin-top:3px;"><span style="display:{{ei}};">§25a margin scheme</span><span style="display:{{di}};">§25a Differenzbesteuerung</span></div></div>
+            <a href="https://wa.me/4915162600982?text=WB-2026-084%20GLE53" data-cardcta="" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(16,37,66,.35);padding:10px 16px;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;color:#102542;" style-hover="color:#0E93A8;border-color:#0E93A8;"><span>Details</span></a>
+          </div>
+          <div style="margin-top:6px;border-top:1px solid rgba(16,37,66,.14);padding-top:14px;font-size:14px;line-height:1.55;">
+            <div style="display:flex;gap:10px;"><span style="min-width:74px;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#0E93A8;padding-top:3px;"><span style="display:{{ei}};">Fits</span><span style="display:{{di}};">Passt</span></span><span style="font-weight:300;color:rgba(16,37,66,.85);"><span style="display:{{ei}};">Well under budget; genuine five‑seat family car.</span><span style="display:{{di}};">Deutlich unter Budget; vollwertiger Fünfsitzer für die Familie.</span></span></div>
+            <div style="display:flex;gap:10px;margin-top:8px;"><span style="min-width:74px;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#67718A;padding-top:3px;"><span style="display:{{ei}};">Doesn't fit</span><span style="display:{{di}};">Passt nicht</span></span><span style="font-weight:300;color:rgba(16,37,66,.85);"><span style="display:{{ei}};">Higher mileage; margin scheme means no VAT saving on export; European spec, not GCC.</span><span style="display:{{di}};">Höhere Laufleistung; keine MwSt.‑Ersparnis beim Export; EU‑Spezifikation, nicht GCC.</span></span></div>
+          </div>
+        </div>
+      </article>
+
+      <article data-carcard="" style="flex:0 0 clamp(280px,32vw,420px);display:flex;flex-direction:column;background:transparent;">
+        <div style="position:relative;overflow:hidden;height:clamp(190px,20vw,250px);mask-image:radial-gradient(115% 115% at 50% 50%, #000 55%, rgba(0,0,0,.35) 82%, transparent 100%);-webkit-mask-image:radial-gradient(115% 115% at 50% 50%, #000 55%, rgba(0,0,0,.35) 82%, transparent 100%);">
+          <img src="assets/cards/911-carrera.png" alt="Porsche 911 Carrera" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div data-cardtint="" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,62,110,.34) 0%,rgba(10,44,84,.18) 45%,rgba(14,62,110,.40) 100%);mix-blend-mode:multiply;pointer-events:none;"></div>
+        </div>
+        <div style="padding:18px 0 6px;display:flex;flex-direction:column;gap:10px;">
+          <div style="font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#67718A;display:flex;align-items:center;gap:12px;"><span>Porsche</span><span data-cardrule="" style="flex:1;height:1px;background:rgba(16,37,66,.14);"></span><span style="display:inline-flex;align-items:center;gap:7px;color:#102542;"><span style="width:6px;height:6px;background:#3BC0D8;"></span><span style="display:{{ei}};">Available</span><span style="display:{{di}};">Verfügbar</span></span></div>
+          <h3 style="margin:0;font-family:'Archivo Narrow',sans-serif;font-size:clamp(24px,2.4vw,32px);font-weight:700;line-height:1.12;letter-spacing:-.02em;text-transform:uppercase;min-height:2.24em;display:flex;align-items:flex-start;">911 Carrera</h3>
+          <div style="font-size:13px;color:#67718A;font-variant-numeric:tabular-nums;">01/2024 · 12,900 km · 283 kW (385 PS) · RWD</div>
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding-top:2px;">
+            <div><div style="font-family:'Archivo Narrow',sans-serif;font-size:30px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;">€104,900</div><div style="font-size:11px;color:#67718A;margin-top:3px;"><span style="display:{{ei}};">Export net €88,151</span><span style="display:{{di}};">Export netto 88.151&nbsp;€</span></div></div>
+            <a href="https://wa.me/4915162600982?text=WB-2026-084%20X5M60i" data-cardcta="" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(16,37,66,.35);padding:10px 16px;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;color:#102542;" style-hover="color:#0E93A8;border-color:#0E93A8;">Details</a>
+          </div>
+          <div style="margin-top:6px;border-top:1px solid rgba(16,37,66,.14);padding-top:14px;font-size:14px;line-height:1.55;">
+            <div style="display:flex;gap:10px;"><span style="min-width:74px;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#0E93A8;padding-top:3px;"><span style="display:{{ei}};">Fits</span><span style="display:{{di}};">Passt</span></span><span style="font-weight:300;color:rgba(16,37,66,.85);"><span style="display:{{ei}};">Low mileage, one owner; full VAT saving on export; the strongest resale in the Gulf of anything here.</span><span style="display:{{di}};">Geringe Laufleistung, ein Halter; volle MwSt.‑Ersparnis beim Export; beste Wertstabilität im Golfraum.</span></span></div>
+            <div style="display:flex;gap:10px;margin-top:8px;"><span style="min-width:74px;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#67718A;padding-top:3px;"><span style="display:{{ei}};">Doesn't fit</span><span style="display:{{di}};">Passt nicht</span></span><span style="font-weight:300;color:rgba(16,37,66,.85);"><span style="display:{{ei}};">Not the family car you asked for — two usable seats and a coupé boot. Included because you may want it alongside the SUV.</span><span style="display:{{di}};">Nicht das gesuchte Familienauto — zwei nutzbare Sitze, Coupé‑Kofferraum. Enthalten, falls Sie es neben dem SUV möchten.</span></span></div>
+          </div>
+        </div>
+      </article>
+
+      <article data-carcard="" style="flex:0 0 clamp(280px,32vw,420px);display:flex;flex-direction:column;background:transparent;">
+        <div style="position:relative;overflow:hidden;height:clamp(190px,20vw,250px);mask-image:radial-gradient(115% 115% at 50% 50%, #000 55%, rgba(0,0,0,.35) 82%, transparent 100%);-webkit-mask-image:radial-gradient(115% 115% at 50% 50%, #000 55%, rgba(0,0,0,.35) 82%, transparent 100%);">
+          <img src="assets/cards/panamera.png" alt="Porsche Panamera Turbo" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div data-cardtint="" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,62,110,.34) 0%,rgba(10,44,84,.18) 45%,rgba(14,62,110,.40) 100%);mix-blend-mode:multiply;pointer-events:none;"></div>
+        </div>
+        <div style="padding:18px 0 6px;display:flex;flex-direction:column;gap:10px;">
+          <div style="font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#67718A;display:flex;align-items:center;gap:12px;"><span>Porsche</span><span data-cardrule="" style="flex:1;height:1px;background:rgba(16,37,66,.14);"></span><span style="color:#102542;white-space:nowrap;"><span style="display:{{ei}};">Reserved to 28.08.</span><span style="display:{{di}};">Reserviert bis 28.08.</span></span></div>
+          <h3 style="margin:0;font-family:'Archivo Narrow',sans-serif;font-size:clamp(24px,2.4vw,32px);font-weight:700;line-height:1.12;letter-spacing:-.02em;text-transform:uppercase;min-height:2.24em;display:flex;align-items:flex-start;">Panamera Turbo</h3>
+          <div style="font-size:13px;color:#67718A;font-variant-numeric:tabular-nums;">09/2023 · 17,600 km · 463 kW (630 PS) · AWD</div>
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding-top:2px;">
+            <div><div style="font-family:'Archivo Narrow',sans-serif;font-size:30px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;">€109,800</div><div style="font-size:11px;color:#67718A;margin-top:3px;"><span style="display:{{ei}};">Export net €92,269</span><span style="display:{{di}};">Export netto 92.269&nbsp;€</span></div></div>
+            <a href="https://wa.me/4915162600982?text=WB-2026-084%20RRS" data-cardcta="" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(16,37,66,.35);padding:10px 16px;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;color:#102542;" style-hover="color:#0E93A8;border-color:#0E93A8;">Details</a>
+          </div>
+          <div style="margin-top:6px;border-top:1px solid rgba(16,37,66,.14);padding-top:14px;font-size:14px;line-height:1.55;">
+            <div style="display:flex;gap:10px;"><span style="min-width:74px;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#0E93A8;padding-top:3px;"><span style="display:{{ei}};">Fits</span><span style="display:{{di}};">Passt</span></span><span style="font-weight:300;color:rgba(16,37,66,.85);"><span style="display:{{ei}};">Four full seats and the most comfortable long‑distance car here; sought after in the Gulf.</span><span style="display:{{di}};">Vier vollwertige Sitze, komfortabelster Langstreckenwagen im Angebot; im Golfmarkt sehr gefragt.</span></span></div>
+            <div style="display:flex;gap:10px;margin-top:8px;"><span style="min-width:74px;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#67718A;padding-top:3px;"><span style="display:{{ei}};">Doesn't fit</span><span style="display:{{di}};">Passt nicht</span></span><span style="font-weight:300;color:rgba(16,37,66,.85);"><span style="display:{{ei}};">A saloon, not an SUV; low ground clearance for Dubai. Under deposit until 28 August — only available if the current buyer withdraws.</span><span style="display:{{di}};">Limousine, kein SUV; geringe Bodenfreiheit für Dubai. Bis 28. August angezahlt — verfügbar nur, falls der aktuelle Käufer zurücktritt.</span></span></div>
+          </div>
+        </div>
+      </article>
+
+      <article data-carcard="" style="flex:0 0 clamp(280px,32vw,420px);display:flex;flex-direction:column;background:transparent;">
+        <div style="position:relative;overflow:hidden;height:clamp(190px,20vw,250px);mask-image:radial-gradient(115% 115% at 50% 50%, #000 55%, rgba(0,0,0,.35) 82%, transparent 100%);-webkit-mask-image:radial-gradient(115% 115% at 50% 50%, #000 55%, rgba(0,0,0,.35) 82%, transparent 100%);">
+          <img src="assets/cards/cayenne-turbo.png" alt="Porsche Cayenne Turbo E-Hybrid" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div data-cardtint="" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,62,110,.34) 0%,rgba(10,44,84,.18) 45%,rgba(14,62,110,.40) 100%);mix-blend-mode:multiply;pointer-events:none;"></div>
+        </div>
+        <div style="padding:18px 0 6px;display:flex;flex-direction:column;gap:10px;">
+          <div style="font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#67718A;display:flex;align-items:center;gap:12px;"><span>Porsche</span><span data-cardrule="" style="flex:1;height:1px;background:rgba(16,37,66,.14);"></span><span style="color:#102542;"><span style="display:{{ei}};">Sourceable</span><span style="display:{{di}};">Beschaffbar</span></span></div>
+          <h3 style="margin:0;font-family:'Archivo Narrow',sans-serif;font-size:clamp(24px,2.4vw,32px);font-weight:700;line-height:1.12;letter-spacing:-.02em;text-transform:uppercase;min-height:2.24em;display:flex;align-items:flex-start;">Cayenne Turbo E‑Hybrid Coupé</h3>
+          <div style="font-size:13px;color:#67718A;font-variant-numeric:tabular-nums;">2024 · <span style="display:{{ei}};">partner dealer, Stuttgart</span><span style="display:{{di}};">Partnerhändler, Stuttgart</span></div>
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding-top:2px;">
+            <div><div style="font-family:'Archivo Narrow',sans-serif;font-size:30px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;">€138,000</div><div style="font-size:11px;color:#67718A;margin-top:3px;"><span style="display:{{ei}};">Indicative, net</span><span style="display:{{di}};">Indikativ, netto</span></div></div>
+            <a href="https://wa.me/4915162600982?text=WB-2026-084%20TurboEHybrid" data-cardcta="" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(16,37,66,.35);padding:10px 16px;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;color:#102542;" style-hover="color:#0E93A8;border-color:#0E93A8;"><span><span style="display:{{ei}};">Ask</span><span style="display:{{di}};">Anfragen</span></span></a>
+          </div>
+          <div style="margin-top:6px;border-top:1px solid rgba(16,37,66,.14);padding-top:14px;font-size:14px;line-height:1.55;">
+            <div style="display:flex;gap:10px;"><span style="min-width:74px;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#0E93A8;padding-top:3px;"><span style="display:{{ei}};">Fits</span><span style="display:{{di}};">Passt</span></span><span style="font-weight:300;color:rgba(16,37,66,.85);"><span style="display:{{ei}};">Not listed anywhere yet; roughly two weeks to our showroom.</span><span style="display:{{di}};">Noch nirgends inseriert; ca. zwei Wochen bis zu unserem Showroom.</span></span></div>
+            <div style="display:flex;gap:10px;margin-top:8px;"><span style="min-width:74px;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#67718A;padding-top:3px;"><span style="display:{{ei}};">Doesn't fit</span><span style="display:{{di}};">Passt nicht</span></span><span style="font-weight:300;color:rgba(16,37,66,.85);"><span style="display:{{ei}};">Above your stated budget; timing leaves less margin before November.</span><span style="display:{{di}};">Über Ihrem Budget; weniger Puffer bis November.</span></span></div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div data-raildots="" style="display:none;justify-content:center;align-items:center;gap:8px;padding:2px 20px 30px;">
+      <span style="height:2px;width:28px;background:rgba(16,37,66,.7);transition:width .3s ease,background .3s ease;"></span>
+      <span style="height:2px;width:14px;background:rgba(16,37,66,.18);transition:width .3s ease,background .3s ease;"></span>
+      <span style="height:2px;width:14px;background:rgba(16,37,66,.18);transition:width .3s ease,background .3s ease;"></span>
+      <span style="height:2px;width:14px;background:rgba(16,37,66,.18);transition:width .3s ease,background .3s ease;"></span>
+    </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- ============ 4 · EDITORIAL SPLIT — what we're not showing ============ -->
+  <section data-screen-label="04 What we're not showing" style="background:#F4F5F3;">
+   <div>
+    <div style="max-width:1160px;width:100%;margin:0 auto;padding:clamp(56px,8vw,112px) clamp(20px,5vw,64px);box-sizing:border-box;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,80px);align-items:start;">
+      <div data-rev="" style="position:relative;overflow:hidden;height:clamp(340px,46vw,620px);">
+        <div style="position:absolute;inset:0;">
+          <img data-zoomin="0.22" src="assets/interior.jpg" alt="Cayenne interior" style="width:100%;height:100%;object-fit:cover;display:block;transform-origin:41% 46%;">
+        </div>
+      </div>
+      <div>
+        <div data-rev="" style="font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#67718A;"><span style="display:{{ei}};">The part a listing leaves out</span><span style="display:{{di}};">Was ein Inserat weglässt</span></div>
+        <h2 data-rev="" style="margin:16px 0 0;font-family:'Archivo Narrow',sans-serif;font-size:clamp(30px,4.4vw,60px);font-weight:700;line-height:.92;letter-spacing:-.02em;text-transform:uppercase;"><span style="display:{{ei}};">What we're not showing you</span><span style="display:{{di}};">Was wir Ihnen nicht zeigen</span></h2>
+        <div data-rev="" style="margin-top:24px;border-top:1px solid rgba(16,37,66,.16);">
+          <p style="margin:0;padding:18px 0;border-bottom:1px solid rgba(16,37,66,.16);font-size:16px;font-weight:300;line-height:1.6;color:rgba(16,37,66,.85);display:{{eb}};text-wrap:pretty;">We had two Cayenne Turbo GTs within budget. Both were re‑imports with gaps in the ownership chain, so they are not here.</p>
+          <p style="margin:0;padding:18px 0;border-bottom:1px solid rgba(16,37,66,.16);font-size:16px;font-weight:300;line-height:1.6;color:rgba(16,37,66,.85);display:{{db}};text-wrap:pretty;">Zwei Cayenne Turbo GT lagen im Budget. Beide waren Re‑Importe mit Lücken in der Halterkette — deshalb fehlen sie hier.</p>
+          <p style="margin:0;padding:18px 0;border-bottom:1px solid rgba(16,37,66,.16);font-size:16px;font-weight:300;line-height:1.6;color:rgba(16,37,66,.85);display:{{eb}};text-wrap:pretty;">A GLE 63 S was excluded for a repaired rear quarter panel. The repair was professional; your brief said no accident history, so it was out.</p>
+          <p style="margin:0;padding:18px 0;border-bottom:1px solid rgba(16,37,66,.16);font-size:16px;font-weight:300;line-height:1.6;color:rgba(16,37,66,.85);display:{{db}};text-wrap:pretty;">Ein GLE 63 S schied wegen eines instand gesetzten hinteren Seitenteils aus. Die Reparatur war fachgerecht — Ihre Anfrage lautete unfallfrei, also raus.</p>
+          <p style="margin:18px 0 0;font-size:14px;font-weight:300;color:#67718A;display:{{eb}};">A Mercedes G 500 from a private consignment sits above your budget; mentioned because the G‑Class holds value best in the Gulf. If none of the four is right, tell us what is missing — no marketplace can show you a car that isn't listed yet.</p>
+          <p style="margin:18px 0 0;font-size:14px;font-weight:300;color:#67718A;display:{{db}};">Ein Mercedes G 500 aus privater Konsignation liegt über Ihrem Budget — erwähnt, weil die G‑Klasse im Golfraum am wertstabilsten ist. Wenn keines der vier passt: Sagen Sie uns, was fehlt. Kein Marktplatz zeigt ein Auto, das noch nicht inseriert ist.</p>
+        </div>
+      </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- ============ 5 · VERIFICATION ============ -->
+  <section data-screen-label="05 Verification" style="background:#FFFFFF;">
+    <div style="max-width:1160px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(20px,5vw,64px);box-sizing:border-box;">
+      <h2 data-rev="" style="margin:0;font-family:'Archivo Narrow',sans-serif;font-size:clamp(32px,5vw,64px);font-weight:700;line-height:.92;letter-spacing:-.02em;text-transform:uppercase;"><span style="display:{{ei}};">Verify before you commit</span><span style="display:{{di}};">Prüfen, bevor Sie sich binden</span></h2>
+      <p data-rev="" style="margin:18px 0 0;max-width:560px;font-size:15px;font-weight:300;line-height:1.55;color:#67718A;display:{{eb}};text-wrap:pretty;">You are buying without a viewing. Everything below replaces it, and is delivered over WhatsApp within 24 hours of your request.</p>
+      <p data-rev="" style="margin:18px 0 0;max-width:560px;font-size:15px;font-weight:300;line-height:1.55;color:#67718A;display:{{db}};text-wrap:pretty;">Sie kaufen ohne Besichtigung. Alles Folgende ersetzt sie — und wird innerhalb von 24 Stunden per WhatsApp geliefert.</p>
+      <div data-seq="130" style="margin-top:clamp(28px,4vw,44px);border-top:1px solid rgba(16,37,66,.16);">
+        <div data-rev="" style="display:flex;gap:clamp(16px,3vw,40px);align-items:baseline;padding:20px 0;border-bottom:1px solid rgba(16,37,66,.16);"><span style="min-width:44px;font-family:'Archivo Narrow',sans-serif;font-size:22px;font-weight:700;color:#0E93A8;font-variant-numeric:tabular-nums;">01</span><div style="flex:1;"><div style="font-size:18px;font-weight:600;"><span style="display:{{ei}};">Video walkaround</span><span style="display:{{di}};">Video‑Rundgang</span></div><div style="margin-top:5px;font-size:14px;font-weight:300;color:#67718A;"><span style="display:{{ei}};">Full exterior and interior, filmed on request — not marketing footage.</span><span style="display:{{di}};">Außen und innen komplett, auf Anfrage gefilmt — kein Marketingmaterial.</span></div></div></div>
+        <div data-rev="" style="display:flex;gap:clamp(16px,3vw,40px);align-items:baseline;padding:20px 0;border-bottom:1px solid rgba(16,37,66,.16);"><span style="min-width:44px;font-family:'Archivo Narrow',sans-serif;font-size:22px;font-weight:700;color:#0E93A8;font-variant-numeric:tabular-nums;">02</span><div style="flex:1;"><div style="font-size:18px;font-weight:600;"><span style="display:{{ei}};">Cold‑start video</span><span style="display:{{di}};">Kaltstart‑Video</span></div><div style="margin-top:5px;font-size:14px;font-weight:300;color:#67718A;"><span style="display:{{ei}};">Engine started from cold on camera, uncut.</span><span style="display:{{di}};">Motorstart aus kaltem Zustand, ungeschnitten.</span></div></div></div>
+        <div data-rev="" style="display:flex;gap:clamp(16px,3vw,40px);align-items:baseline;padding:20px 0;border-bottom:1px solid rgba(16,37,66,.16);"><span style="min-width:44px;font-family:'Archivo Narrow',sans-serif;font-size:22px;font-weight:700;color:#0E93A8;font-variant-numeric:tabular-nums;">03</span><div style="flex:1;"><div style="font-size:18px;font-weight:600;"><span style="display:{{ei}};">Paint thickness readings</span><span style="display:{{di}};">Lackschichtmessung</span></div><div style="margin-top:5px;font-size:14px;font-weight:300;color:#67718A;"><span style="display:{{ei}};">Measured panel by panel, values shared as a PDF report.</span><span style="display:{{di}};">Bauteil für Bauteil gemessen, Werte als PDF‑Bericht.</span></div></div></div>
+        <div data-rev="" style="display:flex;gap:clamp(16px,3vw,40px);align-items:baseline;padding:20px 0;border-bottom:1px solid rgba(16,37,66,.16);"><span style="min-width:44px;font-family:'Archivo Narrow',sans-serif;font-size:22px;font-weight:700;color:#0E93A8;font-variant-numeric:tabular-nums;">04</span><div style="flex:1;"><div style="font-size:18px;font-weight:600;"><span style="display:{{ei}};">Service history &amp; ownership record</span><span style="display:{{di}};">Servicehistorie &amp; Halterkette</span></div><div style="margin-top:5px;font-size:14px;font-weight:300;color:#67718A;"><span style="display:{{ei}};">Complete documents scanned before any payment.</span><span style="display:{{di}};">Vollständige Unterlagen, gescannt vor jeder Zahlung.</span></div></div></div>
+        <div data-rev="" style="display:flex;gap:clamp(16px,3vw,40px);align-items:baseline;padding:20px 0;border-bottom:1px solid rgba(16,37,66,.16);"><span style="min-width:44px;font-family:'Archivo Narrow',sans-serif;font-size:22px;font-weight:700;color:#0E93A8;font-variant-numeric:tabular-nums;">05</span><div style="flex:1;"><div style="font-size:18px;font-weight:600;"><span style="display:{{ei}};">Independent inspection — DEKRA</span><span style="display:{{di}};">Unabhängige Prüfung — DEKRA</span></div><div style="margin-top:5px;font-size:14px;font-weight:300;color:#67718A;"><span style="display:{{ei}};">We invite it: a third‑party inspection by DEKRA or an equivalent body, at your cost, arranged by us within 48 hours. The report goes to you directly, not through us.</span><span style="display:{{di}};">Wir laden dazu ein: Drittprüfung durch DEKRA oder gleichwertig, auf Ihre Kosten, von uns binnen 48 Stunden organisiert. Der Bericht geht direkt an Sie.</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6 · EXPORT & LOGISTICS ============ -->
+  <section data-screen-label="06 Export and Logistics" style="position:relative;background:#07101E;color:#F4F5F3;">
+    <div data-lockhero="" style="position:sticky;top:107px;z-index:0;height:min(62vh,520px);min-height:280px;overflow:hidden;">
+      <div data-par="18" style="position:absolute;left:0;right:0;top:-12%;bottom:-12%;">
+        <img src="assets/towers.jpg" alt="Dubai skyline" style="width:100%;height:100%;object-fit:cover;display:block;transform-origin:50% 60%;">
+      </div>
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,9,17,.5) 0%,rgba(4,9,17,.2) 40%,rgba(4,9,17,.95) 100%);"></div>
+      <div style="position:absolute;left:0;right:0;bottom:0;max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,64px) clamp(24px,4vw,48px);box-sizing:border-box;">
+        <h2 data-rev="" style="margin:0;font-family:'Archivo Narrow',sans-serif;font-size:clamp(34px,6.5vw,100px);font-weight:700;line-height:.9;letter-spacing:-.03em;text-transform:uppercase;"><span style="display:{{ei}};">Cologne to Dubai</span><span style="display:{{di}};">Köln nach Dubai</span></h2>
+      </div>
+    </div>
+    <div style="position:relative;z-index:1;background:#07101E;">
+    <div style="max-width:1160px;margin:0 auto;padding:clamp(36px,5vw,64px) clamp(20px,5vw,64px) clamp(48px,7vw,96px);box-sizing:border-box;">
+      <div data-seq="110" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));border-top:1px solid rgba(244,245,243,.18);border-bottom:1px solid rgba(244,245,243,.18);">
+        <div data-rev="" style="padding:18px 18px 18px 0;"><div style="font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,245,243,.5);"><span style="display:{{ei}};">Route</span><span style="display:{{di}};">Route</span></div><div style="margin-top:8px;font-size:17px;font-weight:500;">Bremerhaven → Jebel Ali</div></div>
+        <div data-rev="" style="padding:18px 18px 18px 0;"><div style="font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,245,243,.5);"><span style="display:{{ei}};">Method</span><span style="display:{{di}};">Verfahren</span></div><div style="margin-top:8px;font-size:17px;font-weight:500;"><span style="display:{{ei}};">Enclosed container</span><span style="display:{{di}};">Geschlossener Container</span></div></div>
+        <div data-rev="" style="padding:18px 18px 18px 0;"><div style="font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,245,243,.5);"><span style="display:{{ei}};">Indicative cost</span><span style="display:{{di}};">Indikative Kosten</span></div><div style="margin-top:8px;font-size:17px;font-weight:500;font-variant-numeric:tabular-nums;">€2,100–2,600</div></div>
+        <div data-rev="" style="padding:18px 0;"><div style="font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,245,243,.5);"><span style="display:{{ei}};">Transit time</span><span style="display:{{di}};">Laufzeit</span></div><div style="margin-top:8px;font-size:17px;font-weight:500;"><span style="display:{{ei}};">24–30 days port to port</span><span style="display:{{di}};">24–30 Tage Hafen zu Hafen</span></div></div>
+      </div>
+      <div data-seq="120" style="margin-top:clamp(28px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(20px,3vw,36px);">
+        <div data-rev="" style="border-top:2px solid rgba(244,245,243,.85);padding-top:14px;position:relative;"><span style="position:absolute;top:-2px;left:0;width:44px;height:2px;background:#3BC0D8;"></span><div style="font-size:12px;font-weight:600;color:rgba(244,245,243,.5);font-variant-numeric:tabular-nums;">01</div><div style="margin-top:6px;font-size:16px;font-weight:600;text-transform:uppercase;"><span style="display:{{ei}};">Reservation</span><span style="display:{{di}};">Reservierung</span></div><div style="margin-top:6px;font-size:13px;font-weight:300;color:rgba(244,245,243,.7);line-height:1.5;"><span style="display:{{ei}};">€5,000 deposit, refundable until contract. Car comes off the market same day.</span><span style="display:{{di}};">5.000&nbsp;€ Anzahlung, bis Vertragsschluss erstattbar. Fahrzeug geht sofort vom Markt.</span></div></div>
+        <div data-rev="" style="border-top:2px solid rgba(244,245,243,.85);padding-top:14px;position:relative;"><span style="position:absolute;top:-2px;left:0;width:44px;height:2px;background:#3BC0D8;"></span><div style="font-size:12px;font-weight:600;color:rgba(244,245,243,.5);font-variant-numeric:tabular-nums;">02</div><div style="margin-top:6px;font-size:16px;font-weight:600;text-transform:uppercase;"><span style="display:{{ei}};">Verification</span><span style="display:{{di}};">Prüfung</span></div><div style="margin-top:6px;font-size:13px;font-weight:300;color:rgba(244,245,243,.7);line-height:1.5;"><span style="display:{{ei}};">Videos, documents, DEKRA if requested. Typically 3–5 days.</span><span style="display:{{di}};">Videos, Unterlagen, DEKRA auf Wunsch. In der Regel 3–5 Tage.</span></div></div>
+        <div data-rev="" style="border-top:2px solid rgba(244,245,243,.85);padding-top:14px;position:relative;"><span style="position:absolute;top:-2px;left:0;width:44px;height:2px;background:#3BC0D8;"></span><div style="font-size:12px;font-weight:600;color:rgba(244,245,243,.5);font-variant-numeric:tabular-nums;">03</div><div style="margin-top:6px;font-size:16px;font-weight:600;text-transform:uppercase;"><span style="display:{{ei}};">Contract &amp; payment</span><span style="display:{{di}};">Vertrag &amp; Zahlung</span></div><div style="margin-top:6px;font-size:13px;font-weight:300;color:rgba(244,245,243,.7);line-height:1.5;"><span style="display:{{ei}};">Bilingual contract, bank transfer to our German business account. No cash, no escrow intermediaries.</span><span style="display:{{di}};">Zweisprachiger Vertrag, Überweisung auf unser deutsches Geschäftskonto. Kein Bargeld, keine Treuhand‑Zwischenhändler.</span></div></div>
+        <div data-rev="" style="border-top:2px solid rgba(244,245,243,.85);padding-top:14px;position:relative;"><span style="position:absolute;top:-2px;left:0;width:44px;height:2px;background:#3BC0D8;"></span><div style="font-size:12px;font-weight:600;color:rgba(244,245,243,.5);font-variant-numeric:tabular-nums;">04</div><div style="margin-top:6px;font-size:16px;font-weight:600;text-transform:uppercase;"><span style="display:{{ei}};">Export handling</span><span style="display:{{di}};">Exportabwicklung</span></div><div style="margin-top:6px;font-size:13px;font-weight:300;color:rgba(244,245,243,.7);line-height:1.5;"><span style="display:{{ei}};">Customs export declaration, transport to Bremerhaven, loading — handled by us.</span><span style="display:{{di}};">Ausfuhranmeldung, Transport nach Bremerhaven, Verladung — durch uns.</span></div></div>
+        <div data-rev="" style="border-top:2px solid rgba(244,245,243,.85);padding-top:14px;position:relative;"><span style="position:absolute;top:-2px;left:0;width:44px;height:2px;background:#3BC0D8;"></span><div style="font-size:12px;font-weight:600;color:rgba(244,245,243,.5);font-variant-numeric:tabular-nums;">05</div><div style="margin-top:6px;font-size:16px;font-weight:600;text-transform:uppercase;"><span style="display:{{ei}};">Delivery</span><span style="display:{{di}};">Übergabe</span></div><div style="margin-top:6px;font-size:13px;font-weight:300;color:rgba(244,245,243,.7);line-height:1.5;"><span style="display:{{ei}};">Documents released on arrival at Jebel Ali; your agent or ours clears locally. Tracking shared throughout.</span><span style="display:{{di}};">Dokumentenfreigabe bei Ankunft in Jebel Ali; Verzollung durch Ihren oder unseren Agenten. Tracking durchgehend.</span></div></div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ============ 7 · CLOSE ============ -->
+  <section data-screen-label="07 Close" style="background:#102542;color:#F4F5F3;">
+    <div style="max-width:1160px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(20px,5vw,64px);box-sizing:border-box;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,72px);align-items:center;">
+      <div data-seq="150">
+        <div data-rev="" style="font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:rgba(244,245,243,.5);"><span style="display:{{ei}};">Your contact</span><span style="display:{{di}};">Ihr Ansprechpartner</span></div>
+        <h2 data-rev="" style="margin:16px 0 0;font-family:'Archivo Narrow',sans-serif;font-size:clamp(36px,5vw,64px);font-weight:700;line-height:.9;letter-spacing:-.02em;text-transform:uppercase;">Rati Janashia</h2>
+        <div data-rev="" style="margin-top:10px;font-size:16px;font-weight:300;color:rgba(244,245,243,.7);"><span style="display:{{ei}};">Founder &amp; CEO — he selected these cars for you personally.</span><span style="display:{{di}};">Gründer &amp; CEO — er hat diese Fahrzeuge persönlich für Sie ausgewählt.</span></div>
+        <a data-rev="" href="https://wa.me/4915162600982?text=WB-2026-084" style="margin-top:28px;display:inline-flex;align-items:center;gap:18px;background:#F4F5F3;color:#102542;padding:18px 24px;font-size:clamp(11px,1vw,13px);font-weight:600;letter-spacing:.16em;text-transform:uppercase;" style-hover="background:#FFFFFF;color:#102542;">
+          <span><span style="display:{{ei}};">Reply on WhatsApp</span><span style="display:{{di}};">Per WhatsApp antworten</span> · <span style="font-variant-numeric:tabular-nums;white-space:nowrap;">+49&nbsp;151&nbsp;6260&nbsp;0982</span></span>
+          <span style="font-size:15px;line-height:1;">→</span></a>
+        <div data-rev="" style="margin-top:20px;display:flex;flex-wrap:wrap;gap:12px 28px;font-size:14px;font-weight:300;">
+          <a href="mailto:ceo@westberg-eu.de" style="color:rgba(244,245,243,.85);border-bottom:1px solid rgba(244,245,243,.3);padding-bottom:2px;" style-hover="color:#3BC0D8;"><span style="display:{{ei}};">Propose a video call — we suggest Sat 23.08, 14:00 Dubai time</span><span style="display:{{di}};">Videocall vorschlagen — z.&nbsp;B. Sa 23.08., 14:00 Uhr Dubai</span></a>
+          <a href="#" onClick="{{printPage}}" style="color:rgba(244,245,243,.85);border-bottom:1px solid rgba(244,245,243,.3);padding-bottom:2px;" style-hover="color:#3BC0D8;"><span style="display:{{ei}};">Download as PDF</span><span style="display:{{di}};">Als PDF herunterladen</span></a>
+        </div>
+      </div>
+      <div data-rev="" style="position:relative;overflow:hidden;height:clamp(320px,38vw,520px);">
+        <div data-par="26" style="position:absolute;left:0;right:0;top:-14%;bottom:-14%;">
+          <img src="assets/ceo.png" alt="Rati Janashia at Motorworld Cologne" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;">
+        </div>
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,9,17,0) 60%,rgba(4,9,17,.55) 100%);"></div>
+        <div style="position:absolute;left:20px;bottom:16px;font-size:11px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:rgba(244,245,243,.9);">Motorworld Köln</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer data-screen-label="Footer" style="background:#07101E;color:rgba(244,245,243,.55);">
+    <div style="max-width:1160px;margin:0 auto;padding:32px clamp(20px,5vw,64px) 44px;box-sizing:border-box;font-size:12px;font-weight:300;line-height:1.7;">
+      <img src="assets/logo-white.png" alt="West Berg Europe" style="height:22px;display:block;opacity:.8;">
+      <p style="margin:18px 0 0;max-width:760px;">Impressum — West Berg Europe GmbH · Motorworld Köln, Butzweilerhofallee 3, 50829 Köln, Deutschland · Geschäftsführer: Rati Janashia · Amtsgericht Köln HRB 112233 · USt‑IdNr. DE345678901 · ceo@westberg-eu.de · +49&nbsp;151&nbsp;6260&nbsp;0982</p>
+      <p style="margin:12px 0 0;max-width:760px;display:{{eb}};">This page was prepared for one recipient and is valid until 04.09.2026. Prices are indicative until contract. If you prefer not to receive personal offers from us, reply "stop" on WhatsApp and we will not contact you again.</p>
+      <p style="margin:12px 0 0;max-width:760px;display:{{db}};">Diese Seite wurde für einen Empfänger erstellt und ist gültig bis 04.09.2026. Preise bis Vertragsschluss freibleibend. Wenn Sie keine persönlichen Angebote mehr erhalten möchten, antworten Sie per WhatsApp mit „Stopp".</p>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;de&quot;],&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;'en'|'de'&quot;,&quot;section&quot;:&quot;Offer&quot;},&quot;buyerName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Khalid Al-Rashidi&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Offer&quot;},&quot;parallax&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1.5,&quot;min&quot;:0,&quot;max&quot;:2,&quot;step&quot;:0.1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;fullGallery&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Anchor car&quot;}}">
+class Component extends DCLogic {
+  state = { lang: null, dark: true };
+
+  lang() { return this.state.lang ?? this.props.lang ?? 'en'; }
+
+  componentDidMount() {
+    this.rail = null;
+    document.querySelectorAll('video').forEach(v => {
+      v.muted = true; v.loop = true; v.defaultMuted = true;
+      const p = v.play(); if (p && p.catch) p.catch(() => {});
+    });
+    const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const mobile = () => window.innerWidth < 760;
+    const strength = reduced ? 0 : (this.props.parallax ?? 1) * (mobile() ? 0.45 : 1);
+    let queued = false;
+    const run = () => {
+      queued = false;
+      const vh = window.innerHeight || 800;
+      let settling = false;
+      document.querySelectorAll('[data-par]').forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.bottom < -vh * 0.4 || r.top > vh * 1.4) return;
+        const p = (r.top + r.height / 2 - vh / 2) / vh;
+        const sp = parseFloat(el.getAttribute('data-par')) || 0;
+        const t = p * sp * strength;
+        const prev = el.__pary == null ? t : el.__pary;
+        const cur = prev + (t - prev) * 0.22;
+        el.__pary = Math.abs(t - cur) < 0.05 ? t : cur;
+        if (el.__pary !== t) settling = true;
+        el.style.transform = 'translate3d(0,' + el.__pary.toFixed(2) + 'px,0)';
+        el.style.willChange = 'transform';
+      });
+      document.querySelectorAll('[data-collapse]').forEach(el => {
+        if (!strength || mobile()) return;
+        const r = el.getBoundingClientRect();
+        const inner = el.firstElementChild;
+        const full = el.__wbeH || (el.__wbeH = r.height);
+        const band = full + vh * 0.34;
+        const raw = Math.max(0, Math.min(1, (band - r.bottom) / band));
+        const prev = el.__wbeP == null ? raw : el.__wbeP;
+        const p = prev + (raw - prev) * 0.22;
+        if (Math.abs(raw - p) < 0.001) { el.__wbeP = raw; } else { el.__wbeP = p; settling = true; }
+        const e = p * p * (3 - 2 * p);
+        el.style.overflow = 'hidden';
+        el.style.height = (full * (1 - e * 0.92)).toFixed(1) + 'px';
+        el.style.opacity = (Math.max(0, 1 - e * 1.05)).toFixed(3);
+        if (inner && p < 0.002) { inner.style.transform = ''; el.style.height = ''; el.style.opacity = ''; return; }
+        if (inner) inner.style.transform = 'translate3d(0,' + (-e * full * 0.22).toFixed(1) + 'px,0) scaleY(' + (1 - e * 0.14).toFixed(3) + ')';
+      });
+      const hero = document.querySelector('[data-screen-label="Hero"]');
+      if (hero) {
+        const hr = hero.getBoundingClientRect();
+        const p = Math.max(0, Math.min(1, -hr.top / Math.max(1, hr.height)));
+        const fade = t => { const q = Math.max(0, Math.min(1, t)); return q * q * (3 - 2 * q); };
+        const zoom = hero.querySelector('[data-zoom]');
+        if (zoom) {
+          zoom.style.transform = 'scale(' + (1 + p * 0.10 * strength).toFixed(4) + ')';
+          zoom.style.opacity = (1 - fade((p - 0.12) / 0.75) * 0.9).toFixed(3);
+        }
+        if (!mobile()) hero.querySelectorAll('[data-heroshift]').forEach(el => {
+          const d = parseFloat(el.getAttribute('data-heroshift')) || 0;
+          el.style.transform = 'translate3d(0,' + (p * d * 0.55 * strength).toFixed(2) + 'px,0)';
+          el.style.opacity = (1 - fade((p - 0.1) / 0.6)).toFixed(3);
+        });
+        const wrap = document.querySelector('[data-subwrap]');
+        if (wrap) {
+          const car = document.getElementById('anchor-car');
+          const ct = car ? car.getBoundingClientRect().top : 99999;
+          const r = Math.max(0, Math.min(1, (330 - ct) / 260));
+          const e = r * r * (3 - 2 * r);
+          wrap.style.height = (e * 37).toFixed(2) + 'px';
+          const t = fade((e - 0.45) / 0.5);
+          const txt = wrap.querySelector('[data-subtext]');
+          if (txt) {
+            txt.style.transform = 'translateY(' + ((1 - t) * 9).toFixed(2) + 'px)';
+            txt.style.opacity = t.toFixed(3);
+          }
+          const nm = wrap.querySelector('[data-subname]');
+          if (nm) {
+            if (e > 0.92) {
+              if (!this.nameT && !nm.classList.contains('wbe-in')) {
+                this.nameT = setTimeout(() => { nm.classList.add('wbe-in'); this.nameT = null; }, 520);
+              }
+            } else if (e < 0.5) {
+              clearTimeout(this.nameT); this.nameT = null;
+              nm.classList.remove('wbe-in');
+            }
+          }
+        }
+        const dark = this.state.dark ? hr.bottom > 78 : hr.bottom > 102;
+        if (dark !== this.state.dark) this.setState({ dark });
+      }
+      const carSec = mobile() ? null : document.getElementById('anchor-car');
+      if (carSec) {
+        const cr = carSec.getBoundingClientRect();
+        const pin = carSec.firstElementChild;
+        const img = pin && pin.querySelector('img');
+        const ez = t => { const q = Math.max(0, Math.min(1, t)); return q * q * (3 - 2 * q); };
+        // lock-in: eases as the section top settles onto the bar (107px)
+        const lock = ez((260 - (cr.top - 107)) / 260);
+        // release: eases out as the section bottom rises past the bar
+        const rel = ez((360 - (cr.bottom - 107)) / 360);
+        if (img) {
+          img.style.transform = 'scale(' + (1 + (1 - lock) * 0.07 + rel * 0.05).toFixed(4) + ')';
+          img.style.opacity = (1 - rel * 0.55).toFixed(3);
+        }
+        if (pin) pin.style.filter = 'brightness(' + (0.82 + lock * 0.18 - rel * 0.12).toFixed(3) + ')';
+      }
+      this.syncRail();
+      const lock = mobile() ? null : document.querySelector('[data-lockhero]');
+      if (lock) {
+        const lr = lock.getBoundingClientRect();
+        const im = lock.querySelector('img');
+        const ez = t => { const q = Math.max(0, Math.min(1, t)); return q * q * (3 - 2 * q); };
+        const settle = ez((300 - (lr.top - 107)) / 300);
+        const cover = ez((360 - lr.bottom) / 360);
+        if (im) {
+          im.style.transform = 'scale(' + (1 + (1 - settle) * 0.08).toFixed(4) + ')';
+          im.style.opacity = (1 - cover * 0.5).toFixed(3);
+        }
+      }
+      // trailing text column — lags the scroll, eases to a stop
+      document.querySelectorAll('[data-lag]').forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.bottom < -vh || r.top > vh * 2) return;
+        const amt = (parseFloat(el.getAttribute('data-lag')) || 0) * strength;
+        // true lag: scroll pushes the block off, then it eases back to rest
+        const y = window.scrollY;
+        if (el.__lastY == null) { el.__lastY = y; el.__lag = 0; }
+        const d = y - el.__lastY;
+        el.__lastY = y;
+        const push = Math.max(-1, Math.min(1, d / 60)) * amt;
+        let cur = (el.__lag || 0) + push;
+        cur = Math.max(-amt, Math.min(amt, cur));
+        cur *= 0.88;
+        el.__lag = Math.abs(cur) < 0.06 ? 0 : cur;
+        if (el.__lag !== 0) settling = true;
+        el.style.transform = 'translate3d(0,' + el.__lag.toFixed(2) + 'px,0)';
+        el.style.willChange = 'transform';
+      });
+      // eased scroll-driven zoom
+      document.querySelectorAll('[data-zoomin]').forEach(el => {
+        const box = el.parentElement ? el.parentElement.getBoundingClientRect() : el.getBoundingClientRect();
+        if (box.bottom < -vh || box.top > vh * 2) return;
+        const amt = (parseFloat(el.getAttribute('data-zoomin')) || 0.1) * strength;
+        const raw = Math.max(0, Math.min(1, (vh - box.top) / (vh * 0.85)));
+        const e = raw * raw * raw * (raw * (raw * 6 - 15) + 10);
+        const prev = el.__zoom == null ? e : el.__zoom;
+        const cur = prev + (e - prev) * 0.09;
+        el.__zoom = Math.abs(e - cur) < 0.0005 ? e : cur;
+        if (el.__zoom !== e) settling = true;
+        el.style.transform = 'scale(' + (1 + el.__zoom * amt).toFixed(4) + ')';
+        el.style.willChange = 'transform';
+      });
+      if (settling) { queued = true; requestAnimationFrame(run); }
+    };
+    this.run = run;
+    this.onScroll = () => { if (!queued) { queued = true; requestAnimationFrame(run); } };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll);
+    document.addEventListener('scroll', this.onScroll, true);
+
+    this.io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('wbe-in');
+        this.io.unobserve(e.target);
+        if (e.target.hasAttribute('data-briefline')) this.markHot(e.target);
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.05 });
+    document.querySelectorAll('[data-rev]').forEach((el, i) => {
+      el.style.transitionDelay = el.hasAttribute('data-briefline') ? '0ms' : Math.min(i % 6, 4) * 70 + 'ms';
+      this.io.observe(el);
+    });
+    document.querySelectorAll('[data-seq]').forEach(c => {
+      const step = parseFloat(c.getAttribute('data-seq')) || 120;
+      c.querySelectorAll('[data-rev]').forEach((el, i) => { el.style.transitionDelay = (i * step) + 'ms'; });
+    });
+    run();
+  }
+
+  markHot(el) {
+    if (this.hot && this.hot !== el) this.hot.classList.remove('wbe-hot');
+    clearTimeout(this.hotT);
+    this.hot = el;
+    el.classList.add('wbe-hot');
+    this.hotT = setTimeout(() => { if (this.hot === el) el.classList.remove('wbe-hot'); }, 1300);
+  }
+
+  componentDidUpdate() { if (this.run) this.run(); }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+    document.removeEventListener('scroll', this.onScroll, true);
+    if (this.io) this.io.disconnect();
+  }
+
+  syncOut() {
+    return; // section 04 is a plain flow section now
+    const wrap = this.outWrap, pane = this.outPane;
+    if (!wrap || !pane) return;
+    const top = 107;
+    const box = pane.querySelector('[data-outzoom]');
+    const grid = pane.firstElementChild;
+    if (window.innerWidth < 760) {
+      wrap.style.height = 'auto';
+      pane.style.position = 'static';
+      pane.style.height = 'auto';
+      grid.style.transform = '';
+      if (box) { box.style.height = ''; box.style.transform = ''; }
+      return;
+    }
+    pane.style.position = 'sticky';
+    pane.style.height = 'calc(100vh - ' + top + 'px)';
+    const paneH = pane.offsetHeight;
+    const travel = Math.round(paneH * 2.4);
+    const want = paneH + travel;
+    if (wrap.__h !== want) { wrap.style.height = want + 'px'; wrap.__h = want; }
+    const r = wrap.getBoundingClientRect();
+    const raw = Math.max(0, Math.min(1, (top - r.top) / travel));
+    const p = raw * raw * (3 - 2 * raw);
+    if (box) {
+      // layout height always fits the pane; the 30% growth is a transform (no layout impact)
+      const base = Math.min(620, Math.max(300, window.innerWidth * 0.46));
+      const cap = Math.max(220, (paneH - 56) / 1.3);
+      const h = Math.min(base, cap);
+      if (box.__h !== h) { box.style.height = h.toFixed(1) + 'px'; box.__h = h; }
+      const g = 1 + 0.03 * p;
+      box.style.transformOrigin = '50% 50%';
+      box.style.transform = 'scaleY(' + g.toFixed(4) + ')';
+      const im = box.querySelector('img');
+      const z = 1.03 - 0.03 * p;
+      if (im) im.style.transform = 'scale(' + z.toFixed(4) + ',' + (z / g).toFixed(4) + ')';
+    }
+    // never let the pinned block exceed the pane
+    if (grid.__vw !== window.innerWidth) { grid.__vw = window.innerWidth; grid.__nh = 0; grid.style.transform = ''; this.outFit = 1; }
+    const nat = grid.__nh || (grid.__nh = grid.offsetHeight / (this.outFit || 1));
+    const fit = nat > 0 ? Math.max(0.62, Math.min(1, (paneH - 16) / nat)) : 1;
+    if (this.outFit !== fit) {
+      this.outFit = fit;
+      grid.style.transformOrigin = '50% 50%';
+      grid.style.transform = fit < 0.999 ? 'scale(' + fit.toFixed(3) + ')' : '';
+    }
+  }
+
+  syncRail() {
+    const wrap = this.railWrap, pane = this.railPane, el = this.rail;
+    if (!wrap || !pane || !el) return;
+    const top = 107;
+    if (window.innerWidth < 760) {
+      wrap.style.height = 'auto';
+      pane.style.position = 'static';
+      pane.style.height = 'auto';
+      pane.style.overflow = 'visible';
+      el.style.overflowX = 'auto';
+      el.style.transform = ''; el.style.height = ''; el.style.width = '';
+      this.railScale = 1; el.__nh = 0; el.__vw = null;
+      this.railTravel = 0;
+      this.railTarget = null;
+      if (this.railRaf) { cancelAnimationFrame(this.railRaf); this.railRaf = 0; }
+      el.style.touchAction = 'pan-x pan-y';
+      el.style.webkitOverflowScrolling = 'touch';
+      if (!el.__dots) {
+        el.__dots = 1;
+        el.addEventListener('scroll', () => this.syncDots(), { passive: true });
+      }
+      this.syncDots();
+      return;
+    }
+    pane.style.position = 'sticky';
+    pane.style.height = 'calc(100vh - ' + top + 'px)';
+    pane.style.overflow = 'hidden';
+    el.style.overflowX = 'hidden';
+    // scale the rail down if the cards are taller than the pinned viewport
+    const head = pane.firstElementChild;
+    const avail = pane.clientHeight - head.offsetHeight - parseFloat(getComputedStyle(pane).paddingTop || 0);
+    if (el.__vw !== window.innerWidth) {
+      el.__vw = window.innerWidth; el.__nh = 0; this.railScale = 1;
+      el.style.transform = ''; el.style.height = ''; el.style.width = '';
+    }
+    const natural = el.__nh || (el.__nh = el.offsetHeight / (this.railScale || 1));
+    const fit = natural > 0 ? Math.max(0.6, Math.min(1, avail / natural)) : 1;
+    if (this.railScale !== fit) {
+      this.railScale = fit;
+      el.style.transformOrigin = 'top center';
+      el.style.transform = fit < 0.999 ? 'scale(' + fit.toFixed(3) + ')' : '';
+      el.style.width = '';
+      el.style.height = fit < 0.999 ? Math.round(natural * fit) + 'px' : '';
+    }
+    const max = Math.max(0, (el.scrollWidth - el.clientWidth));
+    const paneH = pane.offsetHeight;
+    const want = Math.round(paneH + max);
+    if (wrap.__h !== want) { wrap.style.height = want + 'px'; wrap.__h = want; }
+    const travel = want - paneH;
+    const r = wrap.getBoundingClientRect();
+    const p = travel > 0 ? Math.max(0, Math.min(1, (top - r.top) / travel)) : 0;
+    this.railMax = max; this.railTravel = travel; this.railTop = top;
+    this.railTarget = this.railEase(p) * max;
+    this.railGlide();
+  }
+
+  syncDots() {
+    const el = this.rail;
+    const dots = document.querySelectorAll('[data-raildots] > span');
+    if (!el || !dots.length || !el.children.length) return;
+    const cards = Array.from(el.children);
+    const base = cards[0].offsetLeft;
+    let i = 0, best = Infinity;
+    cards.forEach((c, n) => {
+      const d = Math.abs((c.offsetLeft - base) - el.scrollLeft);
+      if (d < best) { best = d; i = n; }
+    });
+    dots.forEach((s, n) => {
+      s.style.width = n === i ? '28px' : '14px';
+      s.style.background = n === i ? 'rgba(16,37,66,.7)' : 'rgba(16,37,66,.18)';
+    });
+  }
+
+  // smootherstep — flat at both ends, so the rail starts and stops gently
+  railEase(p) {
+    p = Math.max(0, Math.min(1, p));
+    return p * p * p * (p * (p * 6 - 15) + 10);
+  }
+
+  railEaseInv(v) {
+    let lo = 0, hi = 1;
+    for (let i = 0; i < 30; i++) {
+      const mid = (lo + hi) / 2;
+      if (this.railEase(mid) < v) lo = mid; else hi = mid;
+    }
+    return (lo + hi) / 2;
+  }
+
+  // eased scroll mapping + per-frame damping = no jitter on start/stop
+  railGlide() {
+    if (this.railRaf) return;
+    const step = () => {
+      this.railRaf = 0;
+      const el = this.rail;
+      if (!el || this.railTarget == null) return;
+      const cur = el.scrollLeft;
+      const d = this.railTarget - cur;
+      if (Math.abs(d) < 0.3) { el.scrollLeft = this.railTarget; return; }
+      el.scrollLeft = cur + d * 0.16;
+      this.railRaf = requestAnimationFrame(step);
+    };
+    this.railRaf = requestAnimationFrame(step);
+  }
+
+  scrollRail(dir) {
+    const el = this.rail;
+    if (!el) return;
+    const cards = Array.from(el.children);
+    if (!cards.length) return;
+    const base = cards[0].offsetLeft;
+    const max = Math.max(0, el.scrollWidth - el.clientWidth);
+    let i = 0, best = Infinity;
+    cards.forEach((c, n) => {
+      const d = Math.abs(Math.min(max, c.offsetLeft - base) - el.scrollLeft);
+      if (d < best) { best = d; i = n; }
+    });
+    if (this.railIdx == null || Math.abs(Math.min(max, cards[this.railIdx].offsetLeft - base) - el.scrollLeft) > 4) this.railIdx = i;
+    this.railIdx = Math.max(0, Math.min(cards.length - 1, this.railIdx + dir));
+    const target = Math.min(max, cards[this.railIdx].offsetLeft - base);
+    if (window.innerWidth < 760) {
+      el.scrollTo({ left: target, behavior: 'smooth' });
+      setTimeout(() => this.syncDots(), 380);
+    } else if (this.railTravel > 0 && max > 0 && this.railWrap) {
+      const wrapTop = this.railWrap.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: wrapTop - this.railTop + this.railEaseInv(target / max) * this.railTravel, behavior: 'smooth' });
+    } else {
+      el.scrollTo({ left: target, behavior: 'smooth' });
+    }
+  }
+
+  renderVals() {
+    const de = this.lang() === 'de';
+    const dark = this.state.dark;
+    return {
+      ei: de ? 'none' : 'inline', di: de ? 'inline' : 'none',
+      eb: de ? 'none' : 'block', db: de ? 'block' : 'none',
+      buyerName: (this.props.buyerName ?? 'Khalid Al-Rashidi').trim(),
+      galDisp: (this.props.fullGallery ?? true) ? 'grid' : 'none',
+      rail: el => { this.rail = el; },
+      railWrap: el => { this.railWrap = el; },
+      railPane: el => { this.railPane = el; if (el) this.syncRail(); },
+      videoRef: el => {
+        if (!el) return;
+        el.muted = true; el.defaultMuted = true; el.loop = true;
+        const p = el.play(); if (p && p.catch) p.catch(() => {});
+      },
+      railPrev: () => this.scrollRail(-1),
+      railNext: () => this.scrollRail(1),
+      setEn: () => this.setState({ lang: 'en' }),
+      setDe: () => this.setState({ lang: 'de' }),
+      hdrBg: dark ? 'linear-gradient(180deg,rgba(4,9,17,.72) 0%,rgba(4,9,17,0) 100%)' : 'rgba(244,245,243,.92)',
+      hdrMeta: dark ? 'rgba(244,245,243,.72)' : '#67718A',
+      hdrLine: dark ? 'rgba(244,245,243,.4)' : 'rgba(16,37,66,.3)',
+      lgtI: dark ? 'block' : 'none', lgdI: dark ? 'none' : 'block',
+      enBg: de ? 'transparent' : (dark ? '#F4F5F3' : '#102542'),
+      enC: de ? (dark ? 'rgba(244,245,243,.8)' : '#67718A') : (dark ? '#102542' : '#F4F5F3'),
+      deBg: de ? (dark ? '#F4F5F3' : '#102542') : 'transparent',
+      deC: de ? (dark ? '#102542' : '#F4F5F3') : (dark ? 'rgba(244,245,243,.8)' : '#67718A'),
+      printPage: e => { e.preventDefault(); window.print(); },
+    };
+  }
+}
+
+</script>
+</body>
+</html>

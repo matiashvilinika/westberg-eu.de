@@ -4,6 +4,13 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async rewrites() {
+    return [
+      // Serve the static offers page at a clean /offers URL.
+      // The file itself lives at public/offers/index.html.
+      { source: '/offers', destination: '/offers/index.html' },
+    ];
+  },
   images: {
     remotePatterns: [
       {
