@@ -100,7 +100,7 @@ export const SIGNATURE_TOOL_HTML = `<!DOCTYPE html>
         <label for="f-hosted">Use hosted logo URL instead of embedded image</label>
       </div>
       <label for="f-logourl">Logo URL</label>
-      <input type="text" id="f-logourl" value="https://westberg.eu/assets/westberg-logo@2x.png">
+      <input type="text" id="f-logourl" value="https://www.westberg-eu.de/images/logo/westberg-logo-email@2x.png">
     </div>
 
     <div>
@@ -143,7 +143,7 @@ export const SIGNATURE_TOOL_HTML = `<!DOCTYPE html>
     <h3>The logo</h3>
     <ul>
       <li>SVG doesn't work in email — Outlook and Gmail both refuse it. The signature uses a PNG at 380px rendered down to 190px so it stays sharp on retina screens.</li>
-      <li>By default the PNG is embedded as a data URI, which is what makes <em>Copy formatted</em> work from this page. Gmail strips data URIs from <em>received</em> mail, so once the file is hosted on the company domain, tick the hosted-URL box and use that version — it's the more robust long-term setup.</li>
+      <li>By default the PNG is embedded as a data URI, which is what makes <em>Copy formatted</em> work from this page. Gmail strips data URIs from <em>received</em> mail, so tick the hosted-URL box for the more robust setup — the identical PNG is served from <code>www.westberg-eu.de/images/logo/westberg-logo-email@2x.png</code>. Use the <code>www.</code> form: the bare domain redirects, and Outlook is unreliable at following redirects for images.</li>
       <li><code>width</code> and <code>height</code> are set as HTML attributes as well as CSS, because Outlook ignores CSS sizing on images.</li>
       <li>The <code>alt</code> text reads "West Berg Europe W.B.E. GmbH", so the company name is still legible when images are blocked. That's also why there's no separate company name line — the logo carries it.</li>
     </ul>
