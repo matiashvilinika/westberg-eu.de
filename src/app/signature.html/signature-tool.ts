@@ -74,7 +74,7 @@ export const SIGNATURE_TOOL_HTML = `<!DOCTYPE html>
     <div class="panel">
       <h2>Fields</h2>
       <label for="f-name">Name</label>
-      <input type="text" id="f-name" value="" placeholder="e.g. Alexander Kozmanishvili">
+      <input type="text" id="f-name" value="" placeholder="Vorname Nachname">
       <label for="f-role">Role</label>
       <input type="text" id="f-role" value="" placeholder="e.g. Project Manager — Digital &amp; Business Development">
       <label for="f-mobile">Mobile</label>
