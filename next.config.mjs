@@ -12,6 +12,7 @@ const nextConfig = {
       // /offers would resolve "./support.js" to /support.js and 404 every
       // asset, so the browser has to actually sit at /offers/index.html.
       { source: '/offers', destination: '/offers/index.html', permanent: false },
+      { source: '/911-offer', destination: '/911-offer/index.html', permanent: false },
     ];
   },
   images: {
